@@ -1,0 +1,118 @@
+#welcome {
+  width: 100%;
+  /* position: relative; */
+  --height: calc(100vh - 3em);
+  min-height: var(--height);
+  background-color: #eee;
+  --logoWidth: 50vmin;
+  --logoTop: 40%;
+}
+hr {
+  margin: 0;
+}
+.logo {
+  position: absolute;
+  top: var(--logoTop);
+  left: 50%;
+  overflow: hidden;
+  width: var(--logoWidth);
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  animation-fill-mode: backwards;
+}
+@keyframes fromLeftInto {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+@keyframes fromTopInto {
+  0% {
+    top: 100vh;
+    opacity: 0;
+  }
+}
+@keyframes opacityAdd {
+  0% {
+    opacity: 0;
+  }
+}
+@keyframes tensile {
+  0% {
+    letter-spacing: 0.3em;
+  }
+}
+#logo-main,
+.tt {
+  position: absolute;
+  top: var(--logoTop);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* animation: fromLeftInto 2s; */
+}
+#logo-py {
+  opacity: 1;
+}
+#welcome .tt {
+  position: absolute;
+  top: var(--logoTop);
+  right: 50%;
+  left: 50%;
+  width: max-content;
+  margin: 0;
+  transform: translate(-50%, calc(var(--logoWidth) / 2));
+  opacity: 1;
+}
+#loading {
+  opacity: 1;
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.animation-start #loading {
+  opacity: 0;
+}
+.animation-start #welcome {
+  opacity: 1;
+}
+#welcome {
+  opacity: 0;
+}
+.animation-start .tt {
+  animation: opacityAdd 1s 2s;
+  animation-fill-mode: backwards;
+}
+.animation-start #logo-main {
+  animation: fromLeftInto 2s;
+}
+
+.animation-start #logo-py {
+  animation: fromTopInto 1.5s 1s;
+  animation-fill-mode: backwards;
+}
+
+.animation-start #logo-time {
+  animation: opacityAdd 1s 2.2s;
+  animation-fill-mode: backwards;
+}
+
+.animation-start #logo-circle {
+  animation: opacityAdd 1s 2.8s;
+  animation-fill-mode: backwards;
+}
+
+.animation-start #welcome-title {
+  animation: tensile 1s 1.8s;
+}
+
+@media (max-height: 350px) {
+  .imgs {
+    display: none;
+  }
+  #welcome .tt {
+    top: 20%;
+    transform: translate(-50%, 0);
+  }
+}
