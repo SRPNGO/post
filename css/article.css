@@ -19,7 +19,7 @@ body {
 }
 /* article > div:has(img[style]){display: inline-block;} */
 article > div {
-  display: inline-block;
+  /* display: inline-block; */
 }
 h4 {
   z-index: 3;
