@@ -60,13 +60,14 @@ img {
   margin: 0;
   max-width: none;
 }
-code {
+code,.language-plaintext,.highlighter-rouge {
   color: #383a42;
   background-color: #ececec;
   font-family: monospace;
   display: block;
   padding: 4px;
   border-radius: 8px;
+  text-wrap: initial;
 }
 pre {
   margin: 0;
