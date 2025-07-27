@@ -1,3 +1,10 @@
+h1 {
+  text-align: center;
+}
+h1 + h2 {
+  font-size: 1.2rem;
+  text-align: end;
+}
 h1,
 h2,
 h3,
@@ -44,12 +51,23 @@ img {
   width: 40%;
   max-width: 200px;
 }
-.imageContainer>a{
+.imageContainer > a {
   font-size: small;
   text-align: center;
 }
-.imageContainer>img{
+.imageContainer > img {
   width: 100%;
   margin: 0;
   max-width: none;
+}
+code {
+  color: #383a42;
+  background-color: #ececec;
+  font-family: monospace;
+  display: block;
+  padding: 4px;
+  border-radius: 8px;
+}
+pre {
+  margin: 0;
 }

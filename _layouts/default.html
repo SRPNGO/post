@@ -34,6 +34,12 @@
   </head>
 
   <body>
+    <header>
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.subtitle | default: ''}}</h2>
+      <p>作者：{{page.author | default: '?'}}</p>
+      <hr />
+    </header>
     {{ content }}
     <div>
       <h2 style="text-align: center">更多操作</h2>
