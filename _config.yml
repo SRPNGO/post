@@ -1,0 +1,6 @@
+# title: 星球圈记录
+theme: null
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

@@ -1,3 +1,7 @@
+---
+title: Markdown基本教程
+author: Nsakrty
+---
 # Markdown基本教程
 ## 标题
 ```
@@ -53,4 +57,4 @@
   - 简史
   - 大事年表
 ## 图片
-请交给我。
+略
