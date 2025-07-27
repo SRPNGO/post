@@ -67,7 +67,6 @@ author: Nsakrty
   - 大事年表
 
 ## 图片
-<code>
 <pre>
 你可以用这个方式插入图片：
 
@@ -75,14 +74,12 @@ author: Nsakrty
 
 至于图片上传这一部分请交给站长Nsakrty。
 </pre>
-</code>
 
 
 ## 文章格式
 
 对于所有投稿上来的文章，请按照下列格式书写：
 
-<code>
 <pre>
 ---
 title: 文章标题
@@ -91,4 +88,3 @@ author: 作者
 ---
 文章正文
 </pre>
-</code>

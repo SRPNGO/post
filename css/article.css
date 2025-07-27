@@ -23,6 +23,7 @@ article p {
 body {
   max-width: 600px;
   margin: 0 auto;
+  padding: 4px;
 }
 /* article > div:has(img[style]){display: inline-block;} */
 article > div {
@@ -60,7 +61,7 @@ img {
   margin: 0;
   max-width: none;
 }
-code,.language-plaintext,.highlighter-rouge {
+pre,.language-plaintext,.highlighter-rouge {
   color: #383a42;
   background-color: #ececec;
   font-family: monospace;
@@ -68,7 +69,4 @@ code,.language-plaintext,.highlighter-rouge {
   padding: 4px;
   border-radius: 8px;
   text-wrap:auto;
-}
-pre {
-  margin: 0;
 }
