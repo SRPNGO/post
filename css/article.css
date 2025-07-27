@@ -67,7 +67,7 @@ code,.language-plaintext,.highlighter-rouge {
   display: block;
   padding: 4px;
   border-radius: 8px;
-  text-wrap: initial;
+  text-wrap:auto;
 }
 pre {
   margin: 0;
