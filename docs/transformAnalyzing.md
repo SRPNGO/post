@@ -1,7 +1,7 @@
 ---
-title:论转型运动当前所遇到的问题
-subtitle:——面对转型发展困境的思考
-author:Nsakrty
+title: 论转型运动当前所遇到的问题
+subtitle: ——面对转型发展困境的思考
+author: Nsakrty
 ---
 
 ## 前言
