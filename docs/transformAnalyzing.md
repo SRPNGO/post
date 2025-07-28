@@ -40,9 +40,12 @@ author: Nsakrty
 
 也就是：
 
-$$LFR=\frac{\Delta L}{\Delta F}$$
+<!-- $$LFR=\frac{\Delta L}{\Delta F}$$
 
-$$TFLR=\frac{1000}{LFR} = 1000\times\frac{\Delta F}{\Delta L}$$
+$$TFLR=\frac{1000}{LFR} = 1000\times\frac{\Delta F}{\Delta L}$$ -->
+LFR=ΔL/ΔF
+
+TFLR=1000×ΔF/ΔL
 
 观察一下这个表格，不难发现：
 
