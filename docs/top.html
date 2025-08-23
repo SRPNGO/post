@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+<meta name="google" content="notranslate">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Ranking Survey Quiz</title>
+<style>
+  body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 800px; }
+  .question { margin-top: 20px; }
+  .options { margin: 10px 0; }
+  .options div { display: inline-block; margin-right: 20px; margin-bottom: 5px; }
+  .correct { color: green; font-weight: bold; }
+  .incorrect { color: red; font-weight: bold; }
+  .explanation { margin-left: 20px; font-style: italic; }
+  button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;">D</h2>
+
+<p>
+In a recent global survey, researchers asked thousands of people a seemingly simple question: “Which number is your favorite?” The results, however, turned out to be anything but simple.
+</p>
+<p>
+Unexpectedly, the most popular number was not one, but two. Analysts explained that people might feel “two” suggests companionship, while “one” feels lonely. Close behind, in second place, was five, often associated with the five senses and the idea of completeness.
+</p>
+<p>
+The third spot was taken by seven. This did not surprise experts, since seven is linked to many traditions: seven days in a week, seven wonders of the world, and so on. What did puzzle them was that number three itself only reached fourth place.
+</p>
+<p>
+Number one, the symbol of being first, was pushed down to the fifth position. Even more strangely, number four, which many cultures either love or dislike, landed in sixth place. Then came number eight, sitting firmly in seventh place, leaving some to wonder whether the “lucky eight” was not as lucky as it seemed.
+</p>
+<p>
+Zero, often regarded as the foundation of mathematics, surprisingly ended up in eighth place. Number six, with its frequent appearance in games and daily life, could only manage ninth. Finally, nine, once thought to be a “perfect” number, found itself in tenth place.
+</p>
+<p>
+The outcome of this ranking left many readers scratching their heads. After all, how could numbers, which are supposed to be logical, arrange themselves in such an illogical order? Yet perhaps that is the very charm of the survey: numbers may look certain on paper, but in people’s hearts, their value is far less predictable.
+</p>
+
+<form id="quizForm">
+
+<div class="question">
+  <strong>1. Which number came first in the ranking?</strong>
+  <div class="options">
+    <div><input type="radio" name="q1" value="A"> A. One</div>
+    <div><input type="radio" name="q1" value="B"> B. Two</div>
+  </div>
+  <div class="options">
+    <div><input type="radio" name="q1" value="C"> C. Five</div>
+    <div><input type="radio" name="q1" value="D"> D. Seven</div>
+  </div>
+</div>
+
+<div class="question">
+  <strong>2. Which statement correctly reflects the main sequence of numbers described in the passage?</strong>
+  <div class="options">
+    <div><input type="radio" name="q2" value="A"> A. Three ranked below seven.</div>
+    <div><input type="radio" name="q2" value="B"> B. One missed the top three.</div>
+  </div>
+  <div class="options">
+    <div><input type="radio" name="q2" value="C"> C. Eight finished eighth.</div>
+    <div><input type="radio" name="q2" value="D"> D. Four stood at fourth.</div>
+  </div>
+</div>
+
+<div class="question">
+  <strong>3. Which statement can be supported by the passage?</strong>
+  <div class="options">
+    <div><input type="radio" name="q3" value="A"> A. Eight is often considered lucky but did not reach top five.</div>
+    <div><input type="radio" name="q3" value="B"> B. Four has mixed cultural associations and ranked sixth.</div>
+    <div><input type="radio" name="q3" value="C"> C. Zero is important in math but ranked eighth.</div><br>
+    <div><input type="radio" name="q3" value="D"> D. Six appears in games yet ranked ninth.</div>
+  </div>
+</div>
+
+<div class="question">
+  <strong>4. What can be inferred from the survey?</strong>
+  <div class="options">
+    <div><input type="radio" name="q4" value="A"> A. Numbers are logically fixed, but ranking reflects human choice.</div>
+    <div><input type="radio" name="q4" value="B"> B. Culture and perception influence which numbers are preferred.</div>
+    <div><input type="radio" name="q4" value="C"> C. Numbers’ popularity is partly symbolic rather than numerical.</div>
+    <div><input type="radio" name="q4" value="D"> D. Ranking shows that expectations and actual choices may differ.</div>
+  </div>
+</div>
+
+<button type="button" onclick="checkAnswers()">Submit</button>
+
+<div id="result" style="margin-top:20px;"></div>
+
+<script>
+function checkAnswers() {
+  const answers = {
+    q1: 'B',
+    q2: 'B',
+    q3: 'A',
+    q4: 'B'
+  };
+
+  const explanations = {
+    q1: 'Two came first; One was fifth.',
+    q2: 'One missed the top three; other options are inaccurate.',
+    q3: 'A is most directly supported by the passage.',
+    q4: 'B best summarizes the cultural and perceptual influence.'
+  };
+
+  // 检查所有题是否选择
+  for (let i = 1; i <= 4; i++) {
+    const radios = document.getElementsByName('q'+i);
+    if (!Array.from(radios).some(r => r.checked)) {
+      alert("Please answer all questions before submitting.");
+      return; // 如果有题未选，阻止提交
+    }
+  }
+
+  // 生成结果
+  let resultHTML = '';
+  for (let i = 1; i <= 4; i++) {
+    const radios = document.getElementsByName('q'+i);
+    const selected = Array.from(radios).find(r => r.checked).value;
+
+    if (selected === answers['q'+i]) {
+      resultHTML += `<p>Question ${i}: <span class="correct">Correct!</span><br><span class="explanation">${explanations['q'+i]}</span></p>`;
+    } else {
+      resultHTML += `<p>Question ${i}: <span class="incorrect">Incorrect.</span><br><span class="explanation">${explanations['q'+i]}</span></p>`;
+    }
+  }
+
+  document.getElementById('result').innerHTML = resultHTML;
+}
+</script>
+
+</body>
+</html>
