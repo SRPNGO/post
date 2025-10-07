@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然码部件拆分原理与辅助形码表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        /* 折叠面板样式 */
+        details {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        summary {
+            padding: 16px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            cursor: pointer;
+            list-style: none;
+            background-color: #f1f8ff;
+            border-left: 4px solid #3498db;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: "▼";
+            float: right;
+            font-size: 14px;
+            color: #3498db;
+            transition: transform 0.3s;
+        }
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+        .content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        details[open] .content {
+            padding: 20px;
+            max-height: 2000px; /* 足够大的高度容纳内容 */
+        }
+        /* 标题样式 */
+        h2 {
+            color: #2c3e50;
+            margin: 15px 0;
+            font-size: 20px;
+            border-left: 3px solid #e74c3c;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin: 12px 0;
+            font-size: 18px;
+        }
+        /* 高亮示例样式 */
+        .highlight {
+            display: inline-block;
+            background-color: #f8f9fa;
+            border-left: 3px solid #e74c3c;
+            padding: 5px 10px;
+            margin: 8px 0;
+            border-radius: 0 4px 4px 0;
+            font-family: "Courier New", monospace;
+        }
+        /* 形码表网格样式 */
+        .code-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .code-card {
+            background-color: #f1f9ff;
+            border-radius: 6px;
+            padding: 12px 15px;
+            border-top: 3px solid #3498db;
+        }
+        .code-card h4 {
+            color: #e74c3c;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        /* 特殊记忆列表样式 */
+        .special-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        .special-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .special-list li:last-child {
+            border-bottom: none;
+        }
+        .special-key {
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 0 5px;
+        }
+        .special-note {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        /* 返回顶部按钮 */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            display: none;
+            transition: opacity 0.3s;
+        }
+        #backToTop:hover {
+            background-color: #2980b9;
+        }
+        /* 可点击部件样式 */
+        .component {
+            cursor: pointer;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+        .component:hover {
+            background-color: #e3f2fd;
+        }
+    </style>
+</head>
+<body>
+    <h1>自然码部件拆分原理与辅助形码表</h1>
+    <p>注：本文为转载，并进行了重新排版和新增了一些功能，<a href="https://www.liuchuo.net/archives/2847">原文见此</a>。侵删。</p>
+    <!-- 1. 部件拆分原理 -->
+    <details open>
+        <summary>2 部件拆分原理</summary>
+        <div class="content">
+            <h2>2.1 独体字</h2>
+            <p>一般是部首汉字（如：<span class="highlight">金木水火土辶皿马皮日月目衣耳</span>），全部看成部首，不能进一步拆分，仅由笔画构成。</p>
+            <p><strong>自然码笔画码规则：</strong></p>
+            <ol>
+                <li>以横竖起笔的在 <span class="special-key">a</span> 键：<span class="highlight">"一丨亅レ乛フㄥ"</span></li>
+                <li>以点起笔的在 <span class="special-key">d</span> 键（d=点）：<span class="highlight">"丶冫氵"</span></li>
+                <li>以撇起笔的在 <span class="special-key">p</span> 键（p=撇）：<span class="highlight">"丿彡"</span></li>
+            </ol>
+            <p><strong>举例：</strong><span class="highlight">金【jnp】</span>（jn=金的自然码双拼，辅助码p=金的第一笔"撇"）</p>
+
+            <h2>2.2 有明显部首的汉字</h2>
+            <p>如：<span class="highlight">极、版、码、程、想、福、袋、鳌、游、洪、递</span></p>
+            <p><strong>规则：</strong>辅助码 = 部首的声母（<span style="color: #e74c3c;">注：部首以《新华字典》为准，非按书写顺序</span>）</p>
+            <p><strong>举例1：</strong><span class="highlight">架【jwm】</span>（jw=架的双拼，辅助码m=部首"木"的声母）</p>
+            <p><strong>举例2（双部首可选）：</strong><span class="highlight">杏【xym】或【xyk】</span>（部首可选"木"<span class="special-key">m</span> 或"口"<span class="special-key">k</span>，两者皆可）</p>
+
+            <h2>2.3 不认识或非整体字部件的汉字</h2>
+            <p>如：<span class="highlight">录、芈、暨、释、稽、躅、摭、谧、荔</span></p>
+            <p><strong>规则：</strong>用"首笔画/末笔画"或"能认识的汉字"代替部首/部件</p>
+            <p><strong>举例：</strong><span class="highlight">躅＝足＋虫</span>（可按"足"或"虫"的辅助码编码）</p>
+        </div>
+    </details>
+
+    <!-- 2. 基础辅助形码表 -->
+    <details open>
+        <summary>3 基础辅助形码表（按字母A-Z排序）</summary>
+        <p>注：点击部件可以查看拼音。</p>
+        <div class="content">
+            <div class="code-grid">
+                <div class="code-card"><h4>【a】</h4><p><span class="component" data-pinyin="héng">一</span> <span class="component" data-pinyin="shù">丨</span><span class="component" data-pinyin="jué">亅</span> <span class="component" data-pinyin="r">レ</span> <span class="component" data-pinyin="zhé">乛</span> <span class="component" data-pinyin="f">フ</span> <span class="component" data-pinyin="g">ㄥ</span></p></div>
+                <div class="code-card"><h4>【b】</h4><p><span class="component" data-pinyin="bā">八</span> <span class="component" data-pinyin="b">丷</span> <span class="component" data-pinyin="bǔ">卜</span> <span class="component" data-pinyin="mì">冖</span> <span class="component" data-pinyin="mián">宀</span> <span class="component" data-pinyin="bǐ">匕</span> <span class="component" data-pinyin="bǐ">比</span> <span class="component" data-pinyin="bái">白</span> <span class="component" data-pinyin="bèi">贝</span> <span class="component" data-pinyin="bìng">疒</span> <span class="component" data-pinyin="bí">鼻</span></p></div>
+                <div class="code-card"><h4>【c】</h4><p><span class="component" data-pinyin="cǎo">艹</span> <span class="component" data-pinyin="niàn">卄</span> <span class="component" data-pinyin="gǒng">廾</span> <span class="component" data-pinyin="c"></span> <span class="component" data-pinyin="niàn">廿</span> <span class="component" data-pinyin="chè">屮</span> <span class="component" data-pinyin="guàn">卝</span> <span class="component" data-pinyin="cùn">寸</span></p></div>
+                <div class="code-card"><h4>【d】</h4><p><span class="component" data-pinyin="zhǔ">丶</span> <span class="component" data-pinyin="bīng">冫</span> <span class="component" data-pinyin="shuǐ">氵</span> <span class="component" data-pinyin="dāo">刀</span> <span class="component" data-pinyin="d">刂</span> <span class="component" data-pinyin="l">リ</span> <span class="component" data-pinyin="g">ㄍ</span> <span class="component" data-pinyin="jiàn">⺈</span> <span class="component" data-pinyin="dīng">丁</span> <span class="component" data-pinyin="dǎi">歹</span> <span class="component" data-pinyin="bō">癶</span></p></div>
+                <div class="code-card"><h4>【e】</h4><p><span class="component" data-pinyin="èr">二</span> <span class="component" data-pinyin="ér">儿</span> <span class="component" data-pinyin="f">阝</span> <span class="component" data-pinyin="ěr">耳</span> <span class="component" data-pinyin="jié">卩</span> <span class="component" data-pinyin="e"></span></p></div>
+                <div class="code-card"><h4>【f】</h4><p><span class="component" data-pinyin="shǒu">扌</span> <span class="component" data-pinyin="fēng">丰</span> <span class="component" data-pinyin="fǎn">反</span> <span class="component" data-pinyin="fāng">方</span> <span class="component" data-pinyin="fēng">风</span> <span class="component" data-pinyin="fù">父</span> <span class="component" data-pinyin="fǒu">缶</span> <span class="component" data-pinyin="fú">巿</span></p></div>
+                <div class="code-card"><h4>【g】</h4><p><span class="component" data-pinyin="yǐn">乚</span> <span class="component" data-pinyin="g"></span> <span class="component" data-pinyin="b">ㄅ</span> <span class="component" data-pinyin="n">ㄋ</span> <span class="component" data-pinyin="bāo">勹</span> <span class="component" data-pinyin="gōng">弓</span> <span class="component" data-pinyin="gōng">工</span> <span class="component" data-pinyin="guǎng">广</span> <span class="component" data-pinyin="gèn">艮</span> <span class="component" data-pinyin="gē">戈</span> <span class="component" data-pinyin="guā">瓜</span> <span class="component" data-pinyin="gǔ">谷</span> <span class="component" data-pinyin="gé">革</span> <span class="component" data-pinyin="gǔ">骨</span> <span class="component" data-pinyin="guǐ">鬼</span> <span class="component" data-pinyin="guài">夬</span> <span class="component" data-pinyin="g">罓</span></p></div>
+                <div class="code-card"><h4>【h】</h4><p><span class="component" data-pinyin="huǒ">灬</span> <span class="component" data-pinyin="huǒ">火</span> <span class="component" data-pinyin="hé">禾</span> <span class="component" data-pinyin="hù">户</span> <span class="component" data-pinyin="hǔ">虍</span> <span class="component" data-pinyin="hēi">黑</span> <span class="component" data-pinyin="h">乊</span> <span class="component" data-pinyin="h">厷</span></p></div>
+                <div class="code-card"><h4>【i】</h4><p><span class="component" data-pinyin="chǎng">厂</span> <span class="component" data-pinyin="chuān">川</span> <span class="component" data-pinyin="chuān">巛</span> <span class="component" data-pinyin="chù">亍</span> <span class="component" data-pinyin="chē">车</span> <span class="component" data-pinyin="chóng">虫</span> <span class="component" data-pinyin="chén">臣</span> <span class="component" data-pinyin="chén">辰</span> <span class="component" data-pinyin="chì">赤</span> <span class="component" data-pinyin="chǐ">齿</span> <span class="component" data-pinyin="biāo">髟</span> <span class="component" data-pinyin="chù">豖</span></p></div>
+                <div class="code-card"><h4>【j】</h4><p><span class="component" data-pinyin="jī">几</span> <span class="component" data-pinyin="jiǔ">九</span> <span class="component" data-pinyin="jǐ">己</span> <span class="component" data-pinyin="jīn">巾</span> <span class="component" data-pinyin="jīn">斤</span> <span class="component" data-pinyin="jīn">钅</span> <span class="component" data-pinyin="jīn">金</span> <span class="component" data-pinyin="jiàn">见</span> <span class="component" data-pinyin="jiù">臼</span> <span class="component" data-pinyin="j"></span> <span class="component" data-pinyin="jiǎo">角</span></p></div>
+                <div class="code-card"><h4>【k】</h4><p><span class="component" data-pinyin="k">コ</span> <span class="component" data-pinyin="kǎn">凵</span> <span class="component" data-pinyin="fāng">匚</span> <span class="component" data-pinyin="jiōng">冂</span> <span class="component" data-pinyin="kǒu">口</span> <span class="component" data-pinyin="wéi">囗</span> <span class="component" data-pinyin="k">丂</span></p></div>
+                <div class="code-card"><h4>【l】</h4><p><span class="component" data-pinyin="lì">力</span> <span class="component" data-pinyin="liù">六</span> <span class="component" data-pinyin="lì">立</span> <span class="component" data-pinyin="lóng">龙</span> <span class="component" data-pinyin="lěi">耒</span> <span class="component" data-pinyin="lǔ">卤</span> <span class="component" data-pinyin="lù">鹿</span></p></div>
+                <div class="code-card"><h4>【m】</h4><p><span class="component" data-pinyin="mù">木</span> <span class="component" data-pinyin="mén">门</span> <span class="component" data-pinyin="máo">毛</span> <span class="component" data-pinyin="mǎ">马</span> <span class="component" data-pinyin="mǐ">米</span> <span class="component" data-pinyin="máo">矛</span> <span class="component" data-pinyin="mǔ">母</span> <span class="component" data-pinyin="mǐn">皿</span> <span class="component" data-pinyin="máng">尨</span> <span class="component" data-pinyin="má">麻</span> <span class="component" data-pinyin="miǎn">丏</span></p></div>
+                <div class="code-card"><h4>【n】</h4><p><span class="component" data-pinyin="nǚ">女</span> <span class="component" data-pinyin="niú">牛</span> <span class="component" data-pinyin="niú">牜</span> <span class="component" data-pinyin="niú">⺧</span> <span class="component" data-pinyin="niǎo">鸟</span></p></div>
+                <div class="code-card"><h4>【o】</h4><p><span class="component" data-pinyin="rì">日</span> <span class="component" data-pinyin="yuē">曰</span> <span class="component" data-pinyin="yuè">月</span> <span class="component" data-pinyin="mù">目</span> <span class="special-note">（圆圆的o）</span></p></div>
+                <div class="code-card"><h4>【p】</h4><p><span class="component" data-pinyin="piě">ノ</span> <span class="component" data-pinyin="shān">彡</span> <span class="component" data-pinyin="piàn">片</span> <span class="component" data-pinyin="pí">皮</span> <span class="component" data-pinyin="pǐ">疋</span> <span class="component" data-pinyin="p">⺪</span> <span class="component" data-pinyin="pū">攴</span></p></div>
+                <div class="code-card"><h4>【q】</h4><p><span class="component" data-pinyin="qī">七</span> <span class="component" data-pinyin="quǎn">犭</span> <span class="component" data-pinyin="quǎn">犬</span> <span class="component" data-pinyin="qí">丌</span> <span class="component" data-pinyin="qiàn">欠</span> <span class="component" data-pinyin="qì">气</span> <span class="component" data-pinyin="qiě">且</span></p></div>
+                <div class="code-card"><h4>【r】</h4><p><span class="component" data-pinyin="rén">亻</span> <span class="component" data-pinyin="rén">人</span> <span class="component" data-pinyin="rù">入</span> <span class="component" data-pinyin="ròu">肉</span></p></div>
+                <div class="code-card"><h4>【s】</h4><p><span class="component" data-pinyin="sān">三</span> <span class="component" data-pinyin="wǎng">罒</span> <span class="component" data-pinyin="sì">巳</span> <span class="component" data-pinyin="sī">纟</span> <span class="component" data-pinyin="sī">糹</span> <span class="component" data-pinyin="mì">糸</span> <span class="component" data-pinyin="sī">厶</span> <span class="component" data-pinyin="s"></span></p></div>
+                <div class="code-card"><h4>【t】</h4><p><span class="component" data-pinyin="tǔ">土</span> <span class="component" data-pinyin="tián">田</span></p></div>
+                <div class="code-card"><h4>【u】</h4><p><span class="component" data-pinyin="shuǐ">水</span> <span class="component" data-pinyin="shǒu">手</span> <span class="component" data-pinyin="u"></span> <span class="component" data-pinyin="shí">食</span> <span class="component" data-pinyin="shí">飠</span> <span class="component" data-pinyin="shí">饣</span> <span class="component" data-pinyin="shì">示</span> <span class="component" data-pinyin="shì">礻</span> <span class="component" data-pinyin="shān">山</span> <span class="component" data-pinyin="shí">石</span> <span class="component" data-pinyin="shī">尸</span> <span class="component" data-pinyin="shí">十</span> <span class="component" data-pinyin="shì">士</span> <span class="component" data-pinyin="shǐ">矢</span> <span class="component" data-pinyin="shū">殳</span> <span class="component" data-pinyin="shé">舌</span> <span class="component" data-pinyin="shēn">身</span> <span class="component" data-pinyin="shǐ">豕</span> <span class="component" data-pinyin="shǔ">鼠</span></p></div>
+                <div class="code-card"><h4>【v】</h4><p><span class="component" data-pinyin="zhuī">隹</span> <span class="component" data-pinyin="zhú">⺮</span> <span class="component" data-pinyin="zhǎo">爫</span> <span class="component" data-pinyin="zhǎo">爪</span> <span class="component" data-pinyin="zhì">豸</span> <span class="component" data-pinyin="zhǐ">止</span> <span class="component" data-pinyin="zhì">至</span> <span class="component" data-pinyin="zhōu">舟</span></p></div>
+                <div class="code-card"><h4>【w】</h4><p><span class="component" data-pinyin="wén">文</span> <span class="component" data-pinyin="tóu">亠</span> <span class="component" data-pinyin="pū">攵</span> <span class="component" data-pinyin="zhǐ">夂</span> <span class="component" data-pinyin="suī">夊</span> <span class="component" data-pinyin="w">ㄨ</span> <span class="component" data-pinyin="wáng">王</span> <span class="component" data-pinyin="wéi">韦</span> <span class="component" data-pinyin="wǎ">瓦</span></p></div>
+                <div class="code-card"><h4>【x】</h4><p><span class="component" data-pinyin="chì">彳</span> <span class="component" data-pinyin="xiǎo">小</span> <span class="component" data-pinyin="x"></span> <span class="component" data-pinyin="xīn">心</span> <span class="component" data-pinyin="xīn">忄</span> <span class="component" data-pinyin="x"></span> <span class="component" data-pinyin="xuè">血</span> <span class="component" data-pinyin="xuě">彐</span> <span class="component" data-pinyin="xī">夕</span> <span class="component" data-pinyin="xí">习</span> <span class="component" data-pinyin="xī">西</span> <span class="component" data-pinyin="xīn">辛</span></p></div>
+                <div class="code-card"><h4>【y】</h4><p><span class="component" data-pinyin="yǐ">乙</span> <span class="component" data-pinyin="yòu">又</span> <span class="component" data-pinyin="yǐ">已</span> <span class="component" data-pinyin="yán">讠</span> <span class="component" data-pinyin="yán">言</span> <span class="component" data-pinyin="yāo">幺</span> <span class="component" data-pinyin="yóu">尤</span> <span class="component" data-pinyin="yóu">尢</span> <span class="component" data-pinyin="yín">冘</span> <span class="component" data-pinyin="yī">衣</span> <span class="component" data-pinyin="yī">衤</span> <span class="component" data-pinyin="yáng">羊</span> <span class="component" data-pinyin="yá">牙</span> <span class="component" data-pinyin="yè">业</span> <span class="component" data-pinyin="yóu">由</span> <span class="component" data-pinyin="yòng">用</span> <span class="component" data-pinyin="yè">页</span> <span class="component" data-pinyin="yǒu">酉</span> <span class="component" data-pinyin="yú">鱼</span> <span class="component" data-pinyin="yǔ">雨</span> <span class="component" data-pinyin="yǔ">羽</span> <span class="component" data-pinyin="yù">聿</span> <span class="component" data-pinyin="y">乑</span> <span class="component" data-pinyin="yì">乂</span></p></div>
+                <div class="code-card"><h4>【z】</h4><p><span class="component" data-pinyin="chuò">辶</span> <span class="component" data-pinyin="yǐn">廴</span> <span class="component" data-pinyin="zǐ">子</span> <span class="component" data-pinyin="zì">自</span> <span class="component" data-pinyin="zǒu">走</span> <span class="component" data-pinyin="zú">足</span> <span class="component" data-pinyin="zú">⻊</span> <span class="component" data-pinyin="z">卆</span></p></div>
+            </div>
+        </div>
+    </details>
+
+    <!-- 3. 特殊记忆部件 -->
+    <details open>
+        <summary>4 需要特殊记忆的部件（高频易混）</summary>
+        <div class="content">
+            <ul class="special-list">
+                <li><strong>日、月、曰、目</strong> → 辅助码【<span class="special-key">o</span>】<span class="special-note">（圆圆的o，对应圆形/椭圆形部件）</span></li>
+                <li><strong>扌（提手旁）</strong> → 辅助码【<span class="special-key">f</span>】<span class="special-note">（f=扶手的"扶"）</span></li>
+                <li><strong>彳（双人旁）</strong> → 辅助码【<span class="special-key">x</span>】<span class="special-note">（x=行人的"行"）</span></li>
+                <li><strong>一、丨、亅、乛（横竖折）</strong> → 辅助码【<span class="special-key">a</span>】<span class="special-note">（基础笔画统一归a）</span></li>
+                <li><strong>亠（文字头）</strong> → 辅助码【<span class="special-key">d</span>】<span class="special-note">（d=点起笔，文字头首笔为点）</span></li>
+                <li><strong>灬（四点底）</strong> → 辅助码【<span class="special-key">h</span>】<span class="special-note">（h=火的变体，四点底是火的变形）</span></li>
+                <li><strong>艮</strong> → 辅助码【<span class="special-key">g</span>】<span class="special-note">（g=根的"根"，艮是"根"的声旁）</span></li>
+                <li><strong>肀（聿）</strong> → 辅助码【<span class="special-key">y</span>】<span class="special-note">（y=聿的读音"yù"）</span></li>
+                <li><strong>耒</strong> → 辅助码【<span class="special-key">l</span>】<span class="special-note">（l=垒的"垒"，举例：耕【ggl】）</span></li>
+                <li><strong>爿</strong> → 辅助码【<span class="special-key">p</span>】<span class="special-note">（p=片的"片"，爿与片结构相似）</span></li>
+                <li><strong>豕</strong> → 辅助码【<span class="special-key">u</span>】<span class="special-note">（u=适的"适"，豕是"适"的部件）</span></li>
+                <li><strong>髟</strong> → 辅助码【<span class="special-key">i</span>】<span class="special-note">（i=长"cháng"的声母ch，对应i键）</span></li>
+                <li><strong>隹</strong> → 辅助码【<span class="special-key">v</span>】<span class="special-note">（v=锥"zhuī"的声母zh，对应v键）</span></li>
+                <li><strong>リ（刀的变体）</strong> → 辅助码【<span class="special-key">d</span>】<span class="special-note">（d=刀的"刀"，归为刀的变体）</span></li>
+                <li><strong>（艹的变体）</strong> → 辅助码【<span class="special-key">c</span>】<span class="special-note">（c=草的"草"，归为草字头变体）</span></li>
+                <li><strong>尢（尤的变体）</strong> → 辅助码【<span class="special-key">y</span>】<span class="special-note">（y=尤的"尤"，结构相似）</span></li>
+                <li><strong>丌（齐的变体）</strong> → 辅助码【<span class="special-key">q</span>】<span class="special-note">（q=齐的"齐"，结构相似）</span></li>
+                <li><strong>弋</strong> → 辅助码【<span class="special-key">y</span>】<span class="special-note">（y=弋的读音"yì"）</span></li>
+                <li><strong>厶</strong> → 辅助码【<span class="special-key">s</span>】<span class="special-note">（s=私"sī"的"私"，厶是"私"的部件）</span></li>
+                <li><strong>ㄨ</strong> → 辅助码【<span class="special-key">x</span>】或【<span class="special-key">w</span>】<span class="special-note">（x=叉的"叉"，w=勿的"勿"，两者皆可）</span></li>
+            </ul>
+        </div>
+    </details>
+    <a href="../index.html">返回主页</a>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop">↑</button>
+
+    <script>
+        // 返回顶部功能
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // 滚动超过300px显示按钮
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+
+        // 为所有部件添加点击事件
+        document.querySelectorAll('.component').forEach(component => {
+            component.addEventListener('click', function() {
+                const pinyin = this.getAttribute('data-pinyin');
+                if (pinyin) {
+                    alert(`部件：${this.textContent}\n拼音：${pinyin}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
