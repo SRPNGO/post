@@ -87,7 +87,7 @@
   </head>
   <body>
     <h1>网页计数器测试</h1>
-    <p>数据来源:不蒜子</p>
+    <p>数据来源:<a href="https://www.busuanzi.cc/count.php?search=srpn.top">不蒜子</a></p>
 
     <div class="stats-container">
       <div class="data-cards">
@@ -111,7 +111,7 @@
         <div class="data-card card-pv">
           <div class="card-title">本站今日访问量</div>
           <div class="card-value">
-            <span id="busuanzi_today_site_pv" class="loading">加载中...</span>
+            <span id="busuanzi_today_pv" class="loading">加载中...</span>
             次
           </div>
         </div>
@@ -120,7 +120,7 @@
         <div class="data-card card-uv">
           <div class="card-title">本站今日访客数</div>
           <div class="card-value">
-            <span id="busuanzi_today_site_uv" class="loading">加载中...</span>
+            <span id="busuanzi_today_uv" class="loading">加载中...</span>
             人
           </div>
         </div>
@@ -149,10 +149,10 @@
             document.getElementById("busuanzi_site_uv")?.innerText || 0
           );
           const pvToday = parseInt(
-            document.getElementById("busuanzi_today_site_pv")?.innerText || 0
+            document.getElementById("busuanzi_today_pv")?.innerText || 0
           );
           const uvToday = parseInt(
-            document.getElementById("busuanzi_today_site_uv")?.innerText || 0
+            document.getElementById("busuanzi_today_uv")?.innerText || 0
           );
 
           // 计算 UV/PV 比率（保留两位小数）
