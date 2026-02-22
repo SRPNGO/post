@@ -12,13 +12,14 @@ h4,
 h5,
 p,
 a {
-  line-height: 1.4em;
+  /* line-height: 1.4em; */
+  line-height: 200%;
   margin: 0;
   padding: 0;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
 }
 article p {
-  text-indent: 1cm;
+  text-indent: 2rem;
 }
 body {
   max-width: 600px;
