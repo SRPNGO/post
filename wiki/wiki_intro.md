@@ -7,6 +7,13 @@ author: Nsakrty
 
 - [画质爆炸](./HZBZ)
 - [星球圈](./SC)
-- [星球阁存档计划](./SRAC)
+- [星球阁存档计划](./SRAP)
+- [我有生命](./WYSM)
+- [青菜](./qc)
+- [星球阁的审核制度](./reviewSystem)
+- [恒星生命历程](./starLife)
+- [转型运动](./transformation)
+- [散热片](./sanrepian)
+- [大眼苍蝇](./DYCY)
 
 注：以上Wiki页面由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))
