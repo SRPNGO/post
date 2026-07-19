@@ -20,6 +20,7 @@ author: Nsakrty
 - [狗头君花粉](./huafen)
 - [月球产奶](./YQCN)
 - [黄金时代](./goldenAge)
+- [B站天文圈"正统"之争](./bilibiliGroupConflict)
 
 
 
