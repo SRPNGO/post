@@ -4,3 +4,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+
+markdown: kramdown
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  typographer: false
