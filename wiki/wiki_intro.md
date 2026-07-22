@@ -7,7 +7,6 @@ author: Nsakrty
 
 ### 人物
 - [青菜](./qc)
-- [散热片](./sanrepian)
 - [狗头君花粉](./huafen)
 - [Maugfy](./maugfy)
 - [Earth-2](./E2)
@@ -37,6 +36,7 @@ author: Nsakrty
 - [月球产奶](./YQCN)
 - [星球圈低质低俗化](./XQDHInvasion)
 - [星球地理杯](./SRPGcup)
+- [散热片](./sanrepian)
 
 ### 议题分析
 - [生命周期](./groupLifeCycle)
