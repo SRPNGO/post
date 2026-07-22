@@ -18,7 +18,7 @@ author: Nsakrty
 - [星球阁的审核制度](./reviewSystem)
 - [BSTN](./BSTN)
 - [SYUN](./SYUN)
-- [ACSRPN](./ACSRPN)
+- [ACSRPN(学术天文版星球阁)](./ACSRPN)
 
 ### 历史事件
 - [黄金时代](./goldenAge)
