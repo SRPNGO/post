@@ -1,6 +1,6 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
-  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+  <p class="center"><a href="./wiki_intro">返回wiki主页</a></p>
 title: 新智彗星事件
 description: 2023年1月3日新智彗星解散主群、退阁并带走附属组织的重大事件，是星球圈两年动乱的起点之一。
 ---

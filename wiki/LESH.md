@@ -1,6 +1,6 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
-  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+  <p class="center"><a href="./wiki_intro">返回wiki主页</a></p>
 title: LESH事件
 description: 星球阁历史上破坏性最强、影响力最大的内部事件之一，与新智彗星事件共同构成星球圈两年动乱的起点。
 ---

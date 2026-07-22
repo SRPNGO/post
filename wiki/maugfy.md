@@ -1,6 +1,6 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
-  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+  <p class="center"><a href="./wiki_intro">返回wiki主页</a></p>
 title: Maugfy
 description: 星球阁目前粉丝数最高的成员，以地理学科领域的抽象科普视频和学科燃剪视频著称，是转型运动的核心推动者之一。
 ---

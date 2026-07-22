@@ -1,6 +1,6 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
-  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+  <p class="center"><a href="./wiki_intro">返回wiki主页</a></p>
 title: 星球阁与星球圈的关系
 description: 从"引领—共生"到"脱钩—分化"再到"隔代相望"的复杂演变历程。
 ---
