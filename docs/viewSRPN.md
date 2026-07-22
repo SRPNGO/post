@@ -1,7 +1,7 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
-titile: 论星球阁
+title: 论星球阁
 subtitle: ——论星球阁内的治理风险现象
 author: 极光
 ---

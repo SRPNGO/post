@@ -1,7 +1,7 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
-titile: 散热片
+title: 散热片
 ---
 **散热片**是星球阁成员的自称，也是星球阁社群内部使用频率最高的集体代称。其用法基本等同于"星球阁"，但更具社群亲和力与内部认同感。
 

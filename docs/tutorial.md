@@ -1,7 +1,7 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
-titile: Markdown基本教程
+title: Markdown基本教程
 subtitle: ——兼为本站内容的书写格式
 author: Nsakrty
 ---

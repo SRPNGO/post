@@ -1,7 +1,7 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
-titile: 冲突调节指南
+title: 冲突调节指南
 author: 极光
 ---
 ## 前言

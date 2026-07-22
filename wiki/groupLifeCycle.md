@@ -1,7 +1,7 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
-titile: 生命周期
+title: 生命周期
 description: 梳理星球阁、（旧）星球圈、星球动画圈、新星球动画圈、转型运动以及总的星球圈六个实体从萌芽、成长到消亡或转型的完整生命周期。
 ---
 

@@ -1,5 +1,5 @@
 ---
-titile: 星球阁Wiki主界面
+title: 星球阁Wiki主界面
 author: Nsakrty
 ---
 

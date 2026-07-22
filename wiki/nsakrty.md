@@ -1,7 +1,7 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
-titile: Nsakrty
+title: Nsakrty
 description: 星球阁元老级成员、前阁主、存档计划创立者的个人资料与历史贡献。
 ---
 

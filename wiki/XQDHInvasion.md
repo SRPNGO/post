@@ -1,7 +1,7 @@
 ---
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
-titile: 星球圈低质低俗化
+title: 星球圈低质低俗化
 description: 星球圈内容质量急剧下降、低俗元素泛滥的文化衰退现象，及其对星球阁的深远影响。
 ---
 
