@@ -1,5 +1,7 @@
 ---
-title: SYUN
+customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
+  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+titile: SYUN
 description: 星球阁内部转型运动期间形成的高层派系，与BSTN形成长期对峙局面。
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 星球阁Wiki主界面
+titile: 星球阁Wiki主界面
 author: Nsakrty
 ---
 
@@ -18,7 +18,7 @@ author: Nsakrty
 - [星球阁的审核制度](./reviewSystem)
 - [BSTN](./BSTN)
 - [SYUN](./SYUN)
-- [ACSRPN(学术天文版星球阁)](./ACSRPN)
+- [ACSRPN](./ACSRPN)
 
 ### 历史事件
 - [黄金时代](./goldenAge)

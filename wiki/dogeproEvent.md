@@ -1,5 +1,7 @@
 ---
-title: Dogepro事件
+customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
+  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+titile: Dogepro事件
 description: 星球阁早期历史上一次重要的外部版权交涉事件，及其对星球圈后续发展的影响。
 ---
 

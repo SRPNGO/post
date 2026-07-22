@@ -1,5 +1,7 @@
 ---
-title: 星球地理杯
+customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
+  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+titile: 星球地理杯
 description: 由星球地理主办的系列地理知识竞赛活动，是星球阁社群中历史最悠久、参与度最高的定期活动之一。
 ---
 

@@ -1,5 +1,7 @@
 ---
-title: BSTN
+customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
+  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+titile: BSTN
 description: 星球阁内部转型运动后期形成的高层派系，与SYUN形成长期对峙格局，是"双派系制衡"格局的核心一方。
 ---
 

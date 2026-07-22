@@ -1,5 +1,7 @@
 ---
-title: ACSRPN
+customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
+  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+titile: ACSRPN
 ---
 
 **ACSRPN**（Academia SRPN，学术天文版星球阁）是星球阁于**2023年1月4日**——即新智彗星事件次日——创立的一个短命的分支项目，旨在推动星球阁向学术天文领域转型。ACSRPN仅存在了约三个月便自然消散，但其创立背景与迅速夭折的过程，深刻反映了星球阁在2023年初面临的组织危机与方向迷茫。

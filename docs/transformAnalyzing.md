@@ -1,5 +1,7 @@
 ---
-title: 论转型运动当前所遇到的问题
+customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
+  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+titile: 论转型运动当前所遇到的问题
 subtitle: ——面对转型发展困境的思考
 author: Nsakrty
 ---

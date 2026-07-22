@@ -1,5 +1,7 @@
 ---
-title: 散热片圣经(?)
+customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
+  <p class="center"><a href="./wiki_intro.md">返回wiki主页</a></p>
+titile: 散热片圣经(?)
 ---
 
 ## 止战之殇(星球阁版(?))
