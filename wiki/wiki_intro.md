@@ -11,6 +11,9 @@ author: Nsakrty
 - [Maugfy](./maugfy)
 - [Earth-2](./E2)
 - [Nsakrty](./nsakrty)
+- [水益](./SY)
+- [Acubens-A](./acu)
+- [极光](./jiGuang)
 
 ### 组织与制度
 - [星球圈](./SC)
@@ -19,6 +22,7 @@ author: Nsakrty
 - [BSTN](./BSTN)
 - [SYUN](./SYUN)
 - [ACSRPN](./ACSRPN)
+- [二群制度](./secondGroup)
 
 ### 历史事件
 - [黄金时代](./goldenAge)
@@ -37,10 +41,17 @@ author: Nsakrty
 - [星球圈低质低俗化](./XQDHInvasion)
 - [星球地理杯](./SRPGcup)
 - [散热片](./sanrepian)
+- [星球阁的群聊氛围](./atmosphere)
+- [历史贡献者名单](./contributor)
 
 ### 议题分析
 - [生命周期](./groupLifeCycle)
 - [星球阁与星球圈的关系](./relationship)
+- [星球阁的外部关系](./diplomacy)
+- [转型运动的制约因素](./resistance)
+
+### 导航与参考
+- [对回归成员的快速导航](./navigate)
 
 
 
