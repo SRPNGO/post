@@ -14,6 +14,10 @@ author: Nsakrty
 - [水益](./SY)
 - [Acubens-A](./acu)
 - [极光](./jiGuang)
+- [天白](./TB)
+- [XF](./XF)
+- [银杏](./yx)
+- [473w人](./473wr)
 
 ### 组织与制度
 - [星球圈](./SC)
@@ -23,6 +27,8 @@ author: Nsakrty
 - [SYUN](./SYUN)
 - [ACSRPN](./ACSRPN)
 - [二群制度](./secondGroup)
+- [军武阁](./LWT)
+- [星球地理](./SRPG)
 
 ### 历史事件
 - [黄金时代](./goldenAge)
@@ -31,6 +37,8 @@ author: Nsakrty
 - [新智彗星事件](./XZHXEvent)
 - [LESH事件](./LESH)
 - [转型运动](./transformation)
+- [1·22事件](./122event)
+- [2026年2月16日主群被封事件](./0216banned)
 
 ### 内容与现象
 - [大眼苍蝇](./DYCY)
@@ -43,12 +51,20 @@ author: Nsakrty
 - [散热片](./sanrepian)
 - [星球阁的群聊氛围](./atmosphere)
 - [历史贡献者名单](./contributor)
+- [抽象科普](./CXKP)
+- [学科燃剪](./XKRJ)
+- [天文等级](./AstroRank)
+- [SRPN危机（迷因）](./SRPNweiji)
 
 ### 议题分析
 - [生命周期](./groupLifeCycle)
 - [星球阁与星球圈的关系](./relationship)
 - [星球阁的外部关系](./diplomacy)
 - [转型运动的制约因素](./resistance)
+- [成员年龄结构演变](./AgeStructure)
+- [星球阁的组织认同困局](./OrgId)
+- [主群在线人数统计](./OnlineStats)
+- [星球阁粉丝统计](./fansdata)
 
 ### 导航与参考
 - [对回归成员的快速导航](./navigate)
