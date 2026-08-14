@@ -49,7 +49,7 @@ author: Nsakrty
 - [转型运动](./transformation)
 - [1·22事件](./122event)
 - [2026年2月16日主群被封事件](./0216banned)
-- [昴星阁推翻星知司的历程](./StarRevolution)
+- [B站星球圈知识体系推翻星知司的历程](./StarRevolution)
 
 ### 内容与现象
 - [大眼苍蝇](./DYCY)
