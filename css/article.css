@@ -64,6 +64,19 @@ img {
 }
 pre {
   color: #383a42;
+  font-family: monospace;
+  display: block;
+  margin: 0;
+  text-wrap: auto;
+  overflow-x: auto;
+}
+
+/* Kramdown 块级代码外层容器（div.language-plaintext / div.highlighter-rouge），
+   原本与 pre 共用样式，这里单独加回 padding/背景/圆角，
+   用 :not(code) 排除行内 <code class="language-plaintext highlighter-rouge"> */
+.language-plaintext:not(code),
+.highlighter-rouge:not(code) {
+  color: #383a42;
   background-color: #ececec;
   font-family: monospace;
   display: block;
@@ -82,7 +95,7 @@ code {
   font-size: 0.9em;
 }
 
-/* pre 内的 code 不需要额外背景，避免双层底色 */
+/* pre 内的 code 不需要额外背景/padding，避免双层 */
 pre code {
   background: none;
   padding: 0;
