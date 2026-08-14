@@ -18,6 +18,11 @@ author: Nsakrty
 - [XF](./XF)
 - [银杏](./yx)
 - [473w人](./473wr)
+- [星零](./StarZero)
+- [最佳鸽子](./zjgz)
+- [蜻延](./qn)
+- [室宿一](./ssy)
+- [晓云](./xiaoYun)
 
 ### 组织与制度
 - [星球圈](./SC)
@@ -29,6 +34,11 @@ author: Nsakrty
 - [二群制度](./secondGroup)
 - [军武阁](./LWT)
 - [星球地理](./SRPG)
+- [星球编程](./SRPNGO)
+- [光启阁](./GQGZ)
+- [星联阁](./SKDC)
+- [昴星阁](./PSPN)
+- [试卷生成器](./SRPNTestPaperGenerator)
 
 ### 历史事件
 - [黄金时代](./goldenAge)
@@ -39,6 +49,7 @@ author: Nsakrty
 - [转型运动](./transformation)
 - [1·22事件](./122event)
 - [2026年2月16日主群被封事件](./0216banned)
+- [昴星阁推翻星知司的历程](./StarRevolution)
 
 ### 内容与现象
 - [大眼苍蝇](./DYCY)
@@ -55,6 +66,8 @@ author: Nsakrty
 - [学科燃剪](./XKRJ)
 - [天文等级](./AstroRank)
 - [SRPN危机（迷因）](./SRPNweiji)
+- [星球燃剪](./XQRJ)
+- [星球阁主群日常话题](./dailyTopic)
 
 ### 议题分析
 - [生命周期](./groupLifeCycle)
@@ -65,6 +78,9 @@ author: Nsakrty
 - [星球阁的组织认同困局](./OrgId)
 - [主群在线人数统计](./OnlineStats)
 - [星球阁粉丝统计](./fansdata)
+- [星球阁成员视频制作领域统计](./videoStats)
+- [平台间发展路径差异（抖音vsB站）](./platformDiff)
+- [星球圈双线叙事](./dualNarrative)
 
 ### 导航与参考
 - [对回归成员的快速导航](./navigate)
