@@ -69,6 +69,7 @@ pre {
   margin: 0;
   text-wrap: auto;
   overflow-x: auto;
+  padding: 2px 4px;
 }
 
 /* Kramdown 块级代码外层容器（div.language-plaintext / div.highlighter-rouge），
