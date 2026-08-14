@@ -68,6 +68,7 @@ author: Nsakrty
 
 ### 导航与参考
 - [对回归成员的快速导航](./navigate)
+- [Wiki编写规范](./wikiRule)
 
 
 
