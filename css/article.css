@@ -62,14 +62,32 @@ img {
   margin: 0;
   max-width: none;
 }
-pre,.language-plaintext,.highlighter-rouge {
+pre {
   color: #383a42;
   background-color: #ececec;
   font-family: monospace;
   display: block;
   padding: 4px;
   border-radius: 8px;
-  text-wrap:auto;
+  text-wrap: auto;
+  overflow-x: auto;
+}
+
+/* 行内代码：只加轻量底色，不换行 */
+code {
+  font-family: monospace;
+  background-color: #ececec;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* pre 内的 code 不需要额外背景，避免双层底色 */
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 blockquote {
