@@ -275,35 +275,46 @@ def find_protected_spans(line):
     return spans
 
 
-def collect_terms_from_existing_links(line, term_db):
-    """扫描一行中已有的 Markdown 链接，提取其显示文本对应的术语。
+def collect_linked_files_from_line(line, term_db):
+    """扫描一行中已有的 Markdown 链接，提取已链接的目标文件名。
 
-    显示文本可能是：
-      - 纯文本：[术语](url)              → 术语
-      - 加粗在外：**[术语](url)**         → 术语（注意 ** 在链接括号外）
-      - 加粗在内：[**术语**](url)         → 术语（** 在方括号内）
-    本函数从这几种格式中都能正确剥离并返回命中的术语集合。
-    返回: set[str] —— 这行中已经（通过人工或之前的脚本）链接过的术语
+    从 URL 中提取目标文件（/wiki/xxx → xxx），不依赖显示文本是否与
+    注册术语完全匹配。这样即使用户写了 [Sw天白](/wiki/TB) 这样的变体
+    链接文本，也能正确识别出 TB 已被链接过。
+
+    同时也通过显示文本匹配术语，双重保险。
+
+    返回: set[str] —— 已链接的目标文件名集合
     """
-    already = set()
+    linked = set()
 
-    # 先找加粗在外的模式 **[...](url)**
+    # 方法1：从 URL 中提取文件名（最可靠）
+    # 匹配 [text](url)，提取 url 部分
+    for m in re.finditer(r'\[([^\]]*)\]\(([^)]+)\)', line):
+        url = m.group(2).strip()
+        # /wiki/xxx → xxx
+        wiki_match = re.match(r'^/wiki/(.+)$', url)
+        if wiki_match:
+            linked.add(wiki_match.group(1))
+        # /docs/xxx → 不加入（不是 wiki 条目）
+        # ./xxx → 不加入（相关页面节中的相对路径，不是正文互链）
+
+    # 方法2：从显示文本中匹配术语（补充）
+    # 处理 **[text](url)** 加粗在外
     for m in re.finditer(r'\*\*\[([^\]]+)\]\([^)]+\)\*\*', line):
-        text = m.group(1).strip()
-        # 内部可能还有 **...**
-        core = text.strip('*').strip()
+        core = m.group(1).strip().strip('*').strip()
         if core in term_db:
-            already.add(core)
+            f, _ = term_db[core]
+            linked.add(f)
 
-    # 再找 [text](url)（含 [**text**](url) 加粗在内）
+    # 处理 [text](url)（含 [**text**](url)）
     for m in re.finditer(r'\[([^\]]+)\]\([^)]+\)', line):
-        text = m.group(1)
-        # 去掉可能的加粗 / 斜体标记
-        core = text.strip('*').strip()
+        core = m.group(1).strip().strip('*').strip()
         if core in term_db:
-            already.add(core)
+            f, _ = term_db[core]
+            linked.add(f)
 
-    return already
+    return linked
 
 
 def pos_inside_any_span(pos, spans):
@@ -455,13 +466,10 @@ def process_body(body, term_db, self_fname, file_titles):
             continue
 
         # ——关键：先登记这一行中已经存在的人工链接——
-        # 将已链接的术语转换为目标文件名，加入 linked_files
-        # 这样同一条目的主标题和别名只要有一个被链接过，其余全部跳过
-        already_linked = collect_terms_from_existing_links(line, term_db)
-        for t in already_linked:
-            if t in term_db:
-                f, _ = term_db[t]
-                linked_files.add(f)
+        # 从 URL 中提取目标文件名，直接加入 linked_files
+        # 这样即使链接显示文本是变体（如 [Sw天白](/wiki/TB)），也能正确识别已链接
+        already_linked_files = collect_linked_files_from_line(line, term_db)
+        linked_files.update(already_linked_files)
 
         # 真正处理（尝试给首次出现的纯文本术语加链接）
         new_line, line_added_terms = process_line_for_terms(
