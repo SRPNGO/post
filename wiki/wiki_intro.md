@@ -23,6 +23,10 @@ author: Nsakrty
 - [蜻延](./qn)
 - [室宿一](./ssy)
 - [晓云](./xiaoYun)
+- [史小坑](./shiXiaoKeng)
+- [新智彗星](./XZHX)
+- [Hliva](./hliva)
+- [海山二](./HSE)
 
 ### 组织与制度
 - [星球圈](./SC)
@@ -39,6 +43,10 @@ author: Nsakrty
 - [星联阁](./SKDC)
 - [昴星阁](./PSPN)
 - [试卷生成器](./SRPNTestPaperGenerator)
+- [星球家族（SRCN）](./SRCN)
+- [SRPN网](./srpnSite)
+- [星球阁条例的演变](./tiaoliEvolution)
+- [投票制](./votingSystem)
 
 ### 历史事件
 - [黄金时代](./goldenAge)
@@ -50,6 +58,10 @@ author: Nsakrty
 - [1·22事件](./122event)
 - [2026年2月16日主群被封事件](./0216banned)
 - [B站星球圈知识体系推翻星知司的历程](./StarRevolution)
+- [血泪事件](./XLevent)
+- [科学商所长事件](./keShangEvent)
+- [中子星事件](./ZZXEvent)
+- [科普君事件](./KPJEvent)
 
 ### 内容与现象
 - [大眼苍蝇](./DYCY)
@@ -68,6 +80,7 @@ author: Nsakrty
 - [SRPN危机（迷因）](./SRPNweiji)
 - [星球燃剪](./XQRJ)
 - [星球阁主群日常话题](./dailyTopic)
+- [新星球动画圈](./newSC)
 
 ### 议题分析
 - [生命周期](./groupLifeCycle)
@@ -81,6 +94,8 @@ author: Nsakrty
 - [星球阁成员视频制作领域统计](./videoStats)
 - [平台间发展路径差异（抖音vsB站）](./platformDiff)
 - [星球圈双线叙事](./dualNarrative)
+- [星球阁的治理模式变迁](./governance)
+- [星球阁的危机公关与对外发声短板](./crisisPR)
 
 ### 导航与参考
 - [对回归成员的快速导航](./navigate)
