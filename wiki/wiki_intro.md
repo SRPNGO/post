@@ -3,7 +3,7 @@ title: 星球阁Wiki主界面
 author: Nsakrty
 ---
 
-欢迎！这是星球阁的Wiki主界面。这个页面包含了星球阁的所有Wiki页面以便于读者迅速查阅。你可以在页面列表中找到你需要的信息。
+欢迎！这是星球阁的Wiki主界面。这个页面包含了星球阁的所有Wiki页面以便于读者迅速查阅。你可以在页面列表中找到你需要的信息。[新测试主页](./wiki_intro_new.html)。
 
 ### 人物
 - [青菜](./qc)
@@ -47,6 +47,7 @@ author: Nsakrty
 - [SRPN网](./srpnSite)
 - [星球阁条例的演变](./tiaoliEvolution)
 - [投票制](./votingSystem)
+- [星球阁](./SRPN) 
 
 ### 历史事件
 - [黄金时代](./goldenAge)

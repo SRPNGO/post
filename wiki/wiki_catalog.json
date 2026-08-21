@@ -1,0 +1,387 @@
+{
+  "generated_from": "wiki_intro.md (一次性迁移，之后请直接编辑本文件)",
+  "categories": [
+    {
+      "id": "cat_人物",
+      "name": "人物",
+      "order": 0,
+      "entries": [
+        {
+          "slug": "qc",
+          "display": "青菜"
+        },
+        {
+          "slug": "huafen",
+          "display": "狗头君花粉"
+        },
+        {
+          "slug": "maugfy",
+          "display": "Maugfy"
+        },
+        {
+          "slug": "E2",
+          "display": "Earth-2"
+        },
+        {
+          "slug": "nsakrty",
+          "display": "Nsakrty"
+        },
+        {
+          "slug": "SY",
+          "display": "水益"
+        },
+        {
+          "slug": "acu",
+          "display": "Acubens-A"
+        },
+        {
+          "slug": "jiGuang",
+          "display": "极光"
+        },
+        {
+          "slug": "TB",
+          "display": "天白"
+        },
+        {
+          "slug": "XF",
+          "display": "XF"
+        },
+        {
+          "slug": "yx",
+          "display": "银杏"
+        },
+        {
+          "slug": "473wr",
+          "display": "473w人"
+        },
+        {
+          "slug": "StarZero",
+          "display": "星零"
+        },
+        {
+          "slug": "zjgz",
+          "display": "最佳鸽子"
+        },
+        {
+          "slug": "qn",
+          "display": "蜻延"
+        },
+        {
+          "slug": "ssy",
+          "display": "室宿一"
+        },
+        {
+          "slug": "xiaoYun",
+          "display": "晓云"
+        },
+        {
+          "slug": "shiXiaoKeng",
+          "display": "史小坑"
+        },
+        {
+          "slug": "XZHX",
+          "display": "新智彗星"
+        },
+        {
+          "slug": "hliva",
+          "display": "Hliva"
+        },
+        {
+          "slug": "HSE",
+          "display": "海山二"
+        }
+      ]
+    },
+    {
+      "id": "cat_组织与制度",
+      "name": "组织与制度",
+      "order": 1,
+      "entries": [
+        {
+          "slug": "SC",
+          "display": "星球圈"
+        },
+        {
+          "slug": "SRAP",
+          "display": "星球阁存档计划"
+        },
+        {
+          "slug": "reviewSystem",
+          "display": "星球阁的审核制度"
+        },
+        {
+          "slug": "BSTN",
+          "display": "BSTN"
+        },
+        {
+          "slug": "SYUN",
+          "display": "SYUN"
+        },
+        {
+          "slug": "ACSRPN",
+          "display": "ACSRPN"
+        },
+        {
+          "slug": "secondGroup",
+          "display": "二群制度"
+        },
+        {
+          "slug": "LWT",
+          "display": "军武阁"
+        },
+        {
+          "slug": "SRPG",
+          "display": "星球地理"
+        },
+        {
+          "slug": "SRPNGO",
+          "display": "星球编程"
+        },
+        {
+          "slug": "GQGZ",
+          "display": "光启阁"
+        },
+        {
+          "slug": "SKDC",
+          "display": "星联阁"
+        },
+        {
+          "slug": "PSPN",
+          "display": "昴星阁"
+        },
+        {
+          "slug": "SRPNTestPaperGenerator",
+          "display": "试卷生成器"
+        },
+        {
+          "slug": "SRCN",
+          "display": "星球家族（SRCN）"
+        },
+        {
+          "slug": "srpnSite",
+          "display": "SRPN网"
+        },
+        {
+          "slug": "tiaoliEvolution",
+          "display": "星球阁条例的演变"
+        },
+        {
+          "slug": "votingSystem",
+          "display": "投票制"
+        },
+        {
+          "slug": "SRPN",
+          "display": "星球阁"
+        }
+      ]
+    },
+    {
+      "id": "cat_历史事件",
+      "name": "历史事件",
+      "order": 2,
+      "entries": [
+        {
+          "slug": "goldenAge",
+          "display": "黄金时代"
+        },
+        {
+          "slug": "bilibiliGroupConflict",
+          "display": "B站天文圈\"正统\"之争"
+        },
+        {
+          "slug": "dogeproEvent",
+          "display": "Dogepro事件"
+        },
+        {
+          "slug": "XZHXEvent",
+          "display": "新智彗星事件"
+        },
+        {
+          "slug": "LESH",
+          "display": "LESH事件"
+        },
+        {
+          "slug": "transformation",
+          "display": "转型运动"
+        },
+        {
+          "slug": "122event",
+          "display": "1·22事件"
+        },
+        {
+          "slug": "0216banned",
+          "display": "2026年2月16日主群被封事件"
+        },
+        {
+          "slug": "StarRevolution",
+          "display": "B站星球圈知识体系推翻星知司的历程"
+        },
+        {
+          "slug": "XLevent",
+          "display": "血泪事件"
+        },
+        {
+          "slug": "keShangEvent",
+          "display": "科学商所长事件"
+        },
+        {
+          "slug": "ZZXEvent",
+          "display": "中子星事件"
+        },
+        {
+          "slug": "KPJEvent",
+          "display": "科普君事件"
+        }
+      ]
+    },
+    {
+      "id": "cat_内容与现象",
+      "name": "内容与现象",
+      "order": 3,
+      "entries": [
+        {
+          "slug": "DYCY",
+          "display": "大眼苍蝇"
+        },
+        {
+          "slug": "HZBZ",
+          "display": "画质爆炸"
+        },
+        {
+          "slug": "WYSM",
+          "display": "我有生命"
+        },
+        {
+          "slug": "starLife",
+          "display": "恒星生命历程"
+        },
+        {
+          "slug": "YQCN",
+          "display": "月球产奶"
+        },
+        {
+          "slug": "XQDHInvasion",
+          "display": "星球圈低质低俗化"
+        },
+        {
+          "slug": "SRPGcup",
+          "display": "星球地理杯"
+        },
+        {
+          "slug": "sanrepian",
+          "display": "散热片"
+        },
+        {
+          "slug": "atmosphere",
+          "display": "星球阁的群聊氛围"
+        },
+        {
+          "slug": "contributor",
+          "display": "历史贡献者名单"
+        },
+        {
+          "slug": "CXKP",
+          "display": "抽象科普"
+        },
+        {
+          "slug": "XKRJ",
+          "display": "学科燃剪"
+        },
+        {
+          "slug": "AstroRank",
+          "display": "天文等级"
+        },
+        {
+          "slug": "SRPNweiji",
+          "display": "SRPN危机（迷因）"
+        },
+        {
+          "slug": "XQRJ",
+          "display": "星球燃剪"
+        },
+        {
+          "slug": "dailyTopic",
+          "display": "星球阁主群日常话题"
+        },
+        {
+          "slug": "newSC",
+          "display": "新星球动画圈"
+        }
+      ]
+    },
+    {
+      "id": "cat_议题分析",
+      "name": "议题分析",
+      "order": 4,
+      "entries": [
+        {
+          "slug": "groupLifeCycle",
+          "display": "生命周期"
+        },
+        {
+          "slug": "relationship",
+          "display": "星球阁与星球圈的关系"
+        },
+        {
+          "slug": "diplomacy",
+          "display": "星球阁的外部关系"
+        },
+        {
+          "slug": "resistance",
+          "display": "转型运动的制约因素"
+        },
+        {
+          "slug": "AgeStructure",
+          "display": "成员年龄结构演变"
+        },
+        {
+          "slug": "OrgId",
+          "display": "星球阁的组织认同困局"
+        },
+        {
+          "slug": "OnlineStats",
+          "display": "主群在线人数统计"
+        },
+        {
+          "slug": "fansdata",
+          "display": "星球阁粉丝统计"
+        },
+        {
+          "slug": "videoStats",
+          "display": "星球阁成员视频制作领域统计"
+        },
+        {
+          "slug": "platformDiff",
+          "display": "平台间发展路径差异（抖音vsB站）"
+        },
+        {
+          "slug": "dualNarrative",
+          "display": "星球圈双线叙事"
+        },
+        {
+          "slug": "governance",
+          "display": "星球阁的治理模式变迁"
+        },
+        {
+          "slug": "crisisPR",
+          "display": "星球阁的危机公关与对外发声短板"
+        }
+      ]
+    },
+    {
+      "id": "cat_导航与参考",
+      "name": "导航与参考",
+      "order": 5,
+      "entries": [
+        {
+          "slug": "navigate",
+          "display": "对回归成员的快速导航"
+        },
+        {
+          "slug": "wikiRule",
+          "display": "Wiki编写规范"
+        }
+      ]
+    }
+  ]
+}
