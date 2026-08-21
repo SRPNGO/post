@@ -22,15 +22,15 @@
 
     <style>
       /* ============================================================
-         Wiki 主页专用样式
-         - 基础变量沿用 basic.css 里的 --bgColor / --linkColor / --textColor
-         - 只增加布局/组件层，不覆盖原有正文排版手感
-         ============================================================ */
+        Wiki 主页专用样式
+        - 基础变量沿用 basic.css 里的 --bgColor / --linkColor / --textColor
+        - 只增加布局/组件层，不覆盖原有正文排版手感
+        ============================================================ */
       :root {
         --wiki-border: #d9d9d2;
         --wiki-muted: #6a737d;
         --wiki-sidebar-bg: #fafaf7;
-        --wiki-accent: var(--linkColor);   /* 保持星球阁链接蓝，不硬切维基蓝黑 */
+        --wiki-accent: var(--linkColor); /* 保持星球阁链接蓝，不硬切维基蓝黑 */
         --wiki-card-bg: #ffffff;
         --wiki-chip-bg: #ececec;
       }
@@ -94,7 +94,9 @@
         outline: none;
         background: #fff;
         color: var(--textColor);
-        transition: border-color 0.15s, box-shadow 0.15s;
+        transition:
+          border-color 0.15s,
+          box-shadow 0.15s;
       }
       .wiki-search input[type="text"]:focus {
         border-color: var(--wiki-accent);
@@ -152,7 +154,7 @@
           margin: 0;
         }
         .wiki-sidebar h3::after {
-          content: '▸';
+          content: "▸";
           position: absolute;
           right: 0;
           color: var(--wiki-muted);
@@ -288,7 +290,10 @@
         border: 1px solid var(--wiki-border);
         border-radius: 6px;
         padding: 10px 12px;
-        transition: border-color 0.15s, transform 0.1s, box-shadow 0.15s;
+        transition:
+          border-color 0.15s,
+          transform 0.1s,
+          box-shadow 0.15s;
         display: block;
         color: inherit;
       }
@@ -401,18 +406,31 @@
     <!-- ===== 顶部站头（星球阁原有居中大标题风格） ===== -->
     <header class="wiki-header">
       <h1>星球阁 Wiki</h1>
-      <div class="sub">收录和星球圈、星球阁有关的人物、组织、事件、议题与文化现象 · 基于<a href="./SRAP" target="_blank" rel="noopener">《星球阁存档计划》</a>资料整理</div>
+      <div class="sub">
+        收录和星球圈、星球阁有关的人物、组织、事件、议题与文化现象 · 基于<a
+          href="./SRAP"
+          target="_blank"
+          rel="noopener"
+          >《星球阁存档计划》</a
+        >资料整理
+      </div>
       <div class="crumbs">
         <a href="../index.html">返回文档汇总站</a>
         &nbsp;·&nbsp;
-        <a href="https://srpn.top" target="_blank" rel="noopener">星球阁官网 srpn.top</a>
+        <a href="https://srpn.top" target="_blank" rel="noopener"
+          >星球阁官网 srpn.top</a
+        >
       </div>
     </header>
 
     <!-- ===== Hero 搜索框 ===== -->
     <section class="wiki-hero">
       <div class="wiki-hero-inner">
-        <form class="wiki-search" id="wikiSearchForm" autocomplete="off" onsubmit="return false;">
+        <form
+          class="wiki-search"
+          id="wikiSearchForm"
+          autocomplete="off"
+          onsubmit="return false;">
           <input
             id="wikiSearchInput"
             type="text"
@@ -436,8 +454,9 @@
           <!-- 动态插入分类锚点 + 计数 -->
         </ul>
         <div class="sidebar-foot">
-          共 <b id="sideTotalCount">—</b> 个条目 ·
-          索引来源：<code>wiki_index.json</code><br />
+          共 <b id="sideTotalCount">—</b> 个条目 · 索引来源：<code
+            >wiki_index.json</code
+          ><br />
         </div>
       </aside>
 
@@ -447,7 +466,8 @@
         <section class="wiki-intro-card" id="introCard">
           <h2>欢迎来到星球阁 Wiki</h2>
           <p>
-            这里是星球阁非官方 Wiki 的索引页。所有条目按「人物 / 组织与制度 / 历史事件 / 内容与现象 / 议题分析 / 导航与参考」分类。
+            这里是星球阁非官方 Wiki 的索引页。所有条目按「人物 / 组织与制度 /
+            历史事件 / 内容与现象 / 议题分析 / 导航与参考」分类。
             你可以直接使用页面顶部的搜索框按名称、别名或关键词快速检索，也可以在下方分类卡片中逐个浏览。
           </p>
           <div class="stat-row" id="statRow">
@@ -457,12 +477,15 @@
 
         <!-- 搜索结果头部 & 结果区 -->
         <div class="wiki-search-header" id="searchHeader">
-          <div class="qline">搜索关键词：<b id="searchKw"></b> · 找到 <b id="searchCount">0</b> 条结果</div>
+          <div class="qline">
+            搜索关键词：<b id="searchKw"></b> · 找到
+            <b id="searchCount">0</b> 条结果
+          </div>
           <div class="wiki-filter-chips" id="filterChips">
             <!-- 分类筛选 chips（动态） -->
           </div>
         </div>
-        <div id="searchResultContainer" style="display:none;"></div>
+        <div id="searchResultContainer" style="display: none"></div>
 
         <!-- 分类浏览（默认展示，搜索时隐藏） -->
         <div id="categoryContainer">
@@ -476,85 +499,105 @@
     <footer class="wiki-footer">
       <hr />
       <p>
-        以上 Wiki 页面由 AI 经《星球阁存档计划》资料整理而生成，并经过 Nsakrty 的审核和修改。内容仅供参考，不代表官方立场。
+        以上 Wiki 页面由 AI 经《星球阁存档计划》资料整理而生成，并经过 Nsakrty
+        的审核和修改。内容仅供参考，不代表官方立场。
       </p>
       <p>
-        更多详情请参考星球阁官网：<a href="https://srpn.top" target="_blank" rel="noopener">srpn.top</a>
+        更多详情请参考星球阁官网：<a
+          href="https://srpn.top"
+          target="_blank"
+          rel="noopener"
+          >srpn.top</a
+        >
       </p>
     </footer>
 
     <!-- 快照数据：优先加载，即便 JSON fetch 失败也能渲染。脚本内容由 wiki_build_index.py 生成。 -->
-    <script src="./wiki_index_snapshot.js" defer onerror="console.warn('[wiki] snapshot script failed to load')"></script>
+    <script
+      src="./wiki_index_snapshot.js"
+      defer
+      onerror="console.warn('[wiki] snapshot script failed to load')"></script>
     <!-- ===== Wiki 主页 & 搜索 逻辑 ===== -->
     <script>
       (function () {
-        'use strict';
+        "use strict";
 
-        const INDEX_URL = './wiki_index.json';
+        const INDEX_URL = "./wiki_index.json";
         const $ = (sel) => document.querySelector(sel);
 
         const state = {
           index: null,
-          currentKw: '',
-          activeCatFilter: 'all', // all | cat_xxx
+          currentKw: "",
+          activeCatFilter: "all", // all | cat_xxx
         };
 
         // ---------- 工具 ----------
         function escapeHtml(s) {
-          return String(s == null ? '' : s)
-            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+          return String(s == null ? "" : s)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
         }
 
         function escapeForRegex(s) {
-          return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         }
 
         function highlight(text, kw) {
-          const safe = escapeHtml(text || '');
+          const safe = escapeHtml(text || "");
           if (!kw) return safe;
-          const re = new RegExp('(' + escapeForRegex(kw) + ')', 'ig');
+          const re = new RegExp("(" + escapeForRegex(kw) + ")", "ig");
           return safe.replace(re, '<mark class="hit">$1</mark>');
         }
 
         function normalize(s) {
-          return String(s || '').trim().toLowerCase();
+          return String(s || "")
+            .trim()
+            .toLowerCase();
         }
 
         // ---------- 初始渲染 ----------
         function renderSidebar(index) {
-          const ul = $('#sidebarToc');
+          const ul = $("#sidebarToc");
           const order = index.category_order || [];
           const catMap = index.categories || {};
           const countByCat = {};
           (index.entries || []).forEach((e) => {
-            if (e.category) countByCat[e.category] = (countByCat[e.category] || 0) + 1;
+            if (e.category)
+              countByCat[e.category] = (countByCat[e.category] || 0) + 1;
           });
-          let html = '';
+          let html = "";
           order.forEach((cid) => {
             const cat = catMap[cid];
             if (!cat) return;
             const count = countByCat[cid] || 0;
-            html +=
-              `<li><a href="#${cid}">${escapeHtml(cat.name)}<span class="count">${count}</span></a></li>`;
+            html += `<li><a href="#${cid}">${escapeHtml(cat.name)}<span class="count">${count}</span></a></li>`;
           });
           html += `<li><a href="#search-top" id="jumpSearchLink">🔍 搜索</a></li>`;
           ul.innerHTML = html;
-          $('#sideTotalCount').textContent = index.entries ? index.entries.length : 0;
+          $("#sideTotalCount").textContent = index.entries
+            ? index.entries.length
+            : 0;
         }
 
         function renderStats(index) {
           const catCount = Object.keys(index.categories || {}).length;
           const total = (index.entries || []).length;
           const authorCount = new Set(
-            (index.entries || []).map((e) => (e.author || '').trim()).filter(Boolean)
+            (index.entries || [])
+              .map((e) => (e.author || "").trim())
+              .filter(Boolean),
           ).size;
-          const withAliases = (index.entries || []).filter((e) => e.aliases && e.aliases.length).length;
-          $('#statRow').innerHTML = `
+          const withAliases = (index.entries || []).filter(
+            (e) => e.aliases && e.aliases.length,
+          ).length;
+          $("#statRow").innerHTML = `
             <span>📚 <b>${total}</b> 个条目</span>
             <span>🗂 <b>${catCount}</b> 个分类</span>
             <span>🏷 <b>${withAliases}</b> 个条目含别名</span>
-            ${authorCount ? `<span>✍️ <b>${authorCount}</b> 位作者</span>` : ''}
+            ${authorCount ? `<span>✍️ <b>${authorCount}</b> 位作者</span>` : ""}
           `;
         }
 
@@ -564,7 +607,9 @@
           const order = index.category_order || [];
           order.forEach((cid) => {
             const cat = index.categories[cid];
-            const firstEntry = (index.entries || []).find((e) => e.category === cid);
+            const firstEntry = (index.entries || []).find(
+              (e) => e.category === cid,
+            );
             if (firstEntry) picks.push(firstEntry.display || firstEntry.title);
             if (cat) picks.push(cat.name);
           });
@@ -576,37 +621,37 @@
             seen.add(p);
             tips.push(p);
           });
-          const box = $('#heroTips');
+          const box = $("#heroTips");
           // 保留"热门："span（第一个子元素）
-          const label = box.querySelector('span');
-          box.innerHTML = '';
+          const label = box.querySelector("span");
+          box.innerHTML = "";
           if (label) box.appendChild(label);
           tips.slice(0, 8).forEach((t) => {
-            const chip = document.createElement('span');
-            chip.className = 'chip';
+            const chip = document.createElement("span");
+            chip.className = "chip";
             chip.textContent = t;
-            chip.addEventListener('click', () => {
-              $('#wikiSearchInput').value = t;
+            chip.addEventListener("click", () => {
+              $("#wikiSearchInput").value = t;
               doSearch(t);
-              $('#wikiSearchInput').focus();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              $("#wikiSearchInput").focus();
+              window.scrollTo({ top: 0, behavior: "smooth" });
             });
             box.appendChild(chip);
           });
         }
 
         function renderCategories(index) {
-          const container = $('#categoryContainer');
+          const container = $("#categoryContainer");
           const order = index.category_order || [];
           const catMap = index.categories || {};
           // 按分类分组
           const groups = {};
           (index.entries || []).forEach((e) => {
-            const cid = e.category || 'cat_other';
+            const cid = e.category || "cat_other";
             if (!groups[cid]) groups[cid] = [];
             groups[cid].push(e);
           });
-          let html = '';
+          let html = "";
           order.forEach((cid) => {
             const cat = catMap[cid];
             if (!cat) return;
@@ -615,13 +660,17 @@
           });
           // 未分类兜底
           if (groups.cat_other && groups.cat_other.length) {
-            html += renderCategorySection('cat_other', '其他', groups.cat_other);
+            html += renderCategorySection(
+              "cat_other",
+              "其他",
+              groups.cat_other,
+            );
           }
           container.innerHTML = html;
         }
 
         function renderCategorySection(cid, catName, entries) {
-          const cards = entries.map((e) => renderEntryCard(e, '')).join('');
+          const cards = entries.map((e) => renderEntryCard(e, "")).join("");
           return `
             <section class="wiki-category" id="${escapeHtml(cid)}">
               <h2>${escapeHtml(catName)}<span class="count-pill">${entries.length} 个条目</span></h2>
@@ -636,9 +685,9 @@
             e.aliases && e.aliases.length
               ? `<div class="entry-aliases">别名：${e.aliases
                   .map((a) => highlight(a, kw))
-                  .join(' · ')}</div>`
-              : '';
-          const summary = highlight(e.summary || '', kw);
+                  .join(" · ")}</div>`
+              : "";
+          const summary = highlight(e.summary || "", kw);
           return `
             <a class="entry-card" href="${escapeHtml(e.url)}">
               <div class="entry-title">${title}</div>
@@ -652,14 +701,14 @@
         function buildSearchable(entry) {
           // 搜索域：标题 / 别名 / 摘要 / slug / 作者
           const haystacks = [
-            entry.title || '',
-            entry.display || '',
-            (entry.aliases || []).join(' '),
-            entry.slug || '',
-            entry.author || '',
-            entry.summary || '',
+            entry.title || "",
+            entry.display || "",
+            (entry.aliases || []).join(" "),
+            entry.slug || "",
+            entry.author || "",
+            entry.summary || "",
           ];
-          return normalize(haystacks.join(' \u0001 '));
+          return normalize(haystacks.join(" \u0001 "));
         }
 
         function score(entry, kwNorm) {
@@ -668,23 +717,48 @@
           const title = normalize(entry.display || entry.title);
           const aliases = (entry.aliases || []).map(normalize);
           const slug = normalize(entry.slug);
-          const summary = normalize(entry.summary || '');
+          const summary = normalize(entry.summary || "");
           // 标记：是否在"强域"（标题 / 别名 / slug）命中 — 摘要命中仅作为辅助分，不单独作为命中条件
           let strongHit = false;
           // 完全命中标题/别名：最高分
-          if (title === kwNorm) { score += 100; strongHit = true; }
-          if (aliases.includes(kwNorm)) { score += 90; strongHit = true; }
-          if (slug === kwNorm) { score += 85; strongHit = true; }
+          if (title === kwNorm) {
+            score += 100;
+            strongHit = true;
+          }
+          if (aliases.includes(kwNorm)) {
+            score += 90;
+            strongHit = true;
+          }
+          if (slug === kwNorm) {
+            score += 85;
+            strongHit = true;
+          }
           // 标题前缀/包含
-          if (title.startsWith(kwNorm)) { score += 55; strongHit = true; }
-          else if (title.includes(kwNorm)) { score += 45; strongHit = true; }
+          if (title.startsWith(kwNorm)) {
+            score += 55;
+            strongHit = true;
+          } else if (title.includes(kwNorm)) {
+            score += 45;
+            strongHit = true;
+          }
           // 别名包含
           aliases.forEach((a) => {
-            if (a.startsWith(kwNorm)) { score += 40; strongHit = true; }
-            else if (a.includes(kwNorm)) { score += 30; strongHit = true; }
+            if (a.startsWith(kwNorm)) {
+              score += 40;
+              strongHit = true;
+            } else if (a.includes(kwNorm)) {
+              score += 30;
+              strongHit = true;
+            }
           });
-          if (slug.includes(kwNorm)) { score += 25; strongHit = true; }
-          if (summary.includes(kwNorm)) score += 10;
+          if (slug.includes(kwNorm)) {
+            score += 25;
+            strongHit = true;
+          }
+          if (summary.includes(kwNorm)) {
+            score += 10;
+            strongHit = true;
+          }
           // 多关键词 AND（按空白分割）
           const tokens = kwNorm.split(/\s+/).filter(Boolean);
           if (tokens.length > 1) {
@@ -714,38 +788,38 @@
         }
 
         function doSearch(kwRaw) {
-          const kw = (kwRaw || '').trim();
+          const kw = (kwRaw || "").trim();
           state.currentKw = kw;
-          state.activeCatFilter = 'all';
-          $('#searchKw').textContent = kw;
+          state.activeCatFilter = "all";
+          $("#searchKw").textContent = kw;
           applySearchView();
         }
 
         function applySearchView() {
           const kw = state.currentKw;
-          const header = $('#searchHeader');
-          const catContainer = $('#categoryContainer');
-          const intro = $('#introCard');
-          const resultBox = $('#searchResultContainer');
+          const header = $("#searchHeader");
+          const catContainer = $("#categoryContainer");
+          const intro = $("#introCard");
+          const resultBox = $("#searchResultContainer");
 
           if (!kw) {
-            header.classList.remove('active');
-            resultBox.style.display = 'none';
-            catContainer.style.display = '';
-            intro.style.display = '';
+            header.classList.remove("active");
+            resultBox.style.display = "none";
+            catContainer.style.display = "";
+            intro.style.display = "";
             return;
           }
-          header.classList.add('active');
-          catContainer.style.display = 'none';
-          intro.style.display = 'none';
-          resultBox.style.display = '';
+          header.classList.add("active");
+          catContainer.style.display = "none";
+          intro.style.display = "none";
+          resultBox.style.display = "";
 
           renderFilterChips();
           runAndRenderSearchQuery();
         }
 
         function renderFilterChips() {
-          const box = $('#filterChips');
+          const box = $("#filterChips");
           const index = state.index;
           if (!index) return;
           const order = index.category_order || [];
@@ -755,29 +829,30 @@
           const countByCat = {};
           (index.entries || []).forEach((e) => {
             if (score(e, kwNorm) > 0) {
-              const cid = e.category || 'cat_other';
+              const cid = e.category || "cat_other";
               countByCat[cid] = (countByCat[cid] || 0) + 1;
             }
           });
           const totalHit = Object.values(countByCat).reduce((a, b) => a + b, 0);
           const active = state.activeCatFilter;
-          let html = `<span class="fchip ${active === 'all' ? 'active' : ''}" data-cid="all">全部 · ${totalHit}</span> `;
+          let html = `<span class="fchip ${active === "all" ? "active" : ""}" data-cid="all">全部 · ${totalHit}</span> `;
           order.forEach((cid) => {
             const cat = catMap[cid];
             if (!cat) return;
             const cnt = countByCat[cid] || 0;
-            html += `<span class="fchip ${active === cid ? 'active' : ''}" data-cid="${escapeHtml(
-              cid
+            html += `<span class="fchip ${active === cid ? "active" : ""}" data-cid="${escapeHtml(
+              cid,
             )}">${escapeHtml(cat.name)} · ${cnt}</span> `;
           });
           box.innerHTML = html.trim();
           // 使用事件委托绑定一次即可（在父节点上），避免每次重渲染都重新挂监听。
           if (!box._wiki_bound) {
             box._wiki_bound = true;
-            box.addEventListener('click', (ev) => {
-              const el = ev.target && ev.target.closest && ev.target.closest('.fchip');
+            box.addEventListener("click", (ev) => {
+              const el =
+                ev.target && ev.target.closest && ev.target.closest(".fchip");
               if (!el) return;
-              state.activeCatFilter = el.getAttribute('data-cid') || 'all';
+              state.activeCatFilter = el.getAttribute("data-cid") || "all";
               renderFilterChips();
               runAndRenderSearchQuery();
             });
@@ -794,12 +869,14 @@
             .filter((x) => x.s > 0);
 
           // 分类过滤
-          if (state.activeCatFilter !== 'all') {
-            list = list.filter((x) => (x.e.category || 'cat_other') === state.activeCatFilter);
+          if (state.activeCatFilter !== "all") {
+            list = list.filter(
+              (x) => (x.e.category || "cat_other") === state.activeCatFilter,
+            );
           }
           list.sort((a, b) => b.s - a.s);
-          const resultBox = $('#searchResultContainer');
-          $('#searchCount').textContent = list.length;
+          const resultBox = $("#searchResultContainer");
+          $("#searchCount").textContent = list.length;
           if (!list.length) {
             resultBox.innerHTML = `<div class="wiki-empty">
               没有找到与「<b>${escapeHtml(kw)}</b>」匹配的条目。<br />
@@ -808,56 +885,64 @@
             return;
           }
           // 高亮优先使用用户原文 kw（最左完整 token）
-          const firstTok = (kw.split(/\s+/).filter(Boolean)[0]) || kw;
+          const firstTok = kw.split(/\s+/).filter(Boolean)[0] || kw;
           resultBox.innerHTML =
             `<div class="wiki-result-list">` +
-            list.map((x) => renderEntryCard(x.e, firstTok)).join('') +
+            list.map((x) => renderEntryCard(x.e, firstTok)).join("") +
             `</div>`;
         }
 
         function bindEvents() {
-          const form = $('#wikiSearchForm');
-          const input = $('#wikiSearchInput');
-          const btn = $('#wikiSearchBtn');
+          const form = $("#wikiSearchForm");
+          const input = $("#wikiSearchInput");
+          const btn = $("#wikiSearchBtn");
           if (!form || !input || !btn) return; // 防御式：元素缺失不阻塞后续流程
 
-          form.addEventListener('submit', (e) => {
+          form.addEventListener("submit", (e) => {
             e.preventDefault();
             doSearch(input.value);
           });
-          btn.addEventListener('click', () => doSearch(input.value));
+          btn.addEventListener("click", () => doSearch(input.value));
           // 输入时实时过滤（延迟 120ms），清空时回到分类视图
           let t;
-          input.addEventListener('input', () => {
+          input.addEventListener("input", () => {
             clearTimeout(t);
             const v = input.value;
             t = setTimeout(() => doSearch(v), 120);
           });
 
           // URL hash 支持：#q=xxx 打开自动搜索
-          const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
-          const q = hash.get('q');
+          const hash = new URLSearchParams(
+            window.location.hash.replace(/^#/, ""),
+          );
+          const q = hash.get("q");
           if (q) {
             input.value = q;
             doSearch(q);
           }
 
           // 侧栏"🔍 搜索"锚点：使用事件委托，避免元素尚未渲染时 addEventListener 在 null 上抛错
-          document.addEventListener('click', (ev) => {
-            const link = ev.target && ev.target.closest && ev.target.closest('#jumpSearchLink');
+          document.addEventListener("click", (ev) => {
+            const link =
+              ev.target &&
+              ev.target.closest &&
+              ev.target.closest("#jumpSearchLink");
             if (!link) return;
             ev.preventDefault();
             input.focus();
-            try { input.select(); } catch (_) {}
-            if (window.scrollTo) window.scrollTo({ top: 0, behavior: 'smooth' });
+            try {
+              input.select();
+            } catch (_) {}
+            if (window.scrollTo)
+              window.scrollTo({ top: 0, behavior: "smooth" });
           });
 
           // 小屏侧栏折叠：点击「导航」标题切换展开/折叠
-          const sidebar = $('#wikiSidebar');
-          const sidebarTitle = sidebar && sidebar.querySelector('h3');
+          const sidebar = $("#wikiSidebar");
+          const sidebarTitle = sidebar && sidebar.querySelector("h3");
           if (sidebar && sidebarTitle) {
-            sidebarTitle.addEventListener('click', () => {
-              sidebar.classList.toggle('expanded');
+            sidebarTitle.addEventListener("click", () => {
+              sidebar.classList.toggle("expanded");
             });
           }
         }
@@ -873,51 +958,51 @@
 
         function applyLoadedIndex(data, sourceHint) {
           if (!data || !Array.isArray(data.entries)) {
-            throw new Error('索引数据结构异常：缺少 entries 字段');
+            throw new Error("索引数据结构异常：缺少 entries 字段");
           }
           state.index = data;
-          const loading = $('#loadingHint');
-          if (loading) loading.style.display = 'none';
+          const loading = $("#loadingHint");
+          if (loading) loading.style.display = "none";
           renderSidebar(data);
           renderStats(data);
           renderHeroTips(data);
           renderCategories(data);
           // 把数据源写到侧栏脚注便于排查
-          const sideFoot = document.querySelector('#wikiSidebar .sidebar-foot');
+          const sideFoot = document.querySelector("#wikiSidebar .sidebar-foot");
           if (sideFoot && sourceHint) {
-            const mark = document.createElement('div');
-            mark.style.marginTop = '6px';
-            mark.style.fontSize = '0.75rem';
-            mark.style.color = 'var(--wiki-muted)';
-            mark.textContent = '数据源：' + sourceHint;
+            const mark = document.createElement("div");
+            mark.style.marginTop = "6px";
+            mark.style.fontSize = "0.75rem";
+            mark.style.color = "var(--wiki-muted)";
+            mark.textContent = "数据源：" + sourceHint;
             sideFoot.appendChild(mark);
           }
           applySearchView();
         }
 
         async function loadIndex() {
-          const loading = $('#loadingHint');
+          const loading = $("#loadingHint");
           const errors = [];
           const snapshot = getSnapshotIndex();
 
           // 路径 1：fetch JSON（部署到 HTTP 服务下的主流路径）
           try {
-            const resp = await fetch(INDEX_URL, { cache: 'no-cache' });
-            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            const resp = await fetch(INDEX_URL, { cache: "no-cache" });
+            if (!resp.ok) throw new Error("HTTP " + resp.status);
             const data = await resp.json();
-            applyLoadedIndex(data, 'wiki_index.json（在线）');
+            applyLoadedIndex(data, "wiki_index.json（在线）");
             return;
           } catch (e) {
-            errors.push('fetch(' + INDEX_URL + '): ' + e.message);
+            errors.push("fetch(" + INDEX_URL + "): " + e.message);
           }
 
           // 路径 2：降级到已内联/预加载的快照 JS（即便 file:// 或 JSON 404 也能工作）
           if (snapshot) {
             try {
-              applyLoadedIndex(snapshot, 'wiki_index_snapshot.js（快照）');
+              applyLoadedIndex(snapshot, "wiki_index_snapshot.js（快照）");
               return;
             } catch (e) {
-              errors.push('snapshot: ' + e.message);
+              errors.push("snapshot: " + e.message);
             }
           }
 
@@ -925,19 +1010,27 @@
           if (loading) {
             loading.innerHTML =
               '<b style="color:#b84d4d">Wiki 索引未能正确加载。</b><br />' +
-              '请先在项目根目录运行：<code>python wiki_build_index.py</code>，它会生成 <code>wiki/wiki_index.json</code> 与 <code>wiki/wiki_index_snapshot.js</code>。<br />' +
-              '两个文件同时存在后，可以通过本地 HTTP 服务器打开（推荐），也可以直接双击 HTML（快照兜底）。' +
+              "请先在项目根目录运行：<code>python wiki_build_index.py</code>，它会生成 <code>wiki/wiki_index.json</code> 与 <code>wiki/wiki_index_snapshot.js</code>。<br />" +
+              "两个文件同时存在后，可以通过本地 HTTP 服务器打开（推荐），也可以直接双击 HTML（快照兜底）。" +
               '<details style="margin-top:8px"><summary>调试信息（点击展开）</summary>' +
-              '<pre style="margin:6px 0 0">' + escapeHtml(errors.join('\n')) + '</pre></details>';
+              '<pre style="margin:6px 0 0">' +
+              escapeHtml(errors.join("\n")) +
+              "</pre></details>";
           }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-          try { bindEvents(); } catch (e) { /* 不阻塞加载索引 */ console.error(e); }
+        document.addEventListener("DOMContentLoaded", () => {
+          try {
+            bindEvents();
+          } catch (e) {
+            /* 不阻塞加载索引 */ console.error(e);
+          }
           loadIndex();
         });
       })();
     </script>
-    <script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
+    <script
+      src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js"
+      defer></script>
   </body>
 </html>
