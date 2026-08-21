@@ -407,7 +407,7 @@
     <header class="wiki-header">
       <h1>星球阁 Wiki</h1>
       <div class="sub">
-        收录和星球圈、星球阁有关的人物、组织、事件、议题与文化现象 · 基于<a
+        收录和星球圈、星球阁有关的人物、组织、事件、议题与文化现象，基于<a
           href="./SRAP"
           target="_blank"
           rel="noopener"
@@ -466,9 +466,8 @@
         <section class="wiki-intro-card" id="introCard">
           <h2>欢迎来到星球阁 Wiki</h2>
           <p>
-            这里是星球阁非官方 Wiki 的索引页。所有条目按「人物 / 组织与制度 /
-            历史事件 / 内容与现象 / 议题分析 / 导航与参考」分类。
-            你可以直接使用页面顶部的搜索框按名称、别名或关键词快速检索，也可以在下方分类卡片中逐个浏览。
+            这里是星球阁 Wiki 的索引页。所有条目按类别分类。
+            你可以直接使用页面顶部的搜索框按名称、别名或关键词快速检索信息，也可以在下方分类卡片中逐个浏览。
           </p>
           <div class="stat-row" id="statRow">
             <!-- 动态：条目总数 / 分类数 / 最近更新说明 -->
@@ -602,17 +601,24 @@
         }
 
         function renderHeroTips(index) {
-          // 从各分类中按顺序挑 1 个代表条目 + 分类名本身，做热门 chip
+          // 从各分类中随机挑 1 个代表条目 + 分类名本身，做热门 chip
           const picks = [];
           const order = index.category_order || [];
+          const entries = index.entries || [];
           order.forEach((cid) => {
             const cat = index.categories[cid];
-            const firstEntry = (index.entries || []).find(
-              (e) => e.category === cid,
-            );
-            if (firstEntry) picks.push(firstEntry.display || firstEntry.title);
+            const catEntries = entries.filter((e) => e.category === cid);
+            if (catEntries.length > 0) {
+              const randomEntry = catEntries[Math.floor(Math.random() * catEntries.length)];
+              picks.push(randomEntry.display || randomEntry.title);
+            }
             if (cat) picks.push(cat.name);
           });
+          // Fisher–Yates 洗牌
+          for (let i = picks.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [picks[i], picks[j]] = [picks[j], picks[i]];
+          }
           // 去重 + 取前 8
           const seen = new Set();
           const tips = [];
@@ -902,7 +908,10 @@
             e.preventDefault();
             doSearch(input.value);
           });
-          btn.addEventListener("click", () => doSearch(input.value));
+          btn.addEventListener("click", () => {
+            doSearch(input.value);
+            window.location.hash = "#categoryContainer";
+          });
           // 输入时实时过滤（延迟 120ms），清空时回到分类视图
           let t;
           input.addEventListener("input", () => {
