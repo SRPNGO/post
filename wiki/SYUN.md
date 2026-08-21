@@ -5,7 +5,7 @@ title: SYUN
 description: 星球阁内部转型运动期间形成的高层派系，与BSTN形成长期对峙局面。
 ---
 
-**SYUN**（团结工会，Solidarity Union）是星球阁内部在[转型运动](/wiki/transformation)期间形成的一个高层派系，于2025年1月22日由**[Acubens-A](/wiki/acu)**创立。SYUN以创作原创性议题为出发点，以批判[E2](/wiki/E2)和[水益](/wiki/SY)在组织管理及创作规范方面的问题为核心行动方向，其存在深刻影响了星球阁2025年的格局，并与随后成立的**[BSTN](/wiki/BSTN)**（波士顿）形成了长达数月的高层对峙局面。SYUN被视为星球阁历史上影响力最大的派系之一。
+**SYUN**（团结工会，Solidarity Union）是[星球阁](/wiki/SRPN)内部在[转型运动](/wiki/transformation)期间形成的一个高层派系，于2025年1月22日由**[Acubens-A](/wiki/acu)**创立。SYUN以创作原创性议题为出发点，以批判[E2](/wiki/E2)和[水益](/wiki/SY)在组织管理及创作规范方面的问题为核心行动方向，其存在深刻影响了星球阁2025年的格局，并与随后成立的**[BSTN](/wiki/BSTN)**（波士顿）形成了长达数月的高层对峙局面。SYUN被视为星球阁历史上影响力最大的派系之一。
 
 ## 概述
 

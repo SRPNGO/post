@@ -5,7 +5,7 @@ title: 星球编程
 description: 星球阁分组织，2021年3月3日由Nsakrty建立并担任领导人，以编程为主题，是星球阁早期特色分组织之一。注意其缩写SRPG与星球地理相同，二者为不同组织。
 ---
 
-**星球编程**（英文 **Star Programming**，缩写 **SRPG**，代号 SRPNGO）是星球阁的分组织之一，2021年3月3日由[Nsakrty](/wiki/nsakrty)建立并担任领导人，是星球阁早期以编程为主题的特色分组织。
+**星球编程**（英文 **Star Programming**，缩写 **SRPG**，代号 SRPNGO）是[星球阁](/wiki/SRPN)的分组织之一，2021年3月3日由[Nsakrty](/wiki/nsakrty)建立并担任领导人，是星球阁早期以编程为主题的特色分组织。
 
 ---
 

@@ -6,7 +6,7 @@ title: 星球地理
 
 | 项目 | 内容 |
 | --- | --- |
-| 全称 | 星球地理（SRPG, Star Pavilion Geography） |
+| 全称 | 星球地理（SRPG, [Star Pavilion](/wiki/SRPN) Geography） |
 | 类型 | 星球阁分组织 |
 | 成立时间 | 2023年5月7日 |
 | 领导人 | [银杏](/wiki/yx)（MC银杏），现任星球阁副阁主 |

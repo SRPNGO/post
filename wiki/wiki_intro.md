@@ -27,6 +27,8 @@ author: Nsakrty
 - [新智彗星](./XZHX)
 - [Hliva](./hliva)
 - [海山二](./HSE)
+- [91Sun](./91Sun)
+- [轩辕十四](./regulus)
 
 ### 组织与制度
 - [星球圈](./SC)

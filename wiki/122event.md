@@ -4,7 +4,7 @@ customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
 title: 1·22事件
 ---
 
-**1·22事件**是2025年1月22日至23日发生在星球阁内部的、围绕原创与抄袭问题展开的激烈冲突事件。事件的导火索是[Earth-2](/wiki/E2)在模仿[Nsakrty](/wiki/nsakrty)、[Acubens-A](/wiki/acu)[学科燃剪](/wiki/XKRJ)视频时被认定"低创"，叠加其在2024年下半年抄袭[天白](/wiki/TB)、[Maugfy](/wiki/maugfy)、Acubens-A等多位成员视频的旧账，最终由Acubens-A、天白、[室宿一](/wiki/ssy)、[XF](/wiki/XF)等人在"早期审判h1的群聊"中对Earth-2发起较为激烈的批斗。Earth-2最终妥协并删除抄袭视频，但以Acubens-A和天白为初步领导人的"批斗小组"（即后来的团结工会[SYUN](/wiki/SYUN)）在这天成立，并于次日将矛头转向[水益](/wiki/SY)。该事件被视为2025年全年高层分裂（SYUN与[BSTN](/wiki/BSTN)对峙）的起点，也在一定程度上打击了当时成员的创作热情，对星球阁后续的发展趋势产生了深远影响。
+**1·22事件**是2025年1月22日至23日发生在[星球阁](/wiki/SRPN)内部的、围绕原创与抄袭问题展开的激烈冲突事件。事件的导火索是[Earth-2](/wiki/E2)在模仿[Nsakrty](/wiki/nsakrty)、[Acubens-A](/wiki/acu)[学科燃剪](/wiki/XKRJ)视频时被认定"低创"，叠加其在2024年下半年抄袭[天白](/wiki/TB)、[Maugfy](/wiki/maugfy)、Acubens-A等多位成员视频的旧账，最终由Acubens-A、天白、[室宿一](/wiki/ssy)、[XF](/wiki/XF)等人在"早期审判h1的群聊"中对Earth-2发起较为激烈的批斗。Earth-2最终妥协并删除抄袭视频，但以Acubens-A和天白为初步领导人的"批斗小组"（即后来的团结工会[SYUN](/wiki/SYUN)）在这天成立，并于次日将矛头转向[水益](/wiki/SY)。该事件被视为2025年全年高层分裂（SYUN与[BSTN](/wiki/BSTN)对峙）的起点，也在一定程度上打击了当时成员的创作热情，对星球阁后续的发展趋势产生了深远影响。
 
 | 项目 | 内容 |
 | :--- | :--- |
