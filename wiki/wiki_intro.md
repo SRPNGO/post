@@ -50,10 +50,9 @@ author: Nsakrty
 - [SRPN网](./srpnSite)
 - [星球阁条例的演变](./tiaoliEvolution)
 - [投票制](./votingSystem)
-- [星球阁](./SRPN) 
+- [星球阁](./SRPN)
 - [SRAP的方法论与编纂原则](./SRAPMethods)
 - [星球阁主群](./mainGroup)
-
 
 ### 历史事件
 - [黄金时代](./goldenAge)
@@ -110,7 +109,5 @@ author: Nsakrty
 ### 导航与参考
 - [对回归成员的快速导航](./navigate)
 - [Wiki编写规范](./wikiRule)
-
-
 
 注：以上Wiki页面由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))
