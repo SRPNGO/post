@@ -12,7 +12,7 @@ title: 星球阁的组织认同困局
 | 首次系统整理 | 2026年7月18日，[Nsakrty](/wiki/nsakrty)创建《关于星球阁整体组织认同困局的多方对话文本》 |
 | 主要讨论者 | Nsakrty、[水益](/wiki/SY)、[Acubens-A](/wiki/acu)、Earth-2等 |
 | 核心表现 | 组织认同缺失、主群活跃度下降、小群分流、排外与引进的两难、粉丝焦虑 |
-| 背景事件 | 转型运动、高层分裂（[SYUN](/wiki/SYUN)/[BSTN](/wiki/BSTN)）、8·10事件、高层分裂事件 |
+| 背景事件 | 转型运动、高层分裂（[SYUN](/wiki/SYUN)/[BSTN](/wiki/BSTN)）、[8·10事件](/wiki/810Event)、高层分裂事件 |
 | 相关条目 | 转型运动、SYUN、Acubens-A、水益、Nsakrty、[Earth-2](/wiki/E2)、[星球阁粉丝统计](/wiki/fansdata) |
 
 ---

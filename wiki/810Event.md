@@ -5,7 +5,7 @@ title: 8·10事件
 description: 2025年8月星球阁由招新改革引发的大规模内部矛盾，经SYUN介入与BSTN建立后于8月10日冲突升级至顶点、8月11日和解，直接导致决策近乎阻滞、高层险些分裂。
 ---
 
-**8·10事件**（2025年8月1日—11日）是星球阁转型运动中期爆发的一次大规模内部矛盾事件，由废除试卷制度后的主动招新改革引发的意外事件升级而来，核心冲突方为以[Acubens-A](/wiki/acu)、[天白](/wiki/TB)、[XF](/wiki/XF)为首的[SYUN](/wiki/SYUN)与以[水益](/wiki/SY)（及[Nsakrty](/wiki/nsakrty)）为代表的高层核心。事件期间[BSTN](/wiki/BSTN)（波士顿）建立并与SYUN形成正式对峙，8月10日冲突升级至顶点，经多方调和于8月11日达成和解。官方历史评价其"直接导致组织核心决策与运作近乎陷入完全阻滞，高层险些陷入分裂"，是星球阁[决策网络](/wiki/decisionNetwork)危机中的标志性案例。
+**8·10事件**（2025年8月1日—11日）是[星球阁](/wiki/SRPN)[转型运动](/wiki/transformation)中期爆发的一次大规模内部矛盾事件，由废除试卷制度后的主动招新改革引发的意外事件升级而来，核心冲突方为以[Acubens-A](/wiki/acu)、[天白](/wiki/TB)、[XF](/wiki/XF)为首的[SYUN](/wiki/SYUN)与以[水益](/wiki/SY)（及[Nsakrty](/wiki/nsakrty)）为代表的高层核心。事件期间[BSTN](/wiki/BSTN)（波士顿）建立并与SYUN形成正式对峙，8月10日冲突升级至顶点，经多方调和于8月11日达成和解。官方历史评价其"直接导致组织核心决策与运作近乎陷入完全阻滞，高层险些陷入分裂"，是星球阁[决策网络](/wiki/decisionNetwork)危机中的标志性案例。
 
 ---
 
@@ -15,8 +15,8 @@ description: 2025年8月星球阁由招新改革引发的大规模内部矛盾�
 | :--- | :--- |
 | 名称 | 8·10事件（由Nsakrty命名） |
 | 时间 | 2025年8月1日—11日 |
-| 地点 | 星球阁主群及相关小群 |
-| 涉事方 | SYUN（Acubens-A、天白、室宿一、XF，合称ATSX）、BSTN（水益等）、9'alpha、失忆、海山二、石浪、Nsakrty等 |
+| 地点 | [星球阁主群](/wiki/mainGroup)及相关小群 |
+| 涉事方 | SYUN（Acubens-A、天白、[室宿一](/wiki/ssy)、XF，合称ATSX）、BSTN（水益等）、9'alpha、失忆、[海山二](/wiki/HSE)、石浪、Nsakrty等 |
 | 原因 | 招新改革引发的意外事件；某新成员的个人冲突公开化；SYUN与高层核心长期积累的矛盾 |
 | 结果 | 8月11日多方调和达成和解；BSTN与SYUN对峙格局形成；2025年决策几乎只由Nsakrty与水益管理 |
 | 相关条目 | [SYUN](/wiki/SYUN)、[BSTN](/wiki/BSTN)、[决策网络](/wiki/decisionNetwork) |

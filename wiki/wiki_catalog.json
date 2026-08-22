@@ -100,6 +100,18 @@
         {
           "slug": "xbj",
           "display": "小北君"
+        },
+        {
+          "slug": "lan09Aa",
+          "display": "Lan09Aa"
+        },
+        {
+          "slug": "maoxiu",
+          "display": "两只可爱的小昴宿"
+        },
+        {
+          "slug": "yutu",
+          "display": "鱼土"
         }
       ]
     },
@@ -191,6 +203,10 @@
         {
           "slug": "mainGroup",
           "display": "星球阁主群"
+        },
+        {
+          "slug": "decisionNetwork",
+          "display": "星球阁的决策网络"
         }
       ]
     },
@@ -250,6 +266,10 @@
         {
           "slug": "KPJEvent",
           "display": "科普君事件"
+        },
+        {
+          "slug": "810Event",
+          "display": "8·10事件"
         }
       ]
     },
@@ -333,6 +353,18 @@
         {
           "slug": "SRAPMethod",
           "display": "SRAP的方法论与编纂原则"
+        },
+        {
+          "slug": "exitReturn",
+          "display": "星球阁的退群与回归现象"
+        },
+        {
+          "slug": "xqb",
+          "display": "星球币"
+        },
+        {
+          "slug": "xqdh",
+          "display": "星球动画"
         }
       ]
     },

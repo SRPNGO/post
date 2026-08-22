@@ -31,7 +31,7 @@ title: 星球阁粉丝统计
 ### 简化版文件结构说明
 
 - **时间列**：从2019年3月4日至2026年7月31日，共66个时间节点。**原始文件以每周为一个时间数据**；对外提供的简化版压缩为约六周一条数据；
-- **成员行**：包括现任成员、历任成员、已淡出成员及部分相关创作者，如Maugfy、[Acubens-A](/wiki/acu)、[Earth-2](/wiki/E2)、[Sw天白](/wiki/TB)、[水益](/wiki/SY)、nsakrty、[Starity海山二星系](/wiki/HSE)、[最佳鸽子](/wiki/zjgz)、[依托青菜](/wiki/qc)、谷神星、依托XF、C₁₇H₃₆（北河三）、亿只南门二A、白笙、Betelgeuse参宿四、9'α、Earth-5、Fomalhaut-清白、星辰（AWForChae）、长命十岁、小轩轩、佰玖、lan09Aa、星球阁官方账号、Hecatebolus、Saiph参宿六、瑞光、草木灰粉、鱼土、南河三A、YancestorsE、盖尼米德、木木昆、仙王座VV A、阿参BR、一只屑手枪星、Alpha Centauri-A、Procyon南河三、Rigufy-星芒三、小海马上火、Hliva、[星零](/wiki/StarZero)等；
+- **成员行**：包括现任成员、历任成员、已淡出成员及部分相关创作者，如Maugfy、[Acubens-A](/wiki/acu)、[Earth-2](/wiki/E2)、[Sw天白](/wiki/TB)、[水益](/wiki/SY)、nsakrty、[Starity海山二星系](/wiki/HSE)、[最佳鸽子](/wiki/zjgz)、[依托青菜](/wiki/qc)、谷神星、依托XF、C₁₇H₃₆（北河三）、亿只南门二A、白笙、Betelgeuse参宿四、9'α、Earth-5、Fomalhaut-清白、星辰（AWForChae）、长命十岁、小轩轩、佰玖、lan09Aa、星球阁官方账号、Hecatebolus、Saiph参宿六、瑞光、草木灰粉、[鱼土](/wiki/yutu)、南河三A、YancestorsE、盖尼米德、木木昆、仙王座VV A、阿参BR、一只屑手枪星、Alpha Centauri-A、Procyon南河三、Rigufy-星芒三、小海马上火、Hliva、[星零](/wiki/StarZero)等；
 - **梯队汇总行**：简化版中设有"其他成员（第一梯队）""其他成员（第二梯队）"两行汇总数据；**原始文件没有分梯队，给的全是原始数据**（此分行为简化版处理方式）。
 
 ### 关键数据一览（截至2026年8月1日）
