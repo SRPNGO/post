@@ -13,7 +13,7 @@ description: 2025年8月星球阁由招新改革引发的大规模内部矛盾�
 
 | 项目 | 内容 |
 | :--- | :--- |
-| 名称 | 8·10事件（由Nsakrty命名） |
+| 名称 | 8·10事件 |
 | 时间 | 2025年8月1日—11日 |
 | 地点 | [星球阁主群](/wiki/mainGroup)及相关小群 |
 | 涉事方 | SYUN（Acubens-A、天白、[室宿一](/wiki/ssy)、XF，合称ATSX）、BSTN（水益等）、9'alpha、失忆、[海山二](/wiki/HSE)、石浪、Nsakrty等 |
