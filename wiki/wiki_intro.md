@@ -29,6 +29,7 @@ author: Nsakrty
 - [海山二](./HSE)
 - [91Sun](./91Sun)
 - [轩辕十四](./regulus)
+- [小北君](./xbj)
 
 ### 组织与制度
 - [星球圈](./SC)
@@ -50,6 +51,9 @@ author: Nsakrty
 - [星球阁条例的演变](./tiaoliEvolution)
 - [投票制](./votingSystem)
 - [星球阁](./SRPN) 
+- [SRAP的方法论与编纂原则](./SRAPMethods)
+- [星球阁主群](./mainGroup)
+
 
 ### 历史事件
 - [黄金时代](./goldenAge)
@@ -84,6 +88,7 @@ author: Nsakrty
 - [星球燃剪](./XQRJ)
 - [星球阁主群日常话题](./dailyTopic)
 - [新星球动画圈](./newSC)
+- [星球圈相关概念辨析](./conceptAnalysis)
 
 ### 议题分析
 - [生命周期](./groupLifeCycle)
@@ -99,6 +104,8 @@ author: Nsakrty
 - [星球圈双线叙事](./dualNarrative)
 - [星球阁的治理模式变迁](./governance)
 - [星球阁的危机公关与对外发声短板](./crisisPR)
+- [星球阁的叙事分层](./narrativeLayers)
+- [星球阁的新人融入困境](./integration)
 
 ### 导航与参考
 - [对回归成员的快速导航](./navigate)

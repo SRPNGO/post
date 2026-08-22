@@ -1,5 +1,4 @@
 {
-  "generated_from": "wiki_intro.md (一次性迁移，之后请直接编辑本文件)",
   "categories": [
     {
       "id": "cat_人物",
@@ -97,6 +96,10 @@
         {
           "slug": "regulus",
           "display": "轩辕十四"
+        },
+        {
+          "slug": "xbj",
+          "display": "小北君"
         }
       ]
     },
@@ -180,6 +183,14 @@
         {
           "slug": "SRPN",
           "display": "星球阁"
+        },
+        {
+          "slug": "SRAPMethods",
+          "display": "SRAP的方法论与编纂原则"
+        },
+        {
+          "slug": "mainGroup",
+          "display": "星球阁主群"
         }
       ]
     },
@@ -314,6 +325,10 @@
         {
           "slug": "newSC",
           "display": "新星球动画圈"
+        },
+        {
+          "slug": "conceptAnalysis",
+          "display": "星球圈相关概念辨析"
         }
       ]
     },
@@ -373,6 +388,14 @@
         {
           "slug": "crisisPR",
           "display": "星球阁的危机公关与对外发声短板"
+        },
+        {
+          "slug": "narrativeLayers",
+          "display": "星球阁的叙事分层"
+        },
+        {
+          "slug": "integration",
+          "display": "星球阁的新人融入困境"
         }
       ]
     },
