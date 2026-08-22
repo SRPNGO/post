@@ -137,8 +137,8 @@ def extract_summary(body, limit=140):
 
 
 ALIAS_HINT_PATTERNS = [
-    r'[（(](?:又称|亦称|又名|简称|俗称|缩写|原名|别名|英文|英语)\s*[）)]?[:：]?\s*(.+?)[）)]',
-    r'(?:又称|亦称|又名|简称|俗称|缩写|原名|别名|英文|英语)\s*[为叫称作：:]?\s*(.+?)[，。；,;]',
+    r'[（(](?:又称|亦称|亦作|又名|简称|俗称|缩写|原名|别名|英文|英语)\s*[）)]?[:：]?\s*(.+?)[）)]',
+    r'(?:又称|亦称|亦作|又名|简称|俗称|缩写|原名|别名|英文|英语)\s*[为叫称作：:]?\s*(.+?)[，。；,;]',
 ]
 # "账号赋值"模式：抖音ID：**Sw天白** / 群聊中常写作**473wr** / 昵称**XXX** / 早期抖音账号名 **沙雕土星**
 # 关键词后面允许「冒号/空格/空」再接一个（也可能带 @/# 等前缀的）粗体账号名。
@@ -158,13 +158,15 @@ META_ASSIGN_RE = re.compile(
 def collect_aliases(body, title):
     """精确抽取别名。
 
-    优先级：
-      1. 「又称 / 简称 / 缩写…」显式触发词 → 取后续粗体。
-      2. 所有「账号赋值」模式：XX：**YY**（XX 为上面 META_KEY_WORDS 之一）→ 把 YY 当别名。
-         这是对「（抖音ID：**Sw天白**）」这类元信息括号段的补偿：此前因括号含 META_HINT 关键词
-         整段被跳过，导致 Sw天白 这类可直接被读者搜索到的 ID 根本进不了搜索域。
-      3. 兜底：标题后 200 字内的粗体，但剔除"元信息括号段 + 非赋值结构"下的粗体（避免把年份
-         数字、「群内全称」这类说明粗体当别名）。
+    只在首段定义句中识别「显式别名语义信号」，不兜底扫描任意粗体——
+    原兜底分支把首段所有加粗（时间、概念、他人名字等）都当别名候选，
+    误报远多于正确命中（如「首个引入恒星演化历程」「2024年7月中旬」「大Q」）。
+
+    识别模式：
+      1. 「又称 / 简称 / 缩写 / 英文…」等显式触发词 → 取后续粗体作为别名。
+      2. 「账号赋值」模式：XX：**YY**（XX 为 META_KEY_WORDS 之一，如抖音ID、昵称…）→
+         把 YY 当别名。用于补偿「（抖音ID：**Sw天白**）」这类元信息括号段——
+         此前因括号含 META_HINT 关键词整段被跳过，导致可直接被读者搜索到的 ID 进不了搜索域。
     """
     aliases = []
     paragraphs = [p.strip() for p in re.split(r'\n\s*\n', body) if p.strip()]
@@ -176,7 +178,7 @@ def collect_aliases(body, title):
     if not first_para:
         return aliases
 
-    # 1) 优先从「又称/简称…」片段内的粗体中提取（精确模式）
+    # 1) 从「又称/简称…」片段内的粗体中提取（显式触发词）
     seed_spans = []
     for pat in ALIAS_HINT_PATTERNS:
         for m in re.finditer(pat, first_para):
@@ -192,28 +194,6 @@ def collect_aliases(body, title):
         if _is_valid_alias(b, title):
             aliases.append(b)
 
-    if aliases:
-        return _dedup(aliases)[:5]
-
-    # 3) 兜底：扫描首段标题后 200 字内的粗体，但剔除"纯元信息括号段"
-    start = first_para.find(title)
-    tail = first_para[start + len(title): start + len(title) + 200] if start >= 0 else first_para[:200]
-    META_HINT = r'抖音|账号|ID|群聊|全称|早期|现名|官方|群内|群昵称|昵称|id'
-
-    def _inside_meta_paren(s, span_start, span_end):
-        for pm in re.finditer(r'[（(].*?[）)]', s):
-            seg = pm.group(0)
-            if re.search(META_HINT, seg):
-                if pm.start() <= span_start and span_end <= pm.end():
-                    return True
-        return False
-
-    for m in re.finditer(r'\*\*(.+?)\*\*', tail):
-        b = m.group(1)
-        if _inside_meta_paren(tail, m.start(1), m.end(1)):
-            continue
-        if _is_valid_alias(b, title):
-            aliases.append(b)
     return _dedup(aliases)[:5]
 
 
@@ -257,11 +237,13 @@ def _is_valid_alias(b, title):
         return False
     if re.search(r'[\[\]\(\)]', b):
         return False
-    # 去除首尾的常见括号/标点残留（如果去除后为空则丢弃）
-    cleaned = b.strip().strip('。，、；：,;:.（）()【】[]《》""''「」『』 \t')
-    if not cleaned or cleaned == title:
+    # 别名不应含引号、括号、逗号等标点残片（之前会先 strip 这些再校验，
+    # 导致 "\"（及行星球的本源概念" 被 strip 成 "及行星球的本源概念" 后误判通过）
+    if re.search(r'["\'""''「」『』（）()【】《》〈〉，。、；：,;.!！？?]', b):
         return False
-    b = cleaned
+    b = b.strip()
+    if not b or b == title:
+        return False
     if len(b) < 2:
         return False
     if re.fullmatch(r'[0-9约〜~—－\-至年日月时分秒万百千万亿.%％]+', b):
@@ -301,11 +283,15 @@ def build_index():
         title = fm.get('title') or slug_to_display.get(slug) or slug
         author = fm.get('author', '')
         summary = extract_summary(body)
-        # 别名优先级：frontmatter 手动指定 > wiki_catalog.json 显示名 > 正文自动抽取
-        aliases = _parse_aliases(fm.get('aliases', '')) + collect_aliases(body, title)
         display_name = slug_to_display.get(slug)
-        if display_name and display_name != title and display_name not in aliases:
-            aliases = [display_name] + aliases
+        # 别名来源：frontmatter 手动指定 + 正文自动抽取。
+        # 不再把 display_name 当别名——display 本身已是 entries 的独立字段，
+        # 前端搜索 buildSearchable 已覆盖它；若再把 display 塞进 aliases，
+        # 像 wikiRule（display="Wiki编写规范"）这类条目会出现"别名=展示名"的冗余。
+        aliases = _parse_aliases(fm.get('aliases', '')) + collect_aliases(body, title)
+        # 若别名与最终展示名（display 优先，否则 title）相同则视为无效数据剔除
+        shown_name = display_name or title
+        aliases = [a for a in aliases if a != shown_name]
         aliases = _dedup(aliases)[:5]
         category = slug_to_cat.get(slug, '')
         entries.append({

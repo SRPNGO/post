@@ -329,6 +329,10 @@
         {
           "slug": "conceptAnalysis",
           "display": "星球圈相关概念辨析"
+        },
+        {
+          "slug": "SRAPMethod",
+          "display": "SRAP的方法论与编纂原则"
         }
       ]
     },

@@ -255,6 +255,21 @@
         color: var(--textColor);
         font-weight: 600;
       }
+      .wiki-intro-card { position: relative; }
+      .view-toggle {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        border: 1px solid var(--wiki-border);
+        border-radius: 6px;
+        background: #fff;
+        color: var(--textColor);
+        cursor: pointer;
+        line-height: 1.5;
+      }
+      .view-toggle:hover { background: #f0f0eb; }
 
       /* 分类段 */
       .wiki-category {
@@ -321,6 +336,29 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+      }
+
+      /* 紧凑标题列表视图（仿 wiki_intro.md） */
+      .entry-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        columns: 2;
+        column-gap: 24px;
+      }
+      .entry-list li {
+        margin: 3px 0;
+        break-inside: avoid;
+      }
+      .entry-list li a {
+        color: var(--wiki-accent);
+      }
+      .li-aliases {
+        color: var(--wiki-muted);
+        font-size: 0.82rem;
+      }
+      @media (max-width: 640px) {
+        .entry-list { columns: 1; }
       }
 
       /* 搜索结果覆盖层（直接显示在主内容区，不弹模态） */
@@ -440,7 +478,7 @@
         </form>
         <div class="wiki-hero-tips" id="heroTips">
           <span>热门：</span>
-          <!-- 热门关键词由 JS 从索引里挑出（与分类名） -->
+          <!-- 热门关键词由 JS 从各分类条目中随机挑出（仅条目，不含分类名） -->
         </div>
       </div>
     </section>
@@ -464,6 +502,7 @@
       <main class="wiki-content" id="wikiContent">
         <!-- 欢迎介绍 -->
         <section class="wiki-intro-card" id="introCard">
+          <button class="view-toggle" id="viewToggle" type="button" title="切换为紧凑列表视图">▤ 紧凑列表</button>
           <h2>欢迎来到星球阁 Wiki</h2>
           <p>
             这里是星球阁 Wiki 的索引页。所有条目按类别分类。
@@ -528,6 +567,7 @@
           index: null,
           currentKw: "",
           activeCatFilter: "all", // all | cat_xxx
+          viewMode: "card", // card | list（紧凑标题列表，仿 wiki_intro.md）
         };
 
         // ---------- 工具 ----------
@@ -601,18 +641,16 @@
         }
 
         function renderHeroTips(index) {
-          // 从各分类中随机挑 1 个代表条目 + 分类名本身，做热门 chip
+          // 从各分类中随机挑 1 个代表条目做热门 chip（仅条目，不含分类名）
           const picks = [];
           const order = index.category_order || [];
           const entries = index.entries || [];
           order.forEach((cid) => {
-            const cat = index.categories[cid];
             const catEntries = entries.filter((e) => e.category === cid);
             if (catEntries.length > 0) {
               const randomEntry = catEntries[Math.floor(Math.random() * catEntries.length)];
               picks.push(randomEntry.display || randomEntry.title);
             }
-            if (cat) picks.push(cat.name);
           });
           // Fisher–Yates 洗牌
           for (let i = picks.length - 1; i > 0; i--) {
@@ -676,6 +714,15 @@
         }
 
         function renderCategorySection(cid, catName, entries) {
+          if (state.viewMode === "list") {
+            const items = entries.map((e) => renderEntryListItem(e, "")).join("");
+            return `
+              <section class="wiki-category wiki-category-list" id="${escapeHtml(cid)}">
+                <h2>${escapeHtml(catName)}<span class="count-pill">${entries.length} 个条目</span></h2>
+                <ul class="entry-list">${items || '<li style="color:var(--wiki-muted)">该分类下暂无条目。</li>'}</ul>
+              </section>
+            `;
+          }
           const cards = entries.map((e) => renderEntryCard(e, "")).join("");
           return `
             <section class="wiki-category" id="${escapeHtml(cid)}">
@@ -683,6 +730,17 @@
               <div class="entry-grid">${cards || '<p style="color:var(--wiki-muted)">该分类下暂无条目。</p>'}</div>
             </section>
           `;
+        }
+
+        function renderEntryListItem(e, kw) {
+          const title = highlight(e.display || e.title, kw);
+          const aliasesHtml =
+            e.aliases && e.aliases.length
+              ? `<span class="li-aliases">（${e.aliases
+                  .map((a) => highlight(a, kw))
+                  .join("·")}）</span>`
+              : "";
+          return `<li><a href="${escapeHtml(e.url)}">${title}</a>${aliasesHtml}</li>`;
         }
 
         function renderEntryCard(e, kw) {
@@ -892,10 +950,17 @@
           }
           // 高亮优先使用用户原文 kw（最左完整 token）
           const firstTok = kw.split(/\s+/).filter(Boolean)[0] || kw;
-          resultBox.innerHTML =
-            `<div class="wiki-result-list">` +
-            list.map((x) => renderEntryCard(x.e, firstTok)).join("") +
-            `</div>`;
+          if (state.viewMode === "list") {
+            resultBox.innerHTML =
+              `<ul class="entry-list">` +
+              list.map((x) => renderEntryListItem(x.e, firstTok)).join("") +
+              `</ul>`;
+          } else {
+            resultBox.innerHTML =
+              `<div class="wiki-result-list">` +
+              list.map((x) => renderEntryCard(x.e, firstTok)).join("") +
+              `</div>`;
+          }
         }
 
         function bindEvents() {
@@ -910,7 +975,12 @@
           });
           btn.addEventListener("click", () => {
             doSearch(input.value);
-            window.location.hash = "#categoryContainer";
+            // 用 scrollIntoView 而非改 hash：hash 重复设置不会再次触发跳转
+            const target = $("#searchHeader").classList.contains("active")
+              ? $("#searchHeader")
+              : $("#categoryContainer");
+            if (target)
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
           });
           // 输入时实时过滤（延迟 120ms），清空时回到分类视图
           let t;
@@ -953,6 +1023,36 @@
             sidebarTitle.addEventListener("click", () => {
               sidebar.classList.toggle("expanded");
             });
+          }
+
+          // 视图切换：卡片 ↔ 紧凑标题列表（偏好记入 localStorage）
+          const toggleBtn = $("#viewToggle");
+          if (toggleBtn) {
+            try {
+              const saved = localStorage.getItem("wikiViewMode");
+              if (saved === "list" || saved === "card") state.viewMode = saved;
+            } catch (_) {}
+            updateViewToggle();
+            toggleBtn.addEventListener("click", () => {
+              state.viewMode = state.viewMode === "list" ? "card" : "list";
+              try {
+                localStorage.setItem("wikiViewMode", state.viewMode);
+              } catch (_) {}
+              updateViewToggle();
+              if (state.index) renderCategories(state.index);
+            });
+          }
+        }
+
+        function updateViewToggle() {
+          const toggleBtn = $("#viewToggle");
+          if (!toggleBtn) return;
+          if (state.viewMode === "list") {
+            toggleBtn.textContent = "▦ 卡片视图";
+            toggleBtn.title = "切换为卡片视图";
+          } else {
+            toggleBtn.textContent = "▤ 紧凑列表";
+            toggleBtn.title = "切换为紧凑列表视图";
           }
         }
 
