@@ -14,9 +14,9 @@ Wiki 主页条目索引生成器
   - 分类与排序完全由 wiki_catalog.json 决定（手改该文件即可调整分类/顺序/显示名）。
   - wiki_intro.md 仅是旧的"链接索引"页，已不在索引管线中，仅通过 EXCLUDE_SLUGS 防止被收录。
 
-用法：
-  python wiki_build_index.py        # 默认生成 JSON + JS 快照
-  python wiki_build_index.py --dry  # 只打印，不写文件
+用法（在项目根目录执行）：
+  python scripts/wiki_build_index.py        # 默认生成 JSON + JS 快照
+  python scripts/wiki_build_index.py --dry  # 只打印，不写文件
 """
 
 import os
@@ -25,8 +25,10 @@ import json
 import sys
 from html import escape
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-WIKI_DIR = os.path.join(BASE_DIR, 'wiki')
+# 脚本位于根目录 scripts/ 下，wiki 目录在 scripts 的上一级
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+WIKI_DIR = os.path.join(PROJECT_ROOT, 'wiki')
 CATALOG_JSON = os.path.join(WIKI_DIR, 'wiki_catalog.json')
 OUT_JSON = os.path.join(WIKI_DIR, 'wiki_index.json')
 OUT_JS   = os.path.join(WIKI_DIR, 'wiki_index_snapshot.js')
@@ -325,7 +327,7 @@ def build_index():
     entries.sort(key=lambda x: rank.get(x['slug'], (9999, 9999)))
 
     result = {
-        'generated_at_hint': '请运行 wiki_build_index.py 重新生成此文件',
+        'generated_at_hint': '请运行 scripts/wiki_build_index.py 重新生成此文件',
         'category_order': [c['id'] for c in categories],
         'categories': {c['id']: {'name': c['name'], 'order': c['order']} for c in categories},
         'entries': entries,
@@ -351,7 +353,7 @@ def main():
     payload = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
     size = len(payload.encode('utf-8'))
     js = (
-        '// Wiki 条目快照（自动生成，勿手改。运行 python wiki_build_index.py 重新生成）\n'
+        '// Wiki 条目快照（自动生成，勿手改。运行 python scripts/wiki_build_index.py 重新生成）\n'
         '// 此脚本会在 wiki_intro.html 中被 <script src="./wiki_index_snapshot.js"> 加载，\n'
         '// 作为 fetch(./wiki_index.json) 失败时的降级数据源，确保即便在 file:// 直开\n'
         '// 或某些静态托管缺失 JSON mime 类型的情况下也能渲染条目。\n'

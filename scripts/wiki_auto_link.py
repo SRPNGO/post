@@ -11,9 +11,9 @@
   4. 对首次出现的、尚未添加链接的专有名词自动加链接
   5. 若术语出现时已加粗（**术语**），则链接格式为 **[术语](url)**，即星号在外
 
-用法：
-  python wiki_auto_link.py              # 预览模式（dry-run），只打印修改不写文件
-  python wiki_auto_link.py --apply      # 真正写入文件
+用法（在项目根目录执行）：
+  python scripts/wiki_auto_link.py              # 预览模式（dry-run），只打印修改不写文件
+  python scripts/wiki_auto_link.py --apply      # 真正写入文件
 """
 
 import os
@@ -22,7 +22,10 @@ import sys
 import glob
 
 # ========= 配置 =========
-WIKI_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'wiki')
+# 脚本位于根目录 scripts/ 下，wiki 目录在 scripts 的上一级
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+WIKI_DIR = os.path.join(PROJECT_ROOT, 'wiki')
 
 # 无需处理的文件
 EXCLUDE_FILES = ['wikiRule.md', 'wiki_intro.md']

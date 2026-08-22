@@ -4,9 +4,14 @@
 import json
 import os
 
+# 脚本位于根目录 scripts/ 下，wiki 目录在 scripts 的上一级
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+WIKI_DIR = os.path.join(PROJECT_ROOT, 'wiki')
+
 def generate_wiki_intro():
     # 读取目录下的 wiki_catalog.json
-    with open('./wiki/wiki_catalog.json', 'r', encoding='utf-8') as f:
+    with open(os.path.join(WIKI_DIR, 'wiki_catalog.json'), 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     categories = data.get('categories', [])
@@ -43,10 +48,10 @@ def generate_wiki_intro():
     lines.append('注：以上Wiki页面由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))')
 
     # 确保目标目录存在
-    os.makedirs('./wiki', exist_ok=True)
+    os.makedirs(WIKI_DIR, exist_ok=True)
 
     # 写入文件
-    with open('./wiki/wiki_intro.md', 'w', encoding='utf-8') as f:
+    with open(os.path.join(WIKI_DIR, 'wiki_intro.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
 
     print("✅ wiki_intro.md 生成成功！")
