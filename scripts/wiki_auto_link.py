@@ -11,7 +11,7 @@
   4. 对首次出现的、尚未添加链接的专有名词自动加链接
   5. 若术语出现时已加粗（**术语**），则链接格式为 **[术语](url)**，即星号在外
 
-用法（在项目根目录执行）：
+用法：
   python scripts/wiki_auto_link.py              # 预览模式（dry-run），只打印修改不写文件
   python scripts/wiki_auto_link.py --apply      # 真正写入文件
 """

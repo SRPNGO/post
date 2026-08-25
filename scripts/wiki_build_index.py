@@ -14,7 +14,7 @@ Wiki 主页条目索引生成器
   - 分类与排序完全由 wiki_catalog.json 决定（手改该文件即可调整分类/顺序/显示名）。
   - wiki_intro.md 仅是旧的"链接索引"页，已不在索引管线中，仅通过 EXCLUDE_SLUGS 防止被收录。
 
-用法（在项目根目录执行）：
+用法：
   python scripts/wiki_build_index.py        # 默认生成 JSON + JS 快照
   python scripts/wiki_build_index.py --dry  # 只打印，不写文件
 """
