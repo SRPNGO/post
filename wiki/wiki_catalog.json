@@ -207,6 +207,14 @@
         {
           "slug": "decisionNetwork",
           "display": "星球阁的决策网络"
+        },
+        {
+          "slug": "SRPH",
+          "display": "史书阁"
+        },
+        {
+          "slug": "orgList",
+          "display": "星球圈组织名单"
         }
       ]
     },
