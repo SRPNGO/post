@@ -144,195 +144,25 @@
         {
           "slug": "nashake",
           "display": "那啥课"
-        }
-      ]
-    },
-    {
-      "id": "cat_组织与制度",
-      "name": "组织与制度",
-      "order": 1,
-      "entries": [
-        {
-          "slug": "SC",
-          "display": "星球圈"
         },
         {
-          "slug": "SRAP",
-          "display": "星球阁存档计划"
+          "slug": "haidao",
+          "display": "海稻"
         },
         {
-          "slug": "reviewSystem",
-          "display": "星球阁的审核制度"
+          "slug": "mrliu",
+          "display": "Mr.Liu"
         },
         {
-          "slug": "BSTN",
-          "display": "BSTN"
-        },
-        {
-          "slug": "SYUN",
-          "display": "SYUN"
-        },
-        {
-          "slug": "ACSRPN",
-          "display": "ACSRPN"
-        },
-        {
-          "slug": "secondGroup",
-          "display": "二群制度"
-        },
-        {
-          "slug": "LWT",
-          "display": "军武阁"
-        },
-        {
-          "slug": "SRPG",
-          "display": "星球地理"
-        },
-        {
-          "slug": "SRPNGO",
-          "display": "星球编程"
-        },
-        {
-          "slug": "GQGZ",
-          "display": "光启阁"
-        },
-        {
-          "slug": "SKDC",
-          "display": "星联阁"
-        },
-        {
-          "slug": "PSPN",
-          "display": "昴星阁"
-        },
-        {
-          "slug": "SRPNTestPaperGenerator",
-          "display": "试卷生成器"
-        },
-        {
-          "slug": "SRCN",
-          "display": "星球家族（SRCN）"
-        },
-        {
-          "slug": "srpnSite",
-          "display": "SRPN网"
-        },
-        {
-          "slug": "tiaoliEvolution",
-          "display": "星球阁条例的演变"
-        },
-        {
-          "slug": "votingSystem",
-          "display": "投票制"
-        },
-        {
-          "slug": "SRPN",
-          "display": "星球阁"
-        },
-        {
-          "slug": "mainGroup",
-          "display": "星球阁主群"
-        },
-        {
-          "slug": "decisionNetwork",
-          "display": "星球阁的决策网络"
-        },
-        {
-          "slug": "SRPH",
-          "display": "史书阁"
-        },
-        {
-          "slug": "orgList",
-          "display": "星球圈组织名单"
-        },
-        {
-          "slug": "SRDC",
-          "display": "星辰阁"
-        },
-        {
-          "slug": "xingzhisi",
-          "display": "星知司"
-        },
-        {
-          "slug": "yawangyuansi",
-          "display": "雅王院司"
-        },
-        {
-          "slug": "starLeagueClans",
-          "display": "星联阁系组织谱系"
-        }
-      ]
-    },
-    {
-      "id": "cat_历史事件",
-      "name": "历史事件",
-      "order": 2,
-      "entries": [
-        {
-          "slug": "goldenAge",
-          "display": "黄金时代"
-        },
-        {
-          "slug": "bilibiliGroupConflict",
-          "display": "B站天文圈\"正统\"之争"
-        },
-        {
-          "slug": "dogeproEvent",
-          "display": "Dogepro事件"
-        },
-        {
-          "slug": "XZHXEvent",
-          "display": "新智彗星事件"
-        },
-        {
-          "slug": "LESH",
-          "display": "LESH事件"
-        },
-        {
-          "slug": "transformation",
-          "display": "转型运动"
-        },
-        {
-          "slug": "122event",
-          "display": "1·22事件"
-        },
-        {
-          "slug": "0216banned",
-          "display": "2026年2月16日主群被封事件"
-        },
-        {
-          "slug": "StarRevolution",
-          "display": "B站星球圈知识体系推翻星知司的历程"
-        },
-        {
-          "slug": "XLevent",
-          "display": "血泪事件"
-        },
-        {
-          "slug": "keShangEvent",
-          "display": "科学商所长事件"
-        },
-        {
-          "slug": "ZZXEvent",
-          "display": "中子星事件"
-        },
-        {
-          "slug": "KPJEvent",
-          "display": "科普君事件"
-        },
-        {
-          "slug": "810Event",
-          "display": "8·10事件"
-        },
-        {
-          "slug": "430Event",
-          "display": "四三零事件"
+          "slug": "muqiu",
+          "display": "暮秋"
         }
       ]
     },
     {
       "id": "cat_内容与现象",
       "name": "内容与现象",
-      "order": 3,
+      "order": 1,
       "entries": [
         {
           "slug": "DYCY",
@@ -457,6 +287,232 @@
         {
           "slug": "srpnWiki",
           "display": "星球阁Wiki"
+        },
+        {
+          "slug": "chuangzuoBantu",
+          "display": "星球阁创作版图"
+        }
+      ]
+    },
+    {
+      "id": "cat_组织与制度",
+      "name": "组织与制度",
+      "order": 2,
+      "entries": [
+        {
+          "slug": "SC",
+          "display": "星球圈"
+        },
+        {
+          "slug": "SRAP",
+          "display": "星球阁存档计划"
+        },
+        {
+          "slug": "reviewSystem",
+          "display": "星球阁的审核制度"
+        },
+        {
+          "slug": "BSTN",
+          "display": "BSTN"
+        },
+        {
+          "slug": "SYUN",
+          "display": "SYUN"
+        },
+        {
+          "slug": "ACSRPN",
+          "display": "ACSRPN"
+        },
+        {
+          "slug": "secondGroup",
+          "display": "二群制度"
+        },
+        {
+          "slug": "LWT",
+          "display": "军武阁"
+        },
+        {
+          "slug": "SRPG",
+          "display": "星球地理"
+        },
+        {
+          "slug": "SRPNGO",
+          "display": "星球编程"
+        },
+        {
+          "slug": "GQGZ",
+          "display": "光启阁"
+        },
+        {
+          "slug": "SKDC",
+          "display": "星联阁"
+        },
+        {
+          "slug": "PSPN",
+          "display": "昴星阁"
+        },
+        {
+          "slug": "SRPNTestPaperGenerator",
+          "display": "试卷生成器"
+        },
+        {
+          "slug": "SRCN",
+          "display": "星球家族（SRCN）"
+        },
+        {
+          "slug": "srpnSite",
+          "display": "SRPN网"
+        },
+        {
+          "slug": "tiaoliEvolution",
+          "display": "星球阁条例的演变"
+        },
+        {
+          "slug": "votingSystem",
+          "display": "投票制"
+        },
+        {
+          "slug": "SRPN",
+          "display": "星球阁"
+        },
+        {
+          "slug": "mainGroup",
+          "display": "星球阁主群"
+        },
+        {
+          "slug": "decisionNetwork",
+          "display": "星球阁的决策网络"
+        },
+        {
+          "slug": "SRPH",
+          "display": "史书阁"
+        },
+        {
+          "slug": "orgList",
+          "display": "星球圈组织名单"
+        },
+        {
+          "slug": "SRDC",
+          "display": "星辰阁"
+        },
+        {
+          "slug": "xingzhisi",
+          "display": "星知司"
+        },
+        {
+          "slug": "yawangyuansi",
+          "display": "雅王院司"
+        },
+        {
+          "slug": "starLeagueClans",
+          "display": "星联阁系组织谱系"
+        },
+        {
+          "slug": "SIPN",
+          "display": "星冰阁"
+        },
+        {
+          "slug": "SKPN",
+          "display": "星火阁"
+        },
+        {
+          "slug": "SPRC",
+          "display": "星球共和阁"
+        },
+        {
+          "slug": "xingGuangGe",
+          "display": "星光阁"
+        },
+        {
+          "slug": "xingyaoge",
+          "display": "星耀阁"
+        },
+        {
+          "slug": "xingyuge",
+          "display": "星宇阁"
+        },
+        {
+          "slug": "SRMP",
+          "display": "星球理科"
+        }
+      ]
+    },
+    {
+      "id": "cat_历史事件",
+      "name": "历史事件",
+      "order": 3,
+      "entries": [
+        {
+          "slug": "goldenAge",
+          "display": "黄金时代"
+        },
+        {
+          "slug": "bilibiliGroupConflict",
+          "display": "B站天文圈\"正统\"之争"
+        },
+        {
+          "slug": "dogeproEvent",
+          "display": "Dogepro事件"
+        },
+        {
+          "slug": "XZHXEvent",
+          "display": "新智彗星事件"
+        },
+        {
+          "slug": "LESH",
+          "display": "LESH事件"
+        },
+        {
+          "slug": "transformation",
+          "display": "转型运动"
+        },
+        {
+          "slug": "122event",
+          "display": "1·22事件"
+        },
+        {
+          "slug": "0216banned",
+          "display": "2026年2月16日主群被封事件"
+        },
+        {
+          "slug": "StarRevolution",
+          "display": "B站星球圈知识体系推翻星知司的历程"
+        },
+        {
+          "slug": "XLevent",
+          "display": "血泪事件"
+        },
+        {
+          "slug": "keShangEvent",
+          "display": "科学商所长事件"
+        },
+        {
+          "slug": "ZZXEvent",
+          "display": "中子星事件"
+        },
+        {
+          "slug": "KPJEvent",
+          "display": "科普君事件"
+        },
+        {
+          "slug": "810Event",
+          "display": "8·10事件"
+        },
+        {
+          "slug": "430Event",
+          "display": "四三零事件"
+        },
+        {
+          "slug": "S9SNSEvent",
+          "display": "S9SNS事件"
+        },
+        {
+          "slug": "kuaishouEvent",
+          "display": "快手反星球圈事件"
+        },
+        {
+          "slug": "2025HighLevelSplit",
+          "display": "2025年高层分裂事件链"
         }
       ]
     },
@@ -543,6 +599,25 @@
         {
           "slug": "wikiRule",
           "display": "Wiki编写规范"
+        }
+      ]
+    },
+    {
+      "id": "cat_别名与谐音",
+      "name": "别名与谐音",
+      "order": 6,
+      "entries": [
+        {
+          "slug": "nashake",
+          "display": "那啥课"
+        },
+        {
+          "slug": "sanrepian",
+          "display": "散热片"
+        },
+        {
+          "slug": "biechengYilan",
+          "display": "星球阁别称一览"
         }
       ]
     }

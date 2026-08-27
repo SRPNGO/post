@@ -76,6 +76,7 @@ description: 2025年8月星球阁由招新改革引发的大规模内部矛盾�
 - [SYUN](/wiki/SYUN)
 - [BSTN](/wiki/BSTN)
 - [决策网络](/wiki/decisionNetwork)
+- [2025年高层分裂事件链](/wiki/2025HighLevelSplit)
 - [1·22事件](/wiki/122event)
 - [转型运动](/wiki/transformation)
 - [审核制度](/wiki/reviewSystem)

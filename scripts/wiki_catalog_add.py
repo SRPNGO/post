@@ -9,6 +9,11 @@ Wiki 目录收录工具
   3. 交互式让添加者选择类别（数字选择 / 跳过此项 / 新建类别），把新词条追加到对应类别
   4. 写回 wiki_catalog.json（保留原有结构、缩进 2 空格、ensure_ascii=False）
 
+内置类别：
+  「别名与谐音」（id: cat_别名与谐音）为内置类别，用于收纳谐音别称 / 黑话 / 重定向类
+  页面（如 [那啥课](/wiki/nashake)、[散热片](/wiki/sanrepian)）。该类别由
+  wiki_catalog.json 驱动，无需在此硬编码，此处仅为说明其已内置。
+
 用法（在项目根目录执行）：
   python scripts/wiki_catalog_add.py
 """

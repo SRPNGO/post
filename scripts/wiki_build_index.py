@@ -23,6 +23,7 @@ import os
 import re
 import json
 import sys
+import datetime
 from html import escape
 
 # 脚本位于根目录 scripts/ 下，wiki 目录在 scripts 的上一级
@@ -294,6 +295,11 @@ def build_index():
         aliases = [a for a in aliases if a != shown_name]
         aliases = _dedup(aliases)[:5]
         category = slug_to_cat.get(slug, '')
+        # 使用条目文件 mtime（最近修改/新增时间，epoch 秒）作为"近期更新"的时间来源
+        try:
+            mtime = os.path.getmtime(path)
+        except Exception:
+            mtime = 0
         entries.append({
             'slug': slug,
             'title': title,
@@ -302,6 +308,7 @@ def build_index():
             'author': author,
             'summary': summary,
             'aliases': aliases,
+            'mtime': mtime,
             'url': f'/wiki/{slug}',
         })
 
@@ -312,11 +319,32 @@ def build_index():
             rank[e['slug']] = (cidx, eidx)
     entries.sort(key=lambda x: rank.get(x['slug'], (9999, 9999)))
 
+    # 近期更新：按条目 mtime（最近修改/新增时间）降序取前 8，供主页"近期更新"区块展示。
+    # 单独提供 slug/display/url/mtime，附带格式化日期 mtime_date，前端无需再做复杂处理。
+    recent_sorted = sorted(
+        entries,
+        key=lambda e: e.get('mtime', 0),
+        reverse=True,
+    )[:8]
+    recent_entries = [
+        {
+            'slug': e['slug'],
+            'display': e['display'],
+            'url': e['url'],
+            'mtime': e['mtime'],
+            'mtime_date': datetime.datetime.fromtimestamp(
+                e['mtime']
+            ).strftime('%Y-%m-%d'),
+        }
+        for e in recent_sorted
+    ]
+
     result = {
         'generated_at_hint': '请运行 scripts/wiki_build_index.py 重新生成此文件',
         'category_order': [c['id'] for c in categories],
         'categories': {c['id']: {'name': c['name'], 'order': c['order']} for c in categories},
         'entries': entries,
+        'recent_entries': recent_entries,
     }
     return result
 

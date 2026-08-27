@@ -305,8 +305,10 @@ def main():
         })
 
         # 写文件（仅 apply 模式且有变化时）
+        # 注意必须带 newline=''：否则 Windows 下 'w' 会把 '\n' 转成 '\r\n'，
+        # 导致仓库里 LF 行尾的文件每次运行都被改写一整行，git 记录被污染。
         if apply_mode and has_change:
-            with open(md_path, 'w', encoding='utf-8') as f:
+            with open(md_path, 'w', encoding='utf-8', newline='') as f:
                 f.write(new_content)
 
     # ============== 汇总报告 ==============
@@ -365,7 +367,8 @@ def main():
                 if not original.endswith('\n') and new_content.endswith('\n'):
                     new_content = new_content.rstrip('\n')
                 if new_content != original:
-                    with open(md_path, 'w', encoding='utf-8') as f:
+                    # newline='' 同上：保持 LF 行尾，避免 git 看到整文件行尾改动
+                    with open(md_path, 'w', encoding='utf-8', newline='') as f:
                         f.write(new_content)
                     written += 1
             print(f'  ✔ 写入完成，共修改 {written} 个文件。')
