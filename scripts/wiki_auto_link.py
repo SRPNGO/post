@@ -37,6 +37,19 @@ MIN_TERM_LENGTH = 2
 # 例如 "SRPG" 同时是「星球编程」(SRPNGO) 和「星球地理」(SRPG) 的缩写，无法确定指向谁
 TERM_BLACKLIST = {'SRPG'}
 
+# 合并交替正则（惰性构建，避免每个文件重复编译）
+# 将全部术语按长度降序合并为一个交替正则，用一次 finditer 扫出整行所有术语命中，
+# 取代原先对每个术语分别 re.finditer 扫描整行的做法，把每行代价从 O(T*L) 降到约 O(L)。
+_TERM_MERGE_RE = None
+
+
+def ensure_merged_re(sorted_terms):
+    """按长度降序把术语合并成单个交替正则。长词放前，用贪心保证命中最长的术语。"""
+    global _TERM_MERGE_RE
+    if _TERM_MERGE_RE is None:
+        _TERM_MERGE_RE = re.compile('|'.join(re.escape(t) for t in sorted_terms))
+    return _TERM_MERGE_RE
+
 
 # ============================================================
 # 工具函数：Frontmatter 解析
@@ -330,100 +343,74 @@ def is_inside_unclosed_bold_before(line, pos):
     return prefix.count('**') % 2 == 1
 
 
-def process_line_for_terms(line, sorted_terms, term_db, linked_files,
-                           self_fname, file_titles):
-    """在一行正文中替换首次出现的术语为链接。
+def process_line_for_terms(line, merged_re, term_db, linked_files, self_fname):
+    """在一行正文中替换首次出现的术语为链接（合并正则单遍扫描，约 O(L)）。
 
-    注意：本函数是「逐行」调用的，首次出现的追踪在调用方维护。
-    linked_files 按「目标文件」去重：同一条目的主标题和别名只要有一个被链接过，其余全部跳过。
+    用编译好的合并交替正则一次 finditer 扫出该行所有术语命中，
+    取代原先对每个术语分别 re.finditer 扫描整行的 O(T*L) 做法，
+    显著降低页面数量增长时的时间复杂度（约 O(n) per line）。
+
     返回 (new_line, newly_linked_terms_in_this_line)
     """
     processed = line
     link_spans = find_protected_spans(processed)
     linked_now = []
+    replacements = []  # (start, end, replacement_text)，按出现顺序收集
 
-    for term in sorted_terms:
+    for m in merged_re.finditer(processed):
+        start, end = m.span()
+        term = m.group(0)
+
         # 黑名单术语跳过（缩写有歧义，无法确定指向哪个条目）
         if term in TERM_BLACKLIST:
             continue
+        # 该命中落在已有 [[text](url)] 链接内部，跳过
+        if pos_inside_any_span(start, link_spans):
+            continue
 
-        term_fname, term_url = term_db[term]
+        # 判定是否为完整加粗 token（**term**）：前后紧邻各一对星号
+        is_whole_bold = (start >= 2 and processed[start-2:start] == '**'
+                         and processed[end:end+2] == '**')
+        # 若不是完整加粗 token，但位于某个更大加粗块的内部（如 **大术语** 中的"术语"），
+        # 属于加粗子串，跳过（原逻辑一致）
+        if not is_whole_bold and is_inside_unclosed_bold_before(processed, start):
+            continue
+
+        term_fname, term_url = term_db.get(term, (None, None))
+        if term_fname is None:
+            continue
+
         # 不链接到自身
         if term_fname == self_fname:
             continue
 
-        # 按目标文件去重：如果该文件已被链接过（无论用主标题还是别名），跳过
+        # 英文/字母数字术语需要独立左右边界
+        if re.match(r'^[A-Za-z0-9_\-]', term):
+            left_ok = (start == 0) or (not processed[start-1:start].isalnum())
+            right_ok = (end >= len(processed)) or (not processed[end].isalnum())
+            if not (left_ok and right_ok):
+                continue
+
+        # 按目标文件去重：该文件已链接过（主标题或别名任一）则跳过
         if term_fname in linked_files:
             continue
 
-        # ==========================================
-        # 优先匹配加粗形式：**术语**
-        # ==========================================
-        bold_pat = r'\*\*' + re.escape(term) + r'\*\*'
-        replaced = False
+        # 组合替换文本：加粗星号在外
+        if is_whole_bold:
+            # start 指向术语文本起点（在 ** 之后），需把整段 **term**（含两侧星号）一并替换，
+            # 避免在已有 ** 之上再叠加 [term](url) 而出现 **** 星号叠加
+            s, e = start - 2, end + 2
+            text = f'**[{term}]({term_url})**'
+        else:
+            s, e = start, end
+            text = f'[{term}]({term_url})'
+        replacements.append((s, e, text))
+        linked_files.add(term_fname)
+        linked_now.append(term)
 
-        for m in re.finditer(bold_pat, processed):
-            # 加粗标记的位置：m.start() 指向第一个 *
-            # 实际术语文字起点：m.start() + 2
-            term_text_pos = m.start() + 2
-            if pos_inside_any_span(term_text_pos, link_spans):
-                continue  # 在已有链接内部，跳过
-
-            # 执行替换：**术语** → **[术语](url)**（星号在外）
-            replacement = f'**[{term}]({term_url})**'
-            # 只替换这一个匹配（不是全部）
-            processed = processed[:m.start()] + replacement + processed[m.end():]
-            linked_files.add(term_fname)
-            linked_now.append(term)
-            replaced = True
-            # 更新 link_spans（因为文本长度改变了）
-            link_spans = find_protected_spans(processed)
-            break
-
-        if replaced:
-            continue
-
-        # ==========================================
-        # 非加粗形式：术语
-        # ==========================================
-        plain_pat = re.escape(term)
-        for m in re.finditer(plain_pat, processed):
-            tpos = m.start()
-            if pos_inside_any_span(tpos, link_spans):
-                continue
-
-            # 如果正好在加粗块内部，也跳过（说明是长加粗词的子串，例如**大术语**中匹配"术语"）
-            # 但要排除正好等于加粗完整内容的情况（此时上面的 bold_pat 应该命中）
-            if is_inside_unclosed_bold_before(processed, tpos):
-                # 找前一个 ** 和后一个 **
-                before = processed[:tpos]
-                after = processed[tpos + len(term):]
-                last_bold = before.rfind('**')
-                next_bold = after.find('**')
-                if last_bold >= 0 and next_bold >= 0:
-                    bold_content = before[last_bold + 2:] + term + after[:next_bold]
-                    if bold_content != term:
-                        # 是加粗放的子串，跳过
-                        continue
-                    # else: 加粗内容正好是term，交给bold_pat处理（这里不会到，因为bold_pat在前面已处理）
-
-            # 确认是独立术语：对于英文/字母数字，要求左右不是字母数字
-            is_alpha_num_term = bool(re.match(r'^[A-Za-z0-9_\-]', term))
-            if is_alpha_num_term:
-                left_ok = (tpos == 0) or (not processed[tpos - 1].isalnum())
-                right_idx = tpos + len(term)
-                right_ok = (right_idx >= len(processed)) or (not processed[right_idx].isalnum())
-                if not (left_ok and right_ok):
-                    continue
-
-            # 执行替换：术语 → [术语](url)
-            replacement = f'[{term}]({term_url})'
-            processed = processed[:m.start()] + replacement + processed[m.end():]
-            linked_files.add(term_fname)
-            linked_now.append(term)
-            replaced = True
-            link_spans = find_protected_spans(processed)
-            break
+    # 从右到左应用替换，避免坐标随文本长度变化而错位
+    for start, end, text in sorted(replacements, reverse=True):
+        processed = processed[:start] + text + processed[end:]
 
     return processed, linked_now
 
@@ -442,6 +429,7 @@ def process_body(body, term_db, self_fname, file_titles):
 
     # 术语按长度降序（长短语优先匹配，避免「星球圈」优先于「星球圈低质低俗化」）
     sorted_terms = sorted(term_db.keys(), key=len, reverse=True)
+    merged_re = ensure_merged_re(sorted_terms)
 
     # 节状态：进入「## 相关页面」或「注：本文由AI...」后停止处理
     in_related_or_footer = False
@@ -476,7 +464,7 @@ def process_body(body, term_db, self_fname, file_titles):
 
         # 真正处理（尝试给首次出现的纯文本术语加链接）
         new_line, line_added_terms = process_line_for_terms(
-            line, sorted_terms, term_db, linked_files, self_fname, file_titles
+            line, merged_re, term_db, linked_files, self_fname
         )
         result.append(new_line)
 

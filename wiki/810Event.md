@@ -16,7 +16,7 @@ description: 2025年8月星球阁由招新改革引发的大规模内部矛盾�
 | 名称 | 8·10事件 |
 | 时间 | 2025年8月1日—11日 |
 | 地点 | [星球阁主群](/wiki/mainGroup)及相关小群 |
-| 涉事方 | SYUN（Acubens-A、天白、[室宿一](/wiki/ssy)、XF，合称ATSX）、BSTN（水益等）、9'alpha、失忆、[海山二](/wiki/HSE)、石浪、Nsakrty等 |
+| 涉事方 | SYUN（Acubens-A、天白、[室宿一](/wiki/ssy)、XF，合称ATSX）、BSTN（水益等）、9'alpha、失忆、[海山二](/wiki/HSE)、[石浪](/wiki/shilang)、Nsakrty等 |
 | 原因 | 招新改革引发的意外事件；某新成员的个人冲突公开化；SYUN与高层核心长期积累的矛盾 |
 | 结果 | 8月11日多方调和达成和解；BSTN与SYUN对峙格局形成；2025年决策几乎只由Nsakrty与水益管理 |
 | 相关条目 | [SYUN](/wiki/SYUN)、[BSTN](/wiki/BSTN)、[决策网络](/wiki/decisionNetwork) |
