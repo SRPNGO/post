@@ -116,6 +116,22 @@
         {
           "slug": "baiJiu",
           "display": "佰玖"
+        },
+        {
+          "slug": "Earth-1",
+          "display": "Earth-1"
+        },
+        {
+          "slug": "Jceair",
+          "display": "Jceair（AXTLK）"
+        },
+        {
+          "slug": "kepuJun",
+          "display": "科普君"
+        },
+        {
+          "slug": "yingJingTaoHua",
+          "display": "樱井桃华"
         }
       ]
     },
@@ -219,6 +235,14 @@
         {
           "slug": "SRDC",
           "display": "星辰阁"
+        },
+        {
+          "slug": "xingzhisi",
+          "display": "星知司"
+        },
+        {
+          "slug": "yawangyuansi",
+          "display": "雅王院司"
         }
       ]
     },
@@ -282,6 +306,10 @@
         {
           "slug": "810Event",
           "display": "8·10事件"
+        },
+        {
+          "slug": "430Event",
+          "display": "四三零事件"
         }
       ]
     },
@@ -409,6 +437,10 @@
         {
           "slug": "2505WGQH",
           "display": "《地理——我国气候》"
+        },
+        {
+          "slug": "srpnWiki",
+          "display": "星球阁Wiki"
         }
       ]
     },
