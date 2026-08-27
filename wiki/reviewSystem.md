@@ -287,9 +287,9 @@ title: 星球阁的审核制度
 ## 相关页面
 
 - [星球阁](https://srpn.top)
-- [星球圈](./SC)
-- [画质爆炸](./HZBZ)
-- [我有生命](./WYSM)
+- [星球圈](/wiki/SC)
+- [画质爆炸](/wiki/HZBZ)
+- [我有生命](/wiki/WYSM)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
 注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年7月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

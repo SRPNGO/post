@@ -17,7 +17,7 @@ description: 星球阁的官方网站，现行域名为srpn.top，由Nsakrty担�
 | 现行域名 | srpn.top（建站于2021年1月31日） |
 | 历代域名 | xingqiuge.mysxl.cn、srpn.rth1.xyz、srpngo.github.io、srpn.top |
 | 站长 | Nsakrty |
-| 内容贡献者 | Nsakrty、[水益](/wiki/SY)、佰玖 |
+| 内容贡献者 | Nsakrty、[水益](/wiki/SY)、[佰玖](/wiki/baiJiu) |
 | 代码贡献者 | Nsakrty、清野、[新智彗星](/wiki/XZHX)、Hliva |
 | 主要板块 | 首页、历史、条例、加入方式、SiteMap、子站点、Wiki |
 | 历史定位 | 星球阁官方叙事的载体，星球阁存档计划（SRAP）的资料来源 |
@@ -52,7 +52,7 @@ description: 星球阁的官方网站，现行域名为srpn.top，由Nsakrty担�
 
 SRPN网导航栏设有**首页、历史、条例、加入方式、SiteMap、子站点、Wiki**七大板块：
 
-- **首页**：介绍"星球阁是什么"，并列出成员名、介绍与备注表格（如"水益——潜力巨大——现任阁主""[Maugfy](/wiki/maugfy)——星球阁粉丝最多的成员""AcuBens-A——[抽象科普](/wiki/CXKP)的'开创人'"等）；
+- **首页**：介绍"星球阁是什么"，并列出成员名、介绍与备注表格（如"水益——潜力巨大——前阁主（2025.9—2026.8）""Nsakrty——现任阁主、官网/Wiki建立者""[Maugfy](/wiki/maugfy)——星球阁粉丝最多的成员""AcuBens-A——[抽象科普](/wiki/CXKP)的'开创人'"等）；
 - **历史**：即"SRPN历史网"，收录星球阁简史、大事年表等官方历史文本；
 - **条例**：收录现行《星球阁条例》（3.0.0 Alpha）、《星球阁处罚条例》及旧版备份页，相关演变详见[星球阁条例的演变](/wiki/tiaoliEvolution)；
 - **加入方式**：说明入阁流程（如"由于现在审核放宽，在阅读完《星球阁条例》后……"）；

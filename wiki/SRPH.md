@@ -61,11 +61,11 @@ description: 星球阁分组织之一，2022年8月14日成立，以编撰文言
 
 ## 相关页面
 
-- [星球阁](./SRPN)
-- [星球圈](./SC)
-- [星球阁存档计划](./SRAP)
-- [星球阁的审核制度](./reviewSystem)
-- [星球地理](./SRPG)
+- [星球阁](/wiki/SRPN)
+- [星球圈](/wiki/SC)
+- [星球阁存档计划](/wiki/SRAP)
+- [星球阁的审核制度](/wiki/reviewSystem)
+- [星球地理](/wiki/SRPG)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
 注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年8月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

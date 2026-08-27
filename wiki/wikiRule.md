@@ -178,7 +178,9 @@ description: 条目简要说明。
 - 星球阁官网：[srpn.top](https://srpn.top)
 ```
 
-> 注意：此节中的链接使用 **`./xxx` 或 `https://`** 格式（以当前文件为基准的相对路径或绝对路径），而正文中的互链统一使用 **`/wiki/xxx` 根相对路径**。二者格式不同，请勿混淆。
+> ⚠️ **格式统一（强制）**：无论正文中的互链、还是「相关页面」节中的 Wiki 内链，**一律统一使用 `/wiki/<文件名>` 根相对路径格式**（不带 `.md` 后缀，以 `/` 开头）。`./xxx` 相对路径格式**不再被允许**，请使用上方示例中的写法。外链仍使用完整 `https://` URL，无需改动。
+>
+> **唯一例外**：YAML frontmatter 中 `customExtraContent` 字段内的 `<a href="./wiki_intro">` 必须保留 `./` 前缀（Jekyll 渲染基准要求，见 §2.1 提醒），此路径不受规范化脚本处理。
 
 #### （7）页脚注释
 
@@ -205,6 +207,10 @@ description: 条目简要说明。
 | 本站其他页面（如首页） | `/index`、`/traffic` 等 | `[返回首页](/index)` |
 | 星球阁官网 srpn.top | `https://srpn.top/<path>` | `[星球阁官网](https://srpn.top/srpn/history)` |
 | 其他外部网站 | 完整绝对 URL | `[Nsakrty的主页](https://v.douyin.com/...)` |
+
+> 🔒 **格式一致性强制要求**：上表中的 Wiki 内链格式（`/wiki/<文件名>`）**对全文所有位置一律生效**——无论正文段落、表格内、引用块中，还是「## 相关页面」节的无序列表，均无例外。`./xxx` 或 `<文件名>.md` 形式的相对路径**禁止使用**。外链、锚点（`#xxx`）、站内图片路径（`/img/xxx`）、以及 YAML `customExtraContent` 字段内的 `./wiki_intro` 不受此限。
+>
+> 🛠️ **维护工具**：可使用 `python scripts/wiki_normalize_links.py`（预览 / `--apply` 实际写入）一键将全文旧格式的 `./xxx` 内链规范化为 `/wiki/xxx`，并自动校验目标文件是否真实存在（避免误转断链）。
 
 ### 4.2 链接原则
 
@@ -390,6 +396,8 @@ Wiki 中信息表的常用格式：
 6. **类型识别**：使用Wiki工具`/scripts/wiki_catalog_add.py`，手动对新条目进行类型识别。
 7. **注册到主页**：使用Wiki工具`/scripts/wiki_build_index.py`，对新条目添加到主页。工具将编辑`/wiki/wiki_index.json`文件，添加新条目的链接。
 8. **审核校对**：提交给 Nsakrty 或指定审核者进行事实校对后，即可发布。
+
+注：第四步起可以使用Wiki工具`/scripts/workflow.py`半自动完成。
 
 ---
 

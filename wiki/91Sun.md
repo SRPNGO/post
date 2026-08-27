@@ -56,11 +56,11 @@ description: 91Sun，河北石家庄人，天文爱好者，2026年8月入阁的
 
 ## 相关页面
 
-- [Maugfy](./maugfy)
-- [青菜](./qc)
-- [星球圈](./SC)
-- [恒星生命历程](./starLife)
-- [星球阁存档计划](./SRAP)
+- [Maugfy](/wiki/maugfy)
+- [青菜](/wiki/qc)
+- [星球圈](/wiki/SC)
+- [恒星生命历程](/wiki/starLife)
+- [星球阁存档计划](/wiki/SRAP)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
 注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年8月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

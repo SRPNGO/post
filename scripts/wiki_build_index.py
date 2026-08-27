@@ -302,7 +302,7 @@ def build_index():
             'author': author,
             'summary': summary,
             'aliases': aliases,
-            'url': f'./{slug}',
+            'url': f'/wiki/{slug}',
         })
 
     # 按照 wiki_catalog.json 中的分类顺序对 entries 排序（未分类的排到最后）

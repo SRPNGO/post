@@ -95,7 +95,7 @@ SRAP自评是"星球阁中最危险但是价值也最大的资料之一"。其�
 ## 相关页面
 
 - [星球阁存档计划](/wiki/SRAP)
-- [星球阁Wiki主界面](/wiki/wiki_intro)
+- [星球阁Wiki主界面](/wiki/wikiRule)
 - [星球阁的组织认同困局](/wiki/OrgId)
 - [星球阁与星球圈的关系](/wiki/relationship)
 - 星球阁官网：[srpn.top](https://srpn.top)

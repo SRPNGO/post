@@ -100,7 +100,7 @@ Nsakrty对此的评价是"你们的叙事更加系统一些"，并澄清"我们�
 - [星球圈](/wiki/SC)
 - [星球阁的组织认同困局](/wiki/OrgId)
 - [星球阁与星球圈的关系](/wiki/relationship)
-- [星球阁Wiki主界面](/wiki/wiki_intro)
+- [星球阁Wiki主界面](/wiki/wikiRule)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
 注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年8月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

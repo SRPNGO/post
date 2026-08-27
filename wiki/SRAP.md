@@ -202,10 +202,10 @@ SRAP 是一个**持续生长**的存档工程。其未来的发展方向包括�
 
 ## 相关页面
 
-- [星球圈](./SC)
-- [画质爆炸](./HZBZ)
+- [星球圈](/wiki/SC)
+- [画质爆炸](/wiki/HZBZ)
 - [星球阁](https://srpn.top)
-- [转型运动](./transformation)
+- [转型运动](/wiki/transformation)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
 > **"30万字远远不够描述一个人的100%。"**

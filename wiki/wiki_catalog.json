@@ -112,6 +112,10 @@
         {
           "slug": "yutu",
           "display": "鱼土"
+        },
+        {
+          "slug": "baiJiu",
+          "display": "佰玖"
         }
       ]
     },
@@ -197,10 +201,6 @@
           "display": "星球阁"
         },
         {
-          "slug": "SRAPMethods",
-          "display": "SRAP的方法论与编纂原则"
-        },
-        {
           "slug": "mainGroup",
           "display": "星球阁主群"
         },
@@ -215,6 +215,10 @@
         {
           "slug": "orgList",
           "display": "星球圈组织名单"
+        },
+        {
+          "slug": "SRDC",
+          "display": "星辰阁"
         }
       ]
     },

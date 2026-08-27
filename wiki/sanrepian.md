@@ -38,7 +38,7 @@ title: 散热片
 
 ## 相关页面
 
-- [星球圈](./SC)
+- [星球圈](/wiki/SC)
 - [星球阁](https://srpn.top)
 - 星球阁官网：[srpn.top](https://srpn.top)
 

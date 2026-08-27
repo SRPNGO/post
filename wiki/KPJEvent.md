@@ -107,7 +107,7 @@ description: 2023年9月—2024年1月星球阁与前星球阁成员、军武阁
 - [水益](/wiki/SY)
 - [Nsakrty](/wiki/nsakrty)
 - [中子星事件](/wiki/ZZXEvent)
-- [科学商所长事件](/wiki/keshangEvent)
+- [科学商所长事件](/wiki/keShangEvent)
 - [四三〇事件](/docs/430EventXBJ)
 - [转型运动](/wiki/transformation)
 - [星球阁存档计划](/wiki/SRAP)

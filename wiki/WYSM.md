@@ -168,14 +168,14 @@ title: 我有生命
 
 ## 相关页面
 
-- [星球圈](./SC)
+- [星球圈](/wiki/SC)
 - [星球阁](https://srpn.top)
-- [画质爆炸](./HZBZ)
-- [转型运动](./transformation)
-- [大眼苍蝇](./DYCY)
-- [恒星生命历程](./starLife)
-- [青菜](./qc)
-- [审核制度](./reviewSystem)
+- [画质爆炸](/wiki/HZBZ)
+- [转型运动](/wiki/transformation)
+- [大眼苍蝇](/wiki/DYCY)
+- [恒星生命历程](/wiki/starLife)
+- [青菜](/wiki/qc)
+- [审核制度](/wiki/reviewSystem)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
 注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年7月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

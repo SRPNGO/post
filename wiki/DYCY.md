@@ -126,11 +126,11 @@ title: 大眼苍蝇
 
 ## 相关页面
 
-- [星球圈](./SC)
+- [星球圈](/wiki/SC)
 - [星球阁](https://srpn.top/)
-- [画质爆炸](./HZBZ)
-- [转型运动](./transformation)
-- [我有生命](./WYSM)
-- [恒星生命历程](./starLife)
+- [画质爆炸](/wiki/HZBZ)
+- [转型运动](/wiki/transformation)
+- [我有生命](/wiki/WYSM)
+- [恒星生命历程](/wiki/starLife)
 
 注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年7月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

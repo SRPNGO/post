@@ -243,10 +243,10 @@ title: 青菜
 
 ## 相关页面
 
-- [画质爆炸](./HZBZ)
-- [星球圈](./SC)
-- [转型运动](./transformation)
-- [我有生命](./WYSM)
+- [画质爆炸](/wiki/HZBZ)
+- [星球圈](/wiki/SC)
+- [转型运动](/wiki/transformation)
+- [我有生命](/wiki/WYSM)
 - [星球阁](https://srpn.top)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
