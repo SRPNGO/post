@@ -2,6 +2,7 @@
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro">返回wiki主页</a></p>
 title: 2025年高层分裂事件链
+aliases: E2-S9SNS-NK天白事件
 description: 星球阁2025年由S9SNS事件、8·10事件与E2边缘化及天白决裂三条支线构成的连锁分裂危机，存档资料合称为E2-S9SNS-NK天白事件。
 ---
 

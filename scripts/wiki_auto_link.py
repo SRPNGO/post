@@ -6,7 +6,7 @@
 
 功能：
   1. 扫描 wiki/ 目录下所有 .md 文件，从 YAML frontmatter 的 title 字段提取专有名词
-  2. 从首段定义句中额外提取别名（又称**XX**、英文 **XX**、缩写 **XX** 等模式）
+  2. 从首段定义句及 frontmatter aliases 字段提取别名（又称**XX**、英文 **XX**、缩写 **XX** 等模式）
   3. 对每个 Wiki 文件的纯正文（排除 frontmatter、## 各级标题、相关页面节、页脚注释）进行扫描
   4. 对首次出现的、尚未添加链接的专有名词自动加链接
   5. 若术语出现时已加粗（**术语**），则链接格式为 **[术语](url)**，即星号在外
@@ -94,6 +94,44 @@ def extract_title_from_frontmatter(frontmatter):
     if match:
         return match.group(1).strip()
     return None
+
+
+def extract_aliases_from_frontmatter(frontmatter):
+    """从 frontmatter 的 aliases 字段提取手动别名，返回 set。
+
+    支持单行（逗号/顿号/斜杠分隔）与多行「- xxx」缩进列表两种写法。
+    手动别名不经正文抽取的严格过滤（长度、字符集等），原样保留；
+    黑名单与冲突检查由调用方在注册术语时统一处理。
+    """
+    aliases = set()
+    lines = frontmatter.split('\n')
+    i = 0
+    while i < len(lines):
+        m = re.match(r'^aliases:\s*(.*)$', lines[i])
+        if not m:
+            i += 1
+            continue
+        single = m.group(1).strip()
+        if single:
+            for part in re.split(r'[,，、;；/]', single):
+                part = part.strip().strip('"\'')
+                if part:
+                    aliases.add(part)
+        else:
+            j = i + 1
+            while j < len(lines):
+                st = lines[j].strip()
+                if st.startswith('- '):
+                    part = st[2:].strip().strip('"\'')
+                    if part:
+                        aliases.add(part)
+                    j += 1
+                elif st == '':
+                    j += 1
+                else:
+                    break
+        break
+    return aliases
 
 
 # ============================================================
@@ -254,9 +292,10 @@ def build_term_database(wiki_dir):
                 existing_fname, _ = term_db[title]
                 print(f'   [!] 术语「{title}」冲突：{fname} vs {existing_fname}.md，保留前者')
 
-        # --- 从首段提别名 ---
+        # --- 从首段定义句 + frontmatter aliases 提别名 ---
         first_para = extract_first_paragraph(body)
         aliases = extract_aliases_from_first_para(first_para, title)
+        aliases |= extract_aliases_from_frontmatter(fm)  # frontmatter 手动指定别名
         for alias in aliases:
             if alias in TERM_BLACKLIST:
                 print(f'   [-] 别名「{alias}」在黑名单中，跳过注册 （来自 {fname}）')

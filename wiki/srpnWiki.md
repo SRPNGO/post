@@ -2,10 +2,10 @@
 customExtraContent: | # 这个竖线|必须加，保留后续HTML格式
   <p class="center"><a href="./wiki_intro">返回wiki主页</a></p>
 title: 星球阁Wiki
-description: 星球阁的对外公开Wiki站点，托管于oc.srpn.top/wiki，2026年7月中旬建立，所有条目由AI依据《星球阁存档计划》资料生成并经Nsakrty审核，是SRAP的直接成果与星球圈知识体系的核心载体。
+description: 星球阁的对外公开Wiki站点，托管于oc.srpn.top/wiki，2026年7月17日建立，所有条目由AI依据《星球阁存档计划》资料生成并经Nsakrty审核，是SRAP的直接成果与星球圈知识体系的核心载体。
 ---
 
-**星球阁Wiki**是[星球阁](/wiki/SRPN)的对外公开知识库站点，托管于 oc.srpn.top 的 `wiki/` 目录下，基于 Jekyll 的 Kramdown Markdown 引擎渲染。该Wiki由[Nsakrty](/wiki/nsakrty)于**2026年7月中旬**建立，所有条目均由AI依据《[星球阁存档计划](/wiki/SRAP)》（SRAP）资料生成，并经Nsakrty的审核与修改。星球阁Wiki被视为SRAP的"直接成果"——其内容深度远超官网叙事，且完全独立于官网内容体系。截至2026年8月，该Wiki收录109个条目，覆盖人物、组织制度、历史事件、内容现象、议题分析与导航参考六大分类。
+**星球阁Wiki**是[星球阁](/wiki/SRPN)的对外公开知识库站点，托管于 oc.srpn.top 的 `wiki/` 目录下，基于 Jekyll 的 Kramdown Markdown 引擎渲染。该Wiki由[Nsakrty](/wiki/nsakrty)于**2026年7月17日**建立（据本站Git提交记录，同日14时49分有"星球阁wiki页面上传"提交，为Wiki首批条目的首次入库），所有条目均由AI依据《[星球阁存档计划](/wiki/SRAP)》（SRAP）资料生成，并经Nsakrty的审核与修改。星球阁Wiki被视为SRAP的"直接成果"——其内容深度远超官网叙事，且完全独立于官网内容体系。截至2026年8月，该Wiki收录109个条目，覆盖人物、组织制度、历史事件、内容现象、议题分析与导航参考六大分类。
 
 ---
 
@@ -15,7 +15,7 @@ description: 星球阁的对外公开Wiki站点，托管于oc.srpn.top/wiki，20
 |------|------|
 | 名称 | 星球阁Wiki（Star Pavilion Wiki） |
 | 域名 | oc.srpn.top/wiki |
-| 建立时间 | 2026年7月中旬 |
+| 建立时间 | 2026年7月17日 |
 | 建立者 | [Nsakrty](/wiki/nsakrty) |
 | 内容来源 | 《[星球阁存档计划](/wiki/SRAP)》（SRAP）\[主\]\[核\]\[专\]\[常\]资料 |
 | 生成方式 | AI依据SRAP资料生成，经Nsakrty审核修改 |
@@ -36,15 +36,15 @@ description: 星球阁的对外公开Wiki站点，托管于oc.srpn.top/wiki，20
 
 **SRAP的成熟**：2025年7月9日，[星球阁存档计划(SRAP)](/wiki/SRAP)正式立项。经过一年的资料整理与AI分析实践，SRAP已积累约78万字的多维资料体系。2026年7月16日，Nsakrty宣布星球阁官网总文字资料突破40万字，并正式计划上线Wiki功能，将社群历史进一步档案化。
 
-**子站点基础**：2025年7月19日，星球阁非官方文档汇总站（oc.srpn.top）正式上线，由Nsakrty担任站长，用于整理星球阁非官方立场的文章。7月24日，[水益](/wiki/SY)成为该站编辑。这一子站点的建立为Wiki的托管提供了基础设施。oc.srpn.top与主站srpn.top在叙事定位上明确区分——主站承载官方叙事，子站点承载更深入、更接近原始资料的记录。
+**子站点基础**：2025年7月19日，[星球阁非官方文档汇总站](/wiki/nonOfficialDocSite)（oc.srpn.top）正式上线，由Nsakrty担任站长，用于整理星球阁非官方立场的文章。7月24日，[水益](/wiki/SY)成为该站编辑。这一子站点的建立为Wiki的托管提供了基础设施。oc.srpn.top与主站srpn.top在叙事定位上明确区分——主站承载官方叙事，子站点承载更深入、更接近原始资料的记录。
 
 ---
 
 ## 发展历程
 
-### 建立与上线（2026年7月中旬）
+### 建立与上线（2026年7月17日）
 
-2026年7月中旬，星球阁Wiki正式上线。Nsakrty依据SRAP的\[主\]\[核\]\[专\]\[常\]资料，利用AI逐条生成Wiki条目，并逐一审核修改。Wiki的首页（wiki_intro）采用分类卡片视图，支持站内搜索条目、别名或关键词，条目数据由wiki_index.json动态索引。
+2026年7月17日，星球阁Wiki首批条目通过"星球阁wiki页面上传"提交正式入库并上线。Nsakrty依据SRAP的\[主\]\[核\]\[专\]\[常\]资料，利用AI逐条生成Wiki条目，并逐一审核修改。Wiki的首页（wiki_intro）采用分类卡片视图，支持站内搜索条目、别名或关键词，条目数据由wiki_index.json动态索引。
 
 建立初期，Wiki即收录了近百个条目，涵盖人物（如[Nsakrty](/wiki/nsakrty)、[水益](/wiki/SY)、[Earth-2](/wiki/E2)等）、组织与制度（如[星球阁](/wiki/SRPN)、[BSTN](/wiki/BSTN)、[SYUN](/wiki/SYUN)等）、历史事件（如[1·22事件](/wiki/122event)、[8·10事件](/wiki/810Event)、[新智彗星事件](/wiki/XZHXEvent)等）、内容与现象（如[转型运动](/wiki/transformation)、[抽象科普](/wiki/CXKP)、[学科燃剪](/wiki/XKRJ)等）、议题分析（如[治理模式演变](/wiki/governance)、[决策网络](/wiki/decisionNetwork)、[整合问题](/wiki/integration)等）以及导航参考（如[对回归成员的快速导航](/wiki/navigate)、[Wiki编写规范](/wiki/wikiRule)）六大分类。
 
