@@ -234,5 +234,11 @@ title: 星球圈
 - [学科燃剪](/wiki/XKRJ)
 - [转型运动](/wiki/transformation)
 - [抽象科普](/wiki/CXKP)
+- [传统星球圈](/wiki/traditionalSC)
+- [星球圈低质低俗化](/wiki/XQDHInvasion)
+- [星球圈双线叙事](/wiki/dualNarrative)
+- [生命周期](/wiki/groupLifeCycle)
+- [星球阁与星球圈的关系](/wiki/relationship)
+- [星联阁系组织谱系](/wiki/starLeagueClans)
 
 注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年9月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。
