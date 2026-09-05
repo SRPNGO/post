@@ -124,6 +124,7 @@ Nsakrty则在回复中说明了紧急决策的逻辑：
 
 - [审核制度](/wiki/reviewSystem)
 - [二群制度](/wiki/secondGroup)
+- [星球阁条例的演变](/wiki/tiaoliEvolution)
 - [BSTN](/wiki/BSTN)
 - [SYUN](/wiki/SYUN)
 - [转型运动](/wiki/transformation)
@@ -131,4 +132,4 @@ Nsakrty则在回复中说明了紧急决策的逻辑：
 - [星球阁存档计划](/wiki/SRAP)
 - 星球阁官网：[srpn.top](https://srpn.top)
 
-注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年8月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。
+注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年9月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

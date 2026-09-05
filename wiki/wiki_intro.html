@@ -754,6 +754,7 @@
             html += `<li><a href="#${cid}">${escapeHtml(cat.name)}<span class="count">${count}</span></a></li>`;
           });
           html += `<li><a href="#search-top" id="jumpSearchLink">🔍 搜索</a></li>`;
+          html += `<li><a href="#" id="randomPageLink">🎲 随机条目</a></li>`;
           ul.innerHTML = html;
           $("#sideTotalCount").textContent = index.entries
             ? index.entries.length
@@ -1181,6 +1182,21 @@
             } catch (_) {}
             if (window.scrollTo)
               window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+
+          // 侧栏"🎲 随机条目"：从已加载索引随机挑一页跳转（事件委托，元素稍后才渲染）
+          document.addEventListener("click", (ev) => {
+            const link =
+              ev.target &&
+              ev.target.closest &&
+              ev.target.closest("#randomPageLink");
+            if (!link) return;
+            ev.preventDefault();
+            const entries = state.index && state.index.entries;
+            if (entries && entries.length) {
+              const pick = entries[Math.floor(Math.random() * entries.length)];
+              if (pick && pick.url) window.location.href = pick.url;
+            }
           });
 
           // 导航栏展开/折叠：汉堡按钮、标题、遮罩、TOC 链接均触发（scrim 由 JS 同步显隐）

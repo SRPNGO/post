@@ -24,6 +24,7 @@ import re
 import json
 import sys
 import datetime
+import subprocess
 from html import escape
 
 # 脚本位于根目录 scripts/ 下，wiki 目录在 scripts 的上一级
@@ -35,6 +36,44 @@ OUT_JSON = os.path.join(WIKI_DIR, 'wiki_index.json')
 OUT_JS   = os.path.join(WIKI_DIR, 'wiki_index_snapshot.js')
 
 EXCLUDE_SLUGS = {'wiki_intro'}
+
+
+def get_git_recent(max_commits=2):
+    """取最近 max_commits 笔 git 提交中发生变动的 wiki 条目，作为"近期更新"来源。
+
+    语义：近期更新 = 本次与上次提交里改动/新增过的条目，而不是文件 mtime
+    （批量构建/脚本改写会让大量 mtime 同时变化，导致"最近更新"失真）。
+
+    返回: [{'slug': str, 'date': 'YYYY-MM-DD'}], 按提交新旧排序、同提交内
+    按 git 报告顺序；git 不可用、无提交或非 wiki 变更时返回 []。
+    """
+    items = []
+    seen = set()
+    try:
+        for i in range(max_commits):
+            proc = subprocess.run(
+                ['git', '-C', PROJECT_ROOT, 'log', '--max-count=1', '--skip', str(i),
+                 '--pretty=format:%aI', '--name-only'],
+                capture_output=True, text=True, encoding='utf-8', timeout=15,
+            )
+            lines = proc.stdout.splitlines()
+            if not lines:
+                continue
+            date = ''
+            if lines[0][:10] and lines[0][4] == '-' and lines[0][7] == '-':
+                date = lines[0][:10]  # 作者时间戳的 YYYY-MM-DD
+            for ln in lines[1:]:
+                ln = ln.strip()
+                if not ln.endswith('.md'):
+                    continue
+                slug = os.path.splitext(os.path.basename(ln))[0]
+                if slug in seen:
+                    continue
+                seen.add(slug)
+                items.append({'slug': slug, 'date': date})
+    except Exception:
+        return []
+    return items
 
 
 def extract_frontmatter_and_body(content):
@@ -319,25 +358,23 @@ def build_index():
             rank[e['slug']] = (cidx, eidx)
     entries.sort(key=lambda x: rank.get(x['slug'], (9999, 9999)))
 
-    # 近期更新：按条目 mtime（最近修改/新增时间）降序取前 8，供主页"近期更新"区块展示。
-    # 单独提供 slug/display/url/mtime，附带格式化日期 mtime_date，前端无需再做复杂处理。
-    recent_sorted = sorted(
-        entries,
-        key=lambda e: e.get('mtime', 0),
-        reverse=True,
-    )[:8]
-    recent_entries = [
-        {
+    # 近期更新：取最近两笔 git 提交变动的 wiki 条目（"本次和上次更新"），
+    # 而非 mtime 降序——避免批量构建/脚本改动让 mtime 集体变化导致失真。
+    # git 不可用或无 wiki 变更时 recent_entries 为空，前端会自动隐藏该区块。
+    slug_to_entry = {e['slug']: e for e in entries}
+    recent_entries = []
+    for it in get_git_recent(max_commits=2):
+        e = slug_to_entry.get(it['slug'])
+        if not e:
+            continue
+        recent_entries.append({
             'slug': e['slug'],
             'display': e['display'],
             'url': e['url'],
-            'mtime': e['mtime'],
-            'mtime_date': datetime.datetime.fromtimestamp(
-                e['mtime']
-            ).strftime('%Y-%m-%d'),
-        }
-        for e in recent_sorted
-    ]
+            'mtime': e.get('mtime', 0),
+            'mtime_date': it['date'] or datetime.date.today().strftime('%Y-%m-%d'),
+        })
+    recent_entries = recent_entries[:8]
 
     result = {
         'generated_at_hint': '请运行 scripts/wiki_build_index.py 重新生成此文件',

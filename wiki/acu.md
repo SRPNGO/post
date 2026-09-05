@@ -193,6 +193,14 @@ Acubens-A在星球阁历史中扮演了极为复杂的角色。在创作领域�
 4. 《2026年4月19日Nsakrty和Acubens-A的对话》
 5. 《星球阁成员视频文字描述》
 
+## 相关页面
+
+- [Nsakrty](/wiki/nsakrty)
+- [团结工会（SYUN）](/wiki/SYUN)
+- [天白](/wiki/TB)
+- [抽象科普](/wiki/CXKP)
+- [转型运动](/wiki/transformation)
+
 ---
 
-注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年7月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。
+注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年9月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。

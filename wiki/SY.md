@@ -208,6 +208,14 @@ Nsakrty在2026年4月的对话中对水益的评价则体现了高度的信任�
 6. 《群聊聊天记录（总结版）》
 7. 星球阁官网（srpn.top）首页
 
+## 相关页面
+
+- [Nsakrty](/wiki/nsakrty)
+- [BSTN](/wiki/BSTN)
+- [星球阁主群](/wiki/mainGroup)
+- [学科燃剪](/wiki/XKRJ)
+- [转型运动](/wiki/transformation)
+
 ---
 
-注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年8月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。
+注：本文由AI经《星球阁存档计划》资料整理而生成，并经过Nsakrty的审核和修改，最后更新于2026年9月。内容仅供参考，不代表官方立场，更多详情请参考星球阁官网([srpn.top](https://srpn.top))。
