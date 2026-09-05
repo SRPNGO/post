@@ -233,6 +233,10 @@
           "display": "新星球动画圈"
         },
         {
+          "slug": "traditionalSC",
+          "display": "传统星球圈"
+        },
+        {
           "slug": "conceptAnalysis",
           "display": "星球圈相关概念辨析"
         },
@@ -588,6 +592,10 @@
         {
           "slug": "academicEvolution",
           "display": "星球圈学术体系演变"
+        },
+        {
+          "slug": "circleIdentity",
+          "display": "星球圈的圈子认同混乱"
         }
       ]
     },
