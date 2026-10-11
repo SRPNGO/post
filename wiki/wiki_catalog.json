@@ -615,6 +615,10 @@
         {
           "slug": "wikiRule",
           "display": "Wiki编写规范"
+        },
+        {
+          "slug": "neutrality",
+          "display": "条目中立性与修正机制"
         }
       ]
     },

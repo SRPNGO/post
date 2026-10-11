@@ -472,9 +472,25 @@ def process_body(body, term_db, self_fname, file_titles):
 
     # 节状态：进入「## 相关页面」或「注：本文由AI...」后停止处理
     in_related_or_footer = False
+    # 围栏代码块状态：其中的示例文本不应被自动加链接
+    in_fence = False
 
     for line in lines:
         stripped = line.strip()
+
+        # 围栏代码块（``` / ~~~）：整段跳过，避免把文档示例当成正文加链接
+        if stripped.startswith('```') or stripped.startswith('~~~'):
+            in_fence = not in_fence
+            result.append(line)
+            continue
+        if in_fence:
+            result.append(line)
+            continue
+
+        # backstage 容器开标签：属性值（data-title 等）中加 Markdown 链接会破坏标记
+        if stripped.startswith('<') and 'class="srp-backstage' in stripped:
+            result.append(line)
+            continue
 
         # 检测是否进入跳过区域
         if not in_related_or_footer:

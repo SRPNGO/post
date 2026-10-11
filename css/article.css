@@ -125,3 +125,99 @@ hr {
   border-top: 1px dashed #bbb;
   margin: 1.5em 0;
 }
+
+/* ============================================================================
+   backstage 分层内容（.srp-backstage）
+   ----------------------------------------------------------------------------
+   - 默认隐藏；仅在 URL 带 ?backstage=1 时由 js/srp-backstage.js 加 .bs-on 展开。
+   - 本机制是"呈现分层"而非权限控制：后台文本仍存在于页面源码与仓库中。
+   ========================================================================== */
+.srp-backstage {
+  display: none;
+}
+
+html.backstage-on .srp-backstage.bs-on {
+  display: block;
+}
+
+.srp-backstage {
+  border: 1px dashed #c9a227;
+  border-left: 4px solid #c9a227;
+  background: #fffdf2;
+  border-radius: 0 6px 6px 0;
+  padding: 10px 14px;
+  margin: 1.4em 0;
+}
+
+.srp-backstage > p {
+  text-indent: 0;
+}
+
+.srp-backstage > :first-child {
+  margin-top: 0;
+}
+
+.srp-backstage-note {
+  font-size: 0.85em;
+  line-height: 1.7;
+  color: #7a6216;
+  background: #fff6d5;
+  border: 1px solid #e8d48a;
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-bottom: 0.9em;
+  text-indent: 0;
+}
+
+.srp-backstage-layer {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: #c9a227;
+  color: #fff;
+  font-size: 0.85em;
+}
+
+.srp-backstage-banner {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 7px 12px;
+  background: #3d3410;
+  color: #ffe9a8;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  text-align: center;
+  text-indent: 0;
+}
+
+.srp-backstage-banner-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #ffcf3f;
+  vertical-align: middle;
+}
+
+.srp-backstage-banner a.srp-backstage-banner-off {
+  color: #ffcf3f;
+  margin-left: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.srp-entry-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: #c9a227;
+  color: #fff;
+  font-size: 0.72em;
+  vertical-align: middle;
+}

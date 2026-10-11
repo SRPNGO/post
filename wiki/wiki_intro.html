@@ -656,6 +656,8 @@
       </p>
     </footer>
 
+    <!-- 内部资料的展开控制由该脚本统一处理（参数由维护者掌握） -->
+    <script src="../js/srp-backstage.js"></script>
     <!-- 快照数据：优先加载，即便 JSON fetch 失败也能渲染。脚本内容由 wiki_build_index.py 生成。 -->
     <script
       src="./wiki_index_snapshot.js"
@@ -674,6 +676,8 @@
           currentKw: "",
           activeCatFilter: "all", // all | cat_xxx
           viewMode: "card", // card | list（紧凑标题列表，仿 wiki_intro.md）
+          // 内部资料：仅在内部视图下加载隐藏内容的全文索引
+          backstage: { requested: false, loaded: false, entries: 0, blocks: 0 },
         };
 
         // ---------- 工具 ----------
@@ -908,7 +912,10 @@
                   .map((a) => highlight(a, kw))
                   .join("·")}）</span>`
               : "";
-          return `<li><a href="${escapeHtml(e.url)}">${title}</a>${aliasesHtml}</li>`;
+          const bsBadge = e._bs
+            ? '<span class="srp-entry-badge">含后台层</span>'
+            : "";
+          return `<li><a href="${escapeHtml(e.url)}">${title}</a>${bsBadge}${aliasesHtml}</li>`;
         }
 
         function renderEntryCard(e, kw) {
@@ -920,9 +927,12 @@
                   .join(" · ")}</div>`
               : "";
           const summary = highlight(e.summary || "", kw);
+          const bsBadge = e._bs
+            ? '<span class="srp-entry-badge">含后台层</span>'
+            : "";
           return `
             <a class="entry-card" href="${escapeHtml(e.url)}">
-              <div class="entry-title">${title}</div>
+              <div class="entry-title">${title}${bsBadge}</div>
               ${aliasesHtml}
               <div class="entry-summary">${summary}</div>
             </a>
@@ -939,6 +949,7 @@
             entry.slug || "",
             entry.author || "",
             entry.summary || "",
+            entry._bs || "", // 隐藏内容全文（默认视图为空，仅内部视图注入）
           ];
           return normalize(haystacks.join(" \u0001 "));
         }
@@ -991,6 +1002,13 @@
             score += 10;
             strongHit = true;
           }
+          // 隐藏内容全文：仅当已加载隐藏内容索引时，_bs 才非空。
+          // 默认视图下 _bs 为空，隐藏内容不会出现在搜索结果里。
+          const bsText = normalize(entry._bs || "");
+          if (bsText && bsText.includes(kwNorm)) {
+            score += 6;
+            strongHit = true;
+          }
           // 多关键词 AND（按空白分割）
           const tokens = kwNorm.split(/\s+/).filter(Boolean);
           if (tokens.length > 1) {
@@ -1000,7 +1018,8 @@
               const inAlias = aliases.some((a) => a.includes(tok));
               const inSlug = slug.includes(tok);
               const inSummary = summary.includes(tok);
-              if (inTitle || inAlias || inSlug) {
+              const inBs = bsText.includes(tok);
+              if (inTitle || inAlias || inSlug || inBs) {
                 score += 8;
                 anyStrong = true;
                 strongHit = true;
@@ -1261,6 +1280,80 @@
           }
         }
 
+        // ---------- 内部资料的按需检索 ----------
+        // 默认视图不加载隐藏内容；只有以内部视图打开时才按需加载，
+        // 并把后台全文并入搜索域（搜索结果卡片会带"含后台层"角标）。
+        function renderBackstageHint(data) {
+          const host = $("#statRow");
+          if (!host || $("#backstageStat")) return;
+          const n =
+            (data && data.entry_count) ||
+            Object.keys((data && data.entries) || {}).length ||
+            0;
+          const b = (data && data.block_count) || 0;
+          const span = document.createElement("span");
+          span.id = "backstageStat";
+          span.innerHTML = `🔒 backstage 内部检索已启用 · <b>${n}</b> 个条目含隐藏内容（<b>${b}</b> 段）`;
+          host.appendChild(span);
+        }
+
+        function applyBackstageIndex(data) {
+          if (!data || !data.entries || !state.index) return false;
+          const bySlug = {};
+          (state.index.entries || []).forEach((e) => {
+            bySlug[e.slug] = e;
+          });
+          let n = 0;
+          Object.keys(data.entries).forEach((slug) => {
+            const e = bySlug[slug];
+            if (!e) return;
+            e._bs = data.entries[slug].text || "";
+            e._bsLayers = data.entries[slug].layers || [];
+            n++;
+          });
+          state.backstage.loaded = true;
+          state.backstage.entries = n;
+          state.backstage.blocks = data.block_count || 0;
+          renderBackstageHint(data);
+          // 若当前正处于搜索态，重新跑一次查询把后台命中带出来
+          if (state.currentKw) runAndRenderSearchQuery();
+          return true;
+        }
+
+        function loadBackstageScript(src) {
+          return new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = src;
+            s.onload = () => resolve(true);
+            s.onerror = () => reject(new Error("script load failed: " + src));
+            document.head.appendChild(s);
+          });
+        }
+
+        async function loadBackstageIndex() {
+          if (!(window.SRP_BACKSTAGE && window.SRP_BACKSTAGE.on)) return;
+          if (state.backstage.requested) return;
+          state.backstage.requested = true;
+          // 路径 1：fetch JSON
+          try {
+            const resp = await fetch("./wiki_backstage_index.json", {
+              cache: "no-cache",
+            });
+            if (!resp.ok) throw new Error("HTTP " + resp.status);
+            if (applyBackstageIndex(await resp.json())) return;
+          } catch (_) {}
+          // 路径 2：兜底快照 JS（按需注入，不占默认视图的流量）
+          try {
+            if (!window.WIKI_BACKSTAGE_SNAPSHOT) {
+              await loadBackstageScript("./wiki_backstage_index_snapshot.js");
+            }
+            if (window.WIKI_BACKSTAGE_SNAPSHOT) {
+              if (applyBackstageIndex(window.WIKI_BACKSTAGE_SNAPSHOT)) return;
+            }
+          } catch (_) {}
+          console.warn("[wiki] backstage 索引未能加载，内部检索不可用");
+        }
+
         // 读取快照 JS（通过 <script> 注入的全局变量 window.WIKI_INDEX_SNAPSHOT）
         function getSnapshotIndex() {
           try {
@@ -1293,6 +1386,7 @@
             sideFoot.appendChild(mark);
           }
           applySearchView();
+          loadBackstageIndex();
         }
 
         async function loadIndex() {
