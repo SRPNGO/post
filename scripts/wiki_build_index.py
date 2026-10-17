@@ -109,8 +109,8 @@ def extract_frontmatter_and_body(content):
         if not m:
             continue
         key, val = m.group(1), m.group(2).strip()
-        # aliases 允许「空值 + 缩进 - 列表」或单行逗号分隔，统一走多行收集
-        if key == 'aliases' and not val:
+        # aliases / searchAliases 允许「空值 + 缩进 - 列表」或单行逗号分隔，统一走多行收集
+        if key in ('aliases', 'searchAliases') and not val:
             multi_key = key
             multi_buf = []
             continue
@@ -333,6 +333,11 @@ def build_index():
         shown_name = display_name or title
         aliases = [a for a in aliases if a != shown_name]
         aliases = _dedup(aliases)[:5]
+        # searchAliases：只进入检索域、**不**在结果卡片里展示的别名。
+        # 用于条目改名后让旧名仍可被搜到，同时不在页面与搜索结果中露出旧名。
+        search_aliases = _parse_aliases(fm.get('searchAliases', ''))
+        search_aliases = [a for a in search_aliases if a != shown_name and a not in aliases]
+        search_aliases = _dedup(search_aliases)[:5]
         category = slug_to_cat.get(slug, '')
         # 使用条目文件 mtime（最近修改/新增时间，epoch 秒）作为"近期更新"的时间来源
         try:
@@ -347,6 +352,7 @@ def build_index():
             'author': author,
             'summary': summary,
             'aliases': aliases,
+            'search_aliases': search_aliases,
             'mtime': mtime,
             'url': f'/wiki/{slug}',
         })

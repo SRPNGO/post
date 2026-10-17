@@ -99,7 +99,7 @@
         },
         {
           "slug": "xbj",
-          "display": "小北君"
+          "display": "小北菌"
         },
         {
           "slug": "lan09Aa",
@@ -160,6 +160,10 @@
         {
           "slug": "mingwo",
           "display": "明沃"
+        },
+        {
+          "slug": "chenWei",
+          "display": "尘蔚"
         }
       ]
     },
@@ -360,6 +364,10 @@
           "display": "昴星阁"
         },
         {
+          "slug": "STPN",
+          "display": "弦星阁"
+        },
+        {
           "slug": "SRPNTestPaperGenerator",
           "display": "试卷生成器"
         },
@@ -446,6 +454,14 @@
         {
           "slug": "SRMP",
           "display": "星球理科"
+        },
+        {
+          "slug": "CAS",
+          "display": "中文天文协会"
+        },
+        {
+          "slug": "douyinFengquan",
+          "display": "抖音风圈"
         }
       ]
     },
@@ -488,7 +504,7 @@
         },
         {
           "slug": "StarRevolution",
-          "display": "B站星球圈知识体系推翻星知司的历程"
+          "display": "2026年星球圈知识体系变革"
         },
         {
           "slug": "XLevent",

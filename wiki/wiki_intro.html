@@ -946,6 +946,8 @@
             entry.title || "",
             entry.display || "",
             (entry.aliases || []).join(" "),
+            // search_aliases：仅参与检索、不在结果卡片中展示的别名（如条目改名前的旧名）
+            (entry.search_aliases || []).join(" "),
             entry.slug || "",
             entry.author || "",
             entry.summary || "",
@@ -958,7 +960,9 @@
           if (!kwNorm) return 0;
           let score = 0;
           const title = normalize(entry.display || entry.title);
-          const aliases = (entry.aliases || []).map(normalize);
+          const aliases = (entry.aliases || [])
+            .concat(entry.search_aliases || [])
+            .map(normalize);
           const slug = normalize(entry.slug);
           const summary = normalize(entry.summary || "");
           // 标记：是否在"强域"（标题 / 别名 / slug）命中 — 摘要命中仅作为辅助分，不单独作为命中条件

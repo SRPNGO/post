@@ -34,8 +34,10 @@ EXCLUDE_FILES = ['wikiRule.md', 'wiki_intro.md']
 MIN_TERM_LENGTH = 2
 
 # 术语黑名单：这些术语不自动加链接（通常因为缩写有歧义，指向多个条目）
-# 例如 "SRPG" 同时是「星球编程」(SRPNGO) 和「星球地理」(SRPG) 的缩写，无法确定指向谁
-TERM_BLACKLIST = {'SRPG'}
+# 例如 "SRPG" 同时是「星球编程」(SRPNGO) 和「星球地理」(SRPG) 的缩写，无法确定指向谁；
+# "STPN" 同时是「恒星阁」(星联阁创始四大阁之一，见 starLeagueClans.md) 与
+# 「弦星阁」(STPN.md) 的缩写，指向两个不同条目，同样无法确定，故一并列入黑名单。
+TERM_BLACKLIST = {'SRPG', 'STPN'}
 
 # 合并交替正则（惰性构建，避免每个文件重复编译）
 # 将全部术语按长度降序合并为一个交替正则，用一次 finditer 扫出整行所有术语命中，
