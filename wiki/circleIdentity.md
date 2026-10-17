@@ -17,7 +17,7 @@ description: 2025—2026年星球圈在星球圈/星球动画/星球球波圈、
 | 分析时间范围 | 约2025—2026年（2026年7月讨论最集中） |
 | 研究对象 | 星球圈整体层面的身份边界与认同机制 |
 | 核心表现 | 星球圈与星球动画互渗、星球球（波兰球子圈）渗透与内化、B站与抖音两分支分野、[传统星球圈](/wiki/traditionalSC)与"新星球圈"的断裂 |
-| 主要讨论者 | [Nsakrty](/wiki/nsakrty)、[樱井桃华](/wiki/yingJingTaoHua)、躺出名、两只小[昴宿](/wiki/maoxiu)等 |
+| 主要讨论者 | [Nsakrty](/wiki/nsakrty)、[樱井桃华](/wiki/yingJingTaoHua)、[躺出名](/wiki/tangChuMing)、两只小[昴宿](/wiki/maoxiu)等 |
 | 相关概念 | 星球圈、星球动画、新星球动画圈、星球阁叙事、[转型运动](/wiki/transformation) |
 
 ---

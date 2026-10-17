@@ -164,6 +164,26 @@
         {
           "slug": "chenWei",
           "display": "尘蔚"
+        },
+        {
+          "slug": "SIRIUS",
+          "display": "SIRIUS（大犬座）—A"
+        },
+        {
+          "slug": "tangChuMing",
+          "display": "躺出名"
+        },
+        {
+          "slug": "hxyxl",
+          "display": "hxyxl"
+        },
+        {
+          "slug": "betelgeuse",
+          "display": "参宿四"
+        },
+        {
+          "slug": "lanmei",
+          "display": "蓝莓"
         }
       ]
     },
@@ -462,6 +482,34 @@
         {
           "slug": "douyinFengquan",
           "display": "抖音风圈"
+        },
+        {
+          "slug": "subSC",
+          "display": "次星球圈"
+        },
+        {
+          "slug": "tianwenTuan",
+          "display": "天文团"
+        },
+        {
+          "slug": "TSPN",
+          "display": "天宿阁"
+        },
+        {
+          "slug": "xingAnLianmeng",
+          "display": "星安共和联盟"
+        },
+        {
+          "slug": "10180",
+          "display": "10180集团"
+        },
+        {
+          "slug": "yushiZhaoren",
+          "display": "宇式招人"
+        },
+        {
+          "slug": "subsidiarySystem",
+          "display": "附属制度"
         }
       ]
     },
