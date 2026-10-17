@@ -17,8 +17,8 @@
 (function () {
   "use strict";
 
-  var OFF_VALUES = { "": 1, "0": 1, "false": 1, "off": 1, "no": 1 };
-  var ALL_VALUES = { "1": 1, "true": 1, "on": 1, "yes": 1, "all": 1 };
+  var OFF_VALUES = { "": 1, 0: 1, false: 1, off: 1, no: 1 };
+  var ALL_VALUES = { 1: 1, true: 1, on: 1, yes: 1, all: 1 };
 
   function readParam(name) {
     try {
@@ -36,7 +36,8 @@
   }
 
   var raw = readParam("backstage");
-  var isOff = raw === null || OFF_VALUES[String(raw).trim().toLowerCase()] === 1;
+  var isOff =
+    raw === null || OFF_VALUES[String(raw).trim().toLowerCase()] === 1;
   var on = !isOff;
   var layers = null; // null 表示全部层
 
@@ -62,14 +63,16 @@
     allows: function (layer) {
       if (!on) return false;
       if (!layers) return true;
-      var l = String(layer || "").trim().toLowerCase();
+      var l = String(layer || "")
+        .trim()
+        .toLowerCase();
       if (!l) return true; // 未标注层的块视为通用后台内容
       return layers.indexOf(l) !== -1;
     },
   };
 
   var NOTE_HTML =
-    '<b>内部资料</b>：以下内容由 AI 依据《星球阁存档计划》原始资料整理与总结，' +
+    "<b>内部资料</b>：以下内容由 AI 依据《星球阁存档计划》原始资料整理与总结，" +
     "因涉及争议、尚未定论或存在风险，默认隐藏，仅在内部视图下显示。" +
     "原文未作删改，内容仅供参考，不代表官方立场，请以原始资料为准。";
 
@@ -100,7 +103,10 @@
   function ensureNote(block) {
     var existing = null;
     for (var i = 0; i < block.children.length; i++) {
-      if (block.children[i].classList && block.children[i].classList.contains("srp-backstage-note")) {
+      if (
+        block.children[i].classList &&
+        block.children[i].classList.contains("srp-backstage-note")
+      ) {
         existing = block.children[i];
         break;
       }
@@ -109,7 +115,9 @@
     var title = String(block.getAttribute("data-title") || "").trim();
     var head =
       (title ? "<b>" + escapeHtml(title) + "</b>" : "") +
-      (label ? '<span class="srp-backstage-layer">' + escapeHtml(label) + "</span>" : "");
+      (label
+        ? '<span class="srp-backstage-layer">' + escapeHtml(label) + "</span>"
+        : "");
     if (existing) {
       if (head) existing.innerHTML = head + "<br />" + NOTE_HTML;
       return;
@@ -128,6 +136,28 @@
       .replace(/"/g, "&quot;");
   }
 
+  function rewriteLinks() {
+    var links = document.querySelectorAll("a[href]");
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = a.getAttribute("href");
+      if (!href) continue;
+      // 跳过锚点 / 脚本 / 邮件 / 电话 / data
+      if (/^(?:#|javascript:|mailto:|tel:|data:|blob:)/i.test(href)) continue;
+
+      var u;
+      try {
+        u = new URL(href, document.baseURI); // 兼容 <base> 与相对路径
+      } catch (_) {
+        continue;
+      }
+      if (u.origin !== window.location.origin) continue; // 跨站链接不动
+
+      u.searchParams.set("backstage", "1"); // 有就覆盖，没有就新增
+      a.setAttribute("href", u.pathname + u.search + u.hash);
+    }
+  }
+
   function apply() {
     if (on) document.documentElement.classList.add("backstage-on");
 
@@ -143,22 +173,27 @@
     }
 
     if (!on) return;
+
+    rewriteLinks();
+
     if (document.getElementById("srpBackstageBanner")) return;
     if (!document.body) return;
     var bar = document.createElement("div");
     bar.id = "srpBackstageBanner";
     bar.className = "srp-backstage-banner";
     bar.innerHTML = BANNER_HTML;
-    bar.querySelector(".srp-backstage-banner-off").addEventListener("click", function () {
-      try {
-        var url = new URL(window.location.href);
-        url.searchParams.delete("backstage");
-        if (/#.*backstage=/.test(url.hash)) url.hash = "";
-        window.location.href = url.toString();
-      } catch (_) {
-        window.location.href = window.location.pathname;
-      }
-    });
+    bar
+      .querySelector(".srp-backstage-banner-off")
+      .addEventListener("click", function () {
+        try {
+          var url = new URL(window.location.href);
+          url.searchParams.delete("backstage");
+          if (/#.*backstage=/.test(url.hash)) url.hash = "";
+          window.location.href = url.toString();
+        } catch (_) {
+          window.location.href = window.location.pathname;
+        }
+      });
     document.body.insertBefore(bar, document.body.firstChild);
   }
 
