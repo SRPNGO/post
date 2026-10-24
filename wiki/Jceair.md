@@ -24,7 +24,7 @@ description: 星球阁早期成员Jceair（又名AXTLK、StasisTea）的人物�
 
 存档收录了《2020年星球阁主群成员名单》，其中将本条目人物记录为"AXTLK(Jceair)"：
 
-> "AXTLK(Jceair)、北河二、北极星没希望了、参宿七很沙雕、醋G爱吃红薯干、[Earth-2](/wiki/E2)、Earth(火)、Frisk-一颗恒星、鸽王游戏君、国瑞、ldl沙雕行星、Jupiter、卡戎/樱桃、卡丝星、乐色百足、[星零](/wiki/StarZero)、水货、r136a1、沙雕的黑洞蛋、水委一、SDFS、SDyer帝国歼星舰、SPR-18693宜居行星、天体君(OceanHalo)、土星MECH、UY Scuti-盾牌座、未来地球、西萧、瞎拍君、一颗大大的黑洞、星球阁官号、YZ去学习了、地球有点饿、太阳系"
+> "AXTLK(Jceair)、北河二、北极星没希望了、参宿七很沙雕、醋G爱吃红薯干、[Earth-2](/wiki/E2)、Earth(火)、Frisk-一颗恒星、鸽王游戏君、国瑞、ldl沙雕行星、Jupiter、卡戎/樱桃、卡丝星、乐色百足、[星零](/wiki/StarZero)、[水货](/wiki/shuiHuo)、r136a1、沙雕的黑洞蛋、水委一、SDFS、SDyer帝国歼星舰、SPR-18693宜居行星、天体君(OceanHalo)、土星MECH、UY Scuti-盾牌座、未来地球、西萧、瞎拍君、一颗大大的黑洞、星球阁官号、YZ去学习了、地球有点饿、太阳系"
 >
 > —— 《2020年星球阁主群成员名单》
 

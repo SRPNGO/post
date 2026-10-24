@@ -61,8 +61,23 @@
       "summary": "狗头君花粉，抖音短视频创作者，前星球阁成员。他于2020年11月至2021年2月期间短暂隶属于星球阁，因携带大量粉丝加入又因严重违反条例被驱逐，成为星球阁早期历史上最具争议性的人物之一。他所在的狗头圈（以狗头形象为主题的低成本短视频创作社群）也对后续的星球动画圈产生了深远影响。",
       "aliases": [],
       "search_aliases": [],
-      "mtime": 1792245235.374257,
+      "mtime": 1792829793.506066,
       "url": "/wiki/huafen"
+    },
+    {
+      "slug": "shuiHuo",
+      "title": "水货",
+      "display": "水货",
+      "category": "cat_人物",
+      "author": "",
+      "summary": "水货是星球阁 2020 年至 2021 年间的早期活跃成员，曾参与设计星球阁第二代标志，并自称\"水货工作室室长\"。他于 2020 年 8 月创办群内新闻节目《水货新闻》，是星球阁早期自制内容与日常氛围的代表性参与者之一。",
+      "aliases": [
+        "水货工作室",
+        "水货新闻"
+      ],
+      "search_aliases": [],
+      "mtime": 1792829750.2419336,
+      "url": "/wiki/shuiHuo"
     },
     {
       "slug": "maugfy",
@@ -252,10 +267,10 @@
       "display": "晓云",
       "category": "cat_人物",
       "author": "",
-      "summary": "晓云（群内全称XY—依托晓云·SRPN，亦作XY晓云）是新星球动画圈的星球燃剪创作者，在燃剪转型兴起的2025年8月以后加入星球阁，是星球阁开放引进新星球动画圈成员过程中的关键人物之一。其以星球燃剪创作获得可观流量，2026年7月因拉入大量星球动画圈高质量作者加入星球阁主群，被N…",
+      "summary": "晓云（群内全称XY—依托晓云·SRPN，亦作XY晓云）是新星球动画圈的星球燃剪创作者，在燃剪转型兴起的2025年8月加入星球阁，是星球阁开放引进新星球动画圈成员过程中的关键人物之一。其以星球燃剪创作获得可观流量，2026年7月因拉入大量星球动画圈高质量作者加入星球阁主群，被Nsa…",
       "aliases": [],
       "search_aliases": [],
-      "mtime": 1792245235.4016833,
+      "mtime": 1792251786.0976386,
       "url": "/wiki/xiaoYun"
     },
     {
@@ -534,7 +549,7 @@
       "summary": "尘蔚是百度星球球吧与中文天文协会（CAS）的领导人，兼天文爱好者吧吧主，中文星球球社区（Planetball）的核心人物之一。他坚持\"星球球至上\"的\"正统\"观念，主张以自波兰球分支而来的星球球为正统创作形式，与行星球圈、学术天文圈的成员长期存在分歧；2026年其与昴星阁等星球圈社…",
       "aliases": [],
       "search_aliases": [],
-      "mtime": 1792245196.0144799,
+      "mtime": 1792829793.9293392,
       "url": "/wiki/chenWei"
     },
     {
@@ -543,12 +558,12 @@
       "display": "SIRIUS（大犬座）—A",
       "category": "cat_人物",
       "author": "",
-      "summary": "SIRIUS（大犬座）—A（资料中亦简称 SIRIUS）是2022年前后活跃于抖音与QQ平台的星球类内容创作者。2022年2月7日，其在抖音发布招生视频，宣布建立社群组织“星球阁（2）”；此后该组织于两周内两次更名为“星球圈”“次星球圈”，以试卷审核、积分与等级、审核员等制度招新…",
+      "summary": "SIRIUS（大犬座）—A（资料中亦简称 SIRIUS）是2022年前后活跃于抖音的星球类内容创作者。2022年2月7日，其在抖音发布招生视频，宣布建立社群组织“星球阁（2）”；此后该组织于两周内两次更名为“星球圈”“次星球圈”，以试卷审核、积分与等级、审核员等制度招新运作。据星…",
       "aliases": [
         "2022年前后"
       ],
       "search_aliases": [],
-      "mtime": 1792245445.9071548,
+      "mtime": 1792246029.3561306,
       "url": "/wiki/SIRIUS"
     },
     {
@@ -993,6 +1008,37 @@
       "url": "/wiki/srpnWiki"
     },
     {
+      "slug": "gouTouQuan",
+      "title": "狗头圈",
+      "display": "狗头圈",
+      "category": "cat_内容与现象",
+      "author": "",
+      "summary": "狗头圈是以短视频平台\"狗头\"表情（emoji）衍生短剧为核心创作题材的网络亚文化圈层，主要活跃于抖音、快手与 B 站，兴起于 2019 年至 2020 年前后。它并非星球圈的分支，二者在题材上无直接关联，但在低成本制作、创作者低龄化与流量周期短等特征上高度相似，故常被用作星球圈相…",
+      "aliases": [
+        "狗头小剧场圈",
+        "狗头圈层"
+      ],
+      "search_aliases": [],
+      "mtime": 1792829749.9581902,
+      "url": "/wiki/gouTouQuan"
+    },
+    {
+      "slug": "SRPNNews",
+      "title": "星球阁新闻联播",
+      "display": "星球阁新闻联播",
+      "category": "cat_内容与现象",
+      "author": "",
+      "summary": "星球阁新闻联播是星球阁于 2020 年 8 月推出的群内自制新闻节目，全称\"星球阁官方电视台｜星球阁新闻联播\"。节目以群内事务与成员动态为报道对象，采用双主播与语音合成播报的形式，多数期次标注为\"未公开，仅群内播送\"，是星球阁早期自制内容体系中的代表性栏目之一。",
+      "aliases": [
+        "星球阁官方电视台",
+        "XQTV",
+        "联播"
+      ],
+      "search_aliases": [],
+      "mtime": 1792829750.2316532,
+      "url": "/wiki/SRPNNews"
+    },
+    {
       "slug": "chuangzuoBantu",
       "title": "星球阁创作版图",
       "display": "星球阁创作版图",
@@ -1027,7 +1073,7 @@
       "summary": "星球阁存档计划（SRAP，全称 Star Pavilion Archive Project）是星球阁（SRPN）的一项系统性历史资料整理与数字化存档工程。该项目由成员 Nsakrty 发起并主理，旨在从官方文档、日常聊天记录、创作作品、粉丝数据等多个维度，全面记录和保存星球阁及更…",
       "aliases": [],
       "search_aliases": [],
-      "mtime": 1792245195.9083166,
+      "mtime": 1792829840.6738453,
       "url": "/wiki/SRAP"
     },
     {
@@ -1275,7 +1321,7 @@
         "SRPN"
       ],
       "search_aliases": [],
-      "mtime": 1792245195.9300113,
+      "mtime": 1792829822.8747182,
       "url": "/wiki/SRPN"
     },
     {
@@ -1492,8 +1538,52 @@
         "CAS"
       ],
       "search_aliases": [],
-      "mtime": 1792245195.832405,
+      "mtime": 1792829779.3892403,
       "url": "/wiki/CAS"
+    },
+    {
+      "slug": "CASwiki",
+      "title": "中文天文wiki",
+      "display": "中文天文wiki",
+      "category": "cat_组织与制度",
+      "author": "",
+      "summary": "中文天文wiki（英文 Chinese astronomy wiki）是中文天文协会（CAS）直属的公共 wiki，于 2025 年 8 月 15 日 建于 Miraheze 平台。该站以天文条目与社区文化记录为主要内容，设有《中立公约》，声明在各天文组织之间保持中立；截至 20…",
+      "aliases": [
+        "Chinese astronomy wiki",
+        "中天协wiki"
+      ],
+      "search_aliases": [],
+      "mtime": 1792829750.3272069,
+      "url": "/wiki/CASwiki"
+    },
+    {
+      "slug": "xingKongHui",
+      "title": "星空绘",
+      "display": "星空绘",
+      "category": "cat_组织与制度",
+      "author": "",
+      "summary": "星空绘是中文星球球社区中的绘画组织，于 2024 年 5 月 13 日 在\"画世界\"平台成立，由尘蔚发起。其宗旨为提高星球球、行星球与星球圈\"三圈\"的绘画质量，被视为中文星球球社区较早成立的小团体之一，后与中文天文协会形成关联。",
+      "aliases": [
+        "星空绘组织"
+      ],
+      "search_aliases": [],
+      "mtime": 1792829750.6074796,
+      "url": "/wiki/xingKongHui"
+    },
+    {
+      "slug": "zhongwenXingQiuQiu",
+      "title": "中文星球球社区",
+      "display": "中文星球球社区",
+      "category": "cat_组织与制度",
+      "author": "",
+      "summary": "中文星球球社区（Planetball 中文社区）是以\"星球球\"创作为核心的中文网络社群。星球球创作源自波兰球（Countryball）传统，以圆形星球角色承载天文、地理与拟人化叙事。该社区自 2021 年 前后出现小团体萌芽，此后经历分裂、分立与重组，至 2025 年后进入整合阶…",
+      "aliases": [
+        "Planetball中文社区",
+        "中文星球球圈"
+      ],
+      "search_aliases": [],
+      "mtime": 1792829750.8484647,
+      "url": "/wiki/zhongwenXingQiuQiu"
     },
     {
       "slug": "douyinFengquan",
@@ -1516,14 +1606,14 @@
       "display": "次星球圈",
       "category": "cat_组织与制度",
       "author": "",
-      "summary": "次星球圈（原名星球阁（2），中间曾用名星球圈，英文 Star Circle，缩写 SRCS）是2022年2月出现于抖音、QQ平台的星球圈早期社群组织，由抖音用户SIRIUS（大犬座）—A于2022年2月7日发起建立，并在两周内先后两次更名。该组织以手写入群试卷、通过分数（资料中称…",
+      "summary": "次星球圈（原名星球阁（2），英文 Star Circle，缩写 SRCS）是2022年2月出现于抖音的星球圈早期社群组织，由抖音用户SIRIUS（大犬座）—A于2022年2月7日发起建立，并在两周内先后两次更名。该组织以手写入群试卷、通过分数（资料中称\"同过分\"）、积分与等级、审…",
       "aliases": [
         "星球阁（2）",
         "星球圈（2022年）",
         "SRCS"
       ],
       "search_aliases": [],
-      "mtime": 1792245444.5910306,
+      "mtime": 1792246134.7233055,
       "url": "/wiki/subSC"
     },
     {
@@ -1840,7 +1930,7 @@
         "E2-S9SNS-NK天白事件"
       ],
       "search_aliases": [],
-      "mtime": 1792245235.3562872,
+      "mtime": 1792245884.0624373,
       "url": "/wiki/2025HighLevelSplit"
     },
     {
@@ -2126,59 +2216,59 @@
   ],
   "recent_entries": [
     {
-      "slug": "SRAP",
-      "display": "星球阁存档计划",
-      "url": "/wiki/SRAP",
-      "mtime": 1792245195.9083166,
+      "slug": "10180",
+      "display": "10180集团",
+      "url": "/wiki/10180",
+      "mtime": 1792245195.7789457,
       "mtime_date": "2026-10-17"
     },
     {
-      "slug": "SRAPMethod",
-      "display": "SRAP的方法论与编纂原则",
-      "url": "/wiki/SRAPMethod",
-      "mtime": 1792245195.911577,
+      "slug": "AstroRank",
+      "display": "天文等级",
+      "url": "/wiki/AstroRank",
+      "mtime": 1792245235.3611653,
       "mtime_date": "2026-10-17"
     },
     {
-      "slug": "STPN",
-      "display": "弦星阁",
-      "url": "/wiki/STPN",
-      "mtime": 1792245195.9381464,
+      "slug": "DYCY",
+      "display": "大眼苍蝇",
+      "url": "/wiki/DYCY",
+      "mtime": 1792245195.8389652,
       "mtime_date": "2026-10-17"
     },
     {
-      "slug": "navigate",
-      "display": "对回归成员的快速导航",
-      "url": "/wiki/navigate",
-      "mtime": 1792245196.1279638,
+      "slug": "E2",
+      "display": "Earth-2",
+      "url": "/wiki/E2",
+      "mtime": 1792245195.8443866,
       "mtime_date": "2026-10-17"
     },
     {
-      "slug": "nsakrty",
-      "display": "Nsakrty",
-      "url": "/wiki/nsakrty",
-      "mtime": 1792245196.1385102,
+      "slug": "PSPN",
+      "display": "昴星阁",
+      "url": "/wiki/PSPN",
+      "mtime": 1792245316.3878932,
       "mtime_date": "2026-10-17"
     },
     {
-      "slug": "orgList",
-      "display": "星球圈组织名单",
-      "url": "/wiki/orgList",
-      "mtime": 1792245196.1461043,
+      "slug": "SIPN",
+      "display": "星冰阁",
+      "url": "/wiki/SIPN",
+      "mtime": 1792245195.893266,
       "mtime_date": "2026-10-17"
     },
     {
-      "slug": "srpnWiki",
-      "display": "星球阁Wiki",
-      "url": "/wiki/srpnWiki",
-      "mtime": 1792245196.1853309,
+      "slug": "SIRIUS",
+      "display": "SIRIUS（大犬座）—A",
+      "url": "/wiki/SIRIUS",
+      "mtime": 1792246029.3561306,
       "mtime_date": "2026-10-17"
     },
     {
-      "slug": "starLeagueClans",
-      "display": "星联阁系组织谱系",
-      "url": "/wiki/starLeagueClans",
-      "mtime": 1792245196.1928658,
+      "slug": "SKDC",
+      "display": "星联阁",
+      "url": "/wiki/SKDC",
+      "mtime": 1792245195.8984935,
       "mtime_date": "2026-10-17"
     }
   ]
